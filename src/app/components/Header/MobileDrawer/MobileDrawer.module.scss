@@ -1,0 +1,201 @@
+.drawer {
+    .inner {
+        width: 84%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            button {
+                &:focus,
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+            .header {
+                padding: 0px;
+                .title {
+                    width: 100%;
+                }
+                .headerContent {
+                    background-color: var(--primary-light-2);
+                    position: relative;
+                    .loginInfoContainer {
+                        padding: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        .closeIcon {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            cursor: pointer;
+                        }
+                        .wizrLogo {
+                            width: 114.24px;
+                            height: 51.192px;
+                            margin: 42px 0px;
+                        }
+                        p {
+                            margin: 16px 0px 28px 0px;
+                            text-align: center;
+                            color: var(--primary-dark-1, #161c20);
+                            text-align: center;
+                            font-family: var(--font-inter);
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: -0.2px;
+                            opacity: 0.7;
+                            max-width: 142px;
+                        }
+                        .loginButton {
+                            width: 100%;
+                            max-width: 280px;
+                            margin-top: 8px;
+                            > div > span {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 8px;
+                                color: var(--discover-brick-2, #f9f3f0);
+                                font-family: var(--font-inter);
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 23px; /* 143.75% */
+                                letter-spacing: -0.016px;
+                            }
+                        }
+                    }
+                    .profileInfoContainer {
+                        padding: 42px 24px 24px 16px;
+                        width: 100%;
+                        display: flex;
+                        gap: 11px;
+                        .profileContainer {
+                            position: relative;
+                            .profileBg {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            span {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                color: var(--neutral-white, #fff);
+                                font-family: var(--font-patron);
+                                font-size: 22.808px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 125%; /* 28.51px */
+                            }
+                            .edit {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
+                        }
+                        .nameContainer {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: center;
+                            gap: 8px;
+
+                            .name {
+                                color: var(--primary-dark-4, #0b0e10);
+                                font-family: var(--font-patron);
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 27px; /* 135% */
+                                letter-spacing: 0.04px;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                            }
+                            .dashboardCTA {
+                                color: var(--primary-dark-1, #161c20);
+                                font-family: var(--font-inter);
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 140%; /* 19.6px */
+                                opacity: 0.5;
+                            }
+                        }
+                        .close {
+                            margin-left: auto;
+                            margin-top: 11.5px;
+                            width: 25px;
+                            height: 25px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 12px 0 0 0;
+                height: max-content;
+                flex: 1 1 0px;
+
+                .accordionContainer {
+                    flex: 1 1 0px;
+                    overflow-y: auto;
+                    .linksContainer {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        .title {
+                            color: var(--primary-dark-1, #161c20);
+                            font-family: var(--font-patron);
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 27px; /* 135% */
+                            letter-spacing: 0.04px;
+                        }
+
+                        .link {
+                            color: var(--primary-dark-1, #161c20);
+                            font-family: var(--font-inter);
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 140%; /* 19.6px */
+                            letter-spacing: -0.2px;
+                            text-align: left;
+                            margin-left: 8px;
+                        }
+
+                        .hightedLink {
+                            background-color: var(--primary-accent-1, #cbfb62);
+                            border-radius: 2px;
+                            padding: 2px 4px 2px 8px;
+                            margin-left: 0px;
+                        }
+                    }
+                }
+                .footer {
+                    background-color: var(--primary-light-2);
+                    height: 117px;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0px 24px;
+                    width: 100%;
+                    align-self: flex-end;
+                    position: sticky;
+                    bottom: 0;
+                    .logoutButton {
+                        margin-top: 31px;
+                    }
+                }
+            }
+        }
+    }
+}

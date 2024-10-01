@@ -1,0 +1,40 @@
+<svg width="865" height="532" viewBox="0 0 865 532" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1635.39" height="862.438" transform="translate(206.617 63.8413)" fill="#EFF5FA"/>
+<line x1="148.484" y1="63.255" x2="1011.13" y2="63.255" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="108.657" x2="1011.13" y2="108.657" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="154.06" x2="1011.13" y2="154.06" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="199.462" x2="1011.13" y2="199.462" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="244.864" x2="1011.13" y2="244.864" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="290.266" x2="1011.13" y2="290.266" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="335.669" x2="1011.13" y2="335.669" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="381.071" x2="1011.13" y2="381.071" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="426.473" x2="1011.13" y2="426.473" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="471.876" x2="1011.13" y2="471.876" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="148.484" y1="517.278" x2="1011.13" y2="517.278" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="147.728" y1="926.655" x2="147.728" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="193.126" y1="926.655" x2="193.126" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="238.532" y1="926.655" x2="238.532" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="283.931" y1="926.655" x2="283.931" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="329.337" y1="926.655" x2="329.337" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="374.735" y1="926.655" x2="374.735" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="420.142" y1="926.655" x2="420.142" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="465.54" y1="926.655" x2="465.54" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="510.946" y1="926.655" x2="510.946" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="556.345" y1="926.655" x2="556.345" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="601.751" y1="926.655" x2="601.751" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="647.15" y1="926.655" x2="647.15" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="692.556" y1="926.655" x2="692.556" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="737.954" y1="926.655" x2="737.954" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="783.36" y1="926.655" x2="783.36" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<line x1="828.759" y1="926.655" x2="828.759" y2="64.012" stroke="#1D1B21" stroke-opacity="0.2" stroke-width="1.51341"/>
+<g filter="url(#filter0_f_15193_51018)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1113.85 0H60L60 719H1113.85V0ZM464.006 450.863C540.77 450.863 603.001 386.805 603.001 307.784C603.001 228.763 540.77 164.705 464.006 164.705C387.241 164.705 325.01 228.763 325.01 307.784C325.01 386.805 387.241 450.863 464.006 450.863Z" fill="#EFF5FA"/>
+</g>
+<defs>
+<filter id="filter0_f_15193_51018" x="0" y="-60" width="1173.85" height="839" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_15193_51018"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,31 @@
+@import "src/app/styles/mixins";
+
+.otpInput {
+    background-color: rgba(153, 153, 153, 0.1);
+    border-radius: 10px;
+    height: 52px !important;
+    min-width: 45px !important;
+    outline: none;
+    border: none;
+    margin-right: 6px;
+    color: var(--learn-purple-3);
+    font-size: 16px;
+    line-height: 23px;
+    user-select: none;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &[type="number"] {
+        -moz-appearance: textfield;
+    }
+    &::selection {
+        background-color: transparent;
+        color: var(--learn-purple-3);
+    }
+    @include md {
+        height: 64px !important;
+        width: 50px !important;
+    }
+}

@@ -1,0 +1,73 @@
+@import "src/app/styles/mixins";
+
+.progressBarContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 9px;
+    width: 100%;
+    z-index: 9;
+    @include mobile {
+        background-color: #f0eae4;
+        width: 93%;
+        border-radius: 60px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 6px;
+    }
+
+    .progressBar {
+        background-color: var(--primary-accent-1);
+        height: 100%;
+        transition: all 0.3s ease-out;
+        position: relative;
+        border-radius: 60px;
+
+        .progress {
+            position: absolute;
+            right: -50px;
+            top: 10px;
+
+            > span {
+                z-index: 99;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 19px;
+                line-height: 22px;
+                text-align: center;
+                color: #d6f963;
+            }
+
+            @include mobile {
+                top: -40px;
+                right: -30px;
+                > img {
+                    transform: rotate(-90deg);
+                    width: 27px;
+                }
+                > span {
+                    font-size: 10px;
+                    line-height: 13px;
+                }
+            }
+        }
+        .progressFlip {
+            right: 0px;
+            > img {
+                transition: transform 0.3s ease-in-out;
+                transform: rotate(90deg);
+            }
+            @include mobile {
+                > img {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+}

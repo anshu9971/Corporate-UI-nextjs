@@ -1,0 +1,70 @@
+@import "src/app/styles/mixins";
+
+button.button {
+    background-color: var(--primary-dark-3);
+    color: var(--primary-dark-1);
+    // border-radius: 50px;
+    overflow: hidden;
+    border: none;
+    transform: scale(1);
+    transition: background-color 0.2s ease-out, transform 0.2s ease-in-out;
+
+    &:disabled {
+        background-color: var(--learn-purple-2) !important;
+        color: #838f97 !important;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: var(--primary-accent-1);
+        z-index: 0;
+        // border-radius: 50px;
+        transition: width 0.2s ease-out;
+    }
+
+    &.primary {
+        background-color: var(--primary-dark-1);
+        color: var(--neutral-white);
+    }
+
+    &.secondary {
+        background-color: yellow;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        transition: transform 0.15s linear;
+    }
+
+    @include md {
+        &:hover {
+            transition: background-color 0.2s ease-out 0.2s,
+                transform 0.2s ease-in-out;
+            color: var(--primary-dark-1);
+            background-color: transparent;
+
+            &::before {
+                width: 100%;
+            }
+        }
+        &:active {
+            transform: none;
+        }
+    }
+
+    & span {
+        font-family: var(--font-inter);
+    }
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &:active,
+    &:visited {
+        outline: none;
+    }
+}

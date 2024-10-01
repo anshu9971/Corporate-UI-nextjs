@@ -1,0 +1,45 @@
+@import "src/app/styles/mixins";
+.controls {
+    // display: none;
+    align-items: center;
+    @include md {
+        display: flex;
+    }
+
+    > p {
+        &:nth-of-type(1) {
+            font-family: var(--font-patron);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 38px;
+            letter-spacing: 0.002em;
+            color: var(--learn-purple-4);
+        }
+
+        &:nth-of-type(2) {
+            font-family: var(--font-inter);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: -0.001em;
+            color: var(--primary-dark-3);
+            margin-top: 15px;
+        }
+    }
+
+    > img {
+        cursor: pointer;
+        width: 29px;
+        height: 29px;
+        padding: 7px;
+        background: #fff;
+        border-radius: 100%;
+
+        &:nth-of-type(2) {
+            transform: rotate(180deg);
+            margin-left: 15px;
+        }
+    }
+}

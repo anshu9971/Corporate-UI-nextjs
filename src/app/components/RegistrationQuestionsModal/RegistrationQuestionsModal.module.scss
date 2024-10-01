@@ -1,0 +1,169 @@
+@import "src/app/styles/mixins";
+
+.registration {
+    :global(.mantine-Modal-content) {
+        @media (max-height: 770px) {
+            height: 95vh !important;
+        }
+    }
+    .registrationContent {
+        position: relative;
+        height: 100%;
+        overflow: visible;
+        background-color: white;
+        border-radius: 16px 16px 0 0;
+        @include md {
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            top: -12%;
+            width: 100%;
+            padding: 0 16px;
+            height: auto;
+            z-index: 1;
+            overflow: hidden;
+            @include md {
+                top: 4%;
+                justify-content: flex-end;
+            }
+
+            .backIcon {
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 3%;
+                left: 3%;
+                cursor: pointer;
+            }
+
+            .icon {
+                &:nth-of-type(1) {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    //top: -115px;
+                    width: 70px;
+                    @include md {
+                        display: none;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    position: relative;
+                    //top: -110px;
+                    @include md {
+                        width: 25px;
+                        height: 25px;
+                        top: 0;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    left: 16px;
+                    //top: -110px;
+                    @include md {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        > div {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100%;
+            overflow-y: auto;
+            @include md {
+                overflow-y: hidden;
+                grid-template-columns: 1fr 0.6fr;
+            }
+
+            .backIcon {
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 4%;
+                left: 3%;
+                cursor: pointer;
+            }
+            .left {
+                height: 100%;
+                max-height: 100%;
+                min-height: 100%;
+            }
+            .right {
+                position: absolute;
+                z-index: -1;
+                top: -130px;
+                left: 0;
+                background-image: url("../../assets/images/illusModalLogin.png");
+                background-repeat: no-repeat;
+                background-size: 140% 100%;
+                justify-content: center;
+                align-items: center;
+
+                &:before {
+                    content: " ";
+                    background: linear-gradient(
+                        180deg,
+                        rgba(152, 142, 164, 0) 0%,
+                        #9e95a9 73.08%
+                    );
+                    transform: matrix(1, 0, 0, -1, 0, 0);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 55%;
+                    @include md {
+                        display: none;
+                    }
+                }
+
+                @include md {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    display: flex;
+                    z-index: unset;
+                    background-size: 100% 100%;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}
+
+.checkbox {
+    > div {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    :global(.mantine-Checkbox-inner) {
+        width: 15px !important;
+        height: 15px !important;
+
+        input {
+            width: 15px !important;
+            height: 15px !important;
+        }
+    }
+}

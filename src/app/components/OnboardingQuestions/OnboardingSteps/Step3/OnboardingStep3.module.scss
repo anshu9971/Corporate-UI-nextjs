@@ -1,0 +1,304 @@
+@import "src/app/styles/mixins";
+
+.onboardingStep {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .subHeader {
+        display: none;
+
+        > button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            width: fit-content;
+        }
+
+        .back {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            > img {
+                margin-right: 20%;
+            }
+
+            > span {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+                text-align: center;
+                letter-spacing: -0.001em;
+                color: #1d1b21;
+            }
+        }
+
+        .skipBtn {
+            cursor: pointer;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 23px;
+            text-align: center;
+            letter-spacing: -0.001em;
+            color: var(--learn-purple-4);
+            transition: transform 0.25s linear;
+
+            &:hover {
+                transition: transform 0.25s linear;
+                transform: scale(1.05);
+            }
+        }
+
+        @include md {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+    }
+
+    > h2 {
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.002em;
+        color: #1d1b21;
+        align-self: center;
+        max-width: 100%;
+        font-size: 25px;
+        line-height: 32px;
+        @include md {
+            max-width: 50%;
+            font-size: 34px;
+            line-height: 45px;
+        }
+        @include xxl {
+            font-size: 39px;
+            line-height: 50px;
+        }
+        @include md-maxHeight {
+            font-size: 29px;
+            line-height: 35px;
+        }
+        @include maxHeightWithDpr(1.5) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    > p {
+        font-style: normal;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: var(--learn-purple-3);
+        margin: 3% 0 8% 0;
+        max-width: 90%;
+        align-self: center;
+        font-size: 14px;
+        line-height: 20px;
+        @include md {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            line-height: 27px;
+        }
+        @include maxHeightWithDpr(1.5) {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    .levelContainer {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        padding-bottom: 50px; //helpReachOut padding
+        width: 97%;
+        overflow-y: visible;
+        @include hideScrollbar();
+        @include md {
+            overflow-y: unset;
+            padding: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+        }
+        @include md-maxHeight {
+            max-width: 80%;
+        }
+
+        .loader {
+            height: 100px;
+            width: 120px;
+            object-fit: cover;
+        }
+
+        > div {
+            display: flex;
+            background: rgba(218, 216, 221, 0.3);
+            border-radius: 20px;
+            align-items: center;
+            margin-right: 0;
+            max-width: unset;
+            margin-bottom: 24px;
+            flex-direction: row;
+            padding: 8px 12px;
+            position: relative;
+            overflow: hidden;
+
+            > img {
+                margin: unset;
+                width: 100px;
+                height: 100px;
+                margin-right: 3%;
+                object-fit: contain;
+            }
+
+            @include md {
+                margin-bottom: 0;
+                cursor: pointer;
+                flex-basis: 33%;
+                height: 330px;
+                padding: 28px;
+                margin-right: 28px;
+                flex-direction: column;
+                align-items: center;
+                max-width: 400px;
+                transition: transform 0.3s ease-out, background 0.3s ease-out;
+                transform: none;
+                justify-content: first baseline;
+                gap: 24px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+                > img {
+                    // margin: auto;
+                    width: 180px;
+                    height: 150px;
+                }
+                &:hover {
+                    transition: transform 0.3s ease-out,
+                        background 0.3s ease-out;
+                    transform: rotate(-2deg);
+                    background: var(--primary-accent-1);
+                }
+            }
+            @include md-maxHeight {
+                height: 270px;
+                flex-basis: 29%;
+                > img {
+                    width: 140px;
+                    height: 114px;
+                }
+            }
+            @include maxHeightWithDpr(1.5) {
+                height: 220px;
+
+                > img {
+                    width: 110px;
+                    height: 77px;
+                }
+            }
+
+            > div {
+                > p {
+                    &:nth-of-type(1) {
+                        font-family: var(--font-patron);
+                        font-style: normal;
+                        color: var(--learn-purple-4);
+                        font-size: 20px;
+                        line-height: 27px;
+                        text-align: left;
+                        font-weight: 700;
+                        @include md {
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 32px;
+                            text-align: center;
+                        }
+                        @include md-maxHeight {
+                            font-size: 21px;
+                        }
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 19px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+
+                .desc {
+                    font-family: var(--font-inter);
+                    font-style: normal;
+                    font-weight: 500;
+                    letter-spacing: -0.01em;
+                    color: var(--learn-purple-4);
+                    opacity: 0.7;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-align: left;
+                    margin-top: 4%;
+                    @include md {
+                        font-size: 16px;
+                        line-height: 27px;
+                        text-align: center;
+                        margin-top: 0;
+                    }
+                    @include md-maxHeight {
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                    @include maxHeightWithDpr(1.5) {
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+            .fold {
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                z-index: 2;
+                margin: 0px;
+                transform: translate(100%, 100%);
+                transition: all 0.3s ease-out;
+                width: 80px;
+                height: 80px;
+                @include md {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            &:hover,
+            &:active {
+                transition: background-color 0.3s ease-out,
+                    transform 0.25s ease-out;
+                background: var(--primary-accent-1);
+                transform: rotate(-3deg);
+
+                .fold {
+                    transform: translate(0%, 0%);
+                    display: block;
+                }
+            }
+
+            &.disabled {
+                cursor: not-allowed;
+                background: rgba(218, 216, 221, 0.3);
+                transform: none;
+                opacity: 0.55 !important;
+
+                .fold {
+                    transform: none;
+                    display: none;
+                }
+            }
+        }
+    }
+}

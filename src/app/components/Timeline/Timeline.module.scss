@@ -1,0 +1,261 @@
+@import "src/app/styles/mixins";
+
+.TimelineContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    //justify-content: space-between;
+    padding-left: 5px;
+
+    &:after {
+        position: absolute;
+        right: -100px;
+        width: 100px;
+        height: 4px;
+        background: rgba(220, 223, 196, 0.28);
+        content: "";
+    }
+
+    > div {
+        // flex-grow: 1;
+        // flex-shrink: 1;
+    }
+    .bar {
+        height: 4px;
+        //width: 40px;
+        background: rgba(220, 223, 196, 0.28);
+        --width: 35px;
+        flex: 1;
+
+        &:last-of-type {
+            display: none;
+        }
+
+        @include md {
+            width: fit-content;
+            // --width: 50px;
+        }
+    }
+
+    @include md {
+        padding: 0;
+        justify-content: unset;
+    }
+
+    .timeSectionContainer {
+        position: relative;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include md {
+            //margin-right: 50px;
+        }
+
+        .btn {
+            border: none;
+        }
+
+        .timeSection {
+            min-width: 21px;
+            min-height: 21px;
+            background: #f3f5e7;
+            transition: background-color 0.3s linear;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            @include md {
+                min-width: 26px;
+                min-height: 26px;
+            }
+            > img {
+                width: 11px;
+                height: 11px;
+                @include md {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+
+            &.completed {
+                background: #dcdfc4;
+
+                > p {
+                    opacity: 1;
+                }
+            }
+
+            &.active {
+                min-width: 32px;
+                min-height: 32px;
+                transition: background-color 0.3s linear;
+                background-color: var(--primary-accent-1);
+                @include md {
+                    min-width: 38px;
+                    min-height: 38px;
+                }
+                > img {
+                    width: 18px;
+                    height: 18px;
+                    @include md {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            &.turnDown {
+                min-width: 38px;
+                min-height: 38px;
+                transition: background-color 0.3s linear;
+                background-color: #dcdfc4;
+
+                > img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                svg > path {
+                    fill: black;
+                }
+            }
+        }
+
+        > p {
+            transform: scale(1) !important;
+            position: absolute;
+            font-family: var(--font-inter);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 14px;
+            letter-spacing: -0.001em;
+            color: #545a7d;
+            top: 35px;
+            opacity: 0.4;
+            width: 199%;
+            text-align: center;
+            @include md {
+                font-size: 12px;
+            }
+        }
+
+        &.activeContainer {
+            > p {
+                top: 42px;
+                opacity: 1;
+            }
+        }
+
+        &:nth-of-type(1) {
+            &:before {
+                content: " ";
+                height: 4px;
+                width: 100px;
+                background: rgba(220, 223, 196, 0.28);
+                position: absolute;
+                left: -100px;
+                animation: fadeIn 0.6s linear;
+            }
+        }
+    }
+}
+
+.kycCardContainer {
+    margin: 0 20%;
+
+    @include mobile {
+        max-width: 70%;
+    }
+
+    &:before {
+        position: absolute;
+        left: -200px;
+        z-index: 0;
+        width: 100px;
+        height: 4px;
+        background: rgba(220, 223, 196, 0.28);
+        content: "";
+    }
+
+    &:after {
+        position: absolute;
+        right: -1000px;
+        z-index: 0;
+        width: 1000px;
+        height: 4px;
+        background: rgba(220, 223, 196, 0.28);
+        content: "";
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100px;
+    }
+}
+
+.infoContainer {
+    position: absolute;
+    width: 260px;
+    margin-left: 10px;
+    font-size: 10px;
+    height: fit-content;
+
+    padding: 24px;
+    padding-bottom: 0px;
+    background-color: white;
+    left: 10;
+    bottom: 36px;
+    // transform: translateX(20%);
+
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+
+    @include lg {
+        left: 0;
+        width: 317px;
+        margin-left: 10px;
+        font-size: 12px;
+        padding: 16px 26px;
+        z-index: 9999;
+        transform: translateX(50%);
+        padding-bottom: 0px;
+    }
+
+    img {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+
+        @include lg {
+            top: 6px;
+            right: 6px;
+        }
+    }
+
+    button {
+        border: none;
+    }
+    // background: #9e9f9f;
+    // color: red;
+    // border: 1px solid black;
+}
+
+.in {
+    position: absolute;
+    left: 38%;
+    top: 100%;
+}

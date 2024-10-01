@@ -1,0 +1,169 @@
+@import "../../styles/mixins";
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: 1324px) {
+        width: 640px;
+    }
+}
+
+.myCreditLimitCard {
+    padding: 8px;
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #e7e6ce;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    height: 200px;
+    align-items: center;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        padding: 16px;
+    }
+
+    .firstHalfContainer {
+        padding: 20px 26px;
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+
+        @include mobile {
+            height: fit-content;
+            flex-direction: column-reverse;
+            padding: 0 26px 16px;
+        }
+
+        > button {
+            margin-top: 20px;
+            max-width: fit-content;
+
+            @include mobile {
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        .desktopCTA {
+            display: block;
+            margin-left: 27px;
+
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+    .firstHalf {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        > img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            margin-top: 4px;
+        }
+
+        > p {
+            //font-family: var(--font-patron);
+            color: var(--Learn-Purple-4, #1d1b21);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 27px; /* 135% */
+            letter-spacing: 0.04px;
+        }
+    }
+
+    .secondHalf {
+        width: 250px;
+        height: 180px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+        > div {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            position: absolute;
+            background-image: url("../../assets/images/ActvityCard_illus5.png");
+            left: -200px;
+            right: 0px;
+            padding-left: 200px;
+
+            > div {
+                height: 52px;
+                width: 52px;
+                background-color: #cbfb62;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50px;
+                margin-bottom: 16px;
+
+                > img {
+                    transform: rotate(16deg);
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            > p {
+                font-family: var(--font-inter);
+                color: #fff;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px; /* 150% */
+                letter-spacing: -0.012px;
+                width: 93px;
+                text-align: center;
+            }
+
+            > h2 {
+                // font-family: var(--font-patron);
+                margin-top: 12px;
+                color: var(--Finance-Blue-4, #102031);
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 29.648px;
+                letter-spacing: 0.064px;
+            }
+        }
+
+        > img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+
+    .mobileCTA {
+        display: none;
+
+        @include mobile {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}

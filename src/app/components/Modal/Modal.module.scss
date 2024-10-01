@@ -1,0 +1,52 @@
+@import "src/app/styles/mixins";
+
+.mantine-Modal-content {
+    border-radius: 30px;
+    background: white;
+}
+
+.modalRoot {
+    .modalInner {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        align-items: flex-end;
+        @include md {
+            padding-left: 5vw;
+            padding-right: 5vw;
+            padding-bottom: 5vh;
+            align-items: center;
+        }
+
+        .modalContent {
+            max-width: 100%;
+            height: 85%;
+            flex-basis: 100vw;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            overflow-y: visible;
+            background-color: transparent;
+            @include md {
+                height: 75vh;
+                max-width: 80%;
+                flex-basis: 80vw;
+                border-radius: 30px;
+                overflow-y: auto;
+                @media (max-height: 740px) {
+                    //karna resolution
+                    height: 85vh;
+                }
+            }
+            @include xxl {
+                max-width: 74%;
+            }
+            @include md-maxHeight {
+                height: 80vh;
+                max-width: 80%;
+            }
+            @include maxHeightWithDpr(1.25) {
+                height: 85vh;
+            }
+        }
+    }
+}

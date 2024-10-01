@@ -1,0 +1,119 @@
+@import "src/app/styles/mixins";
+
+.onboardingStep {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #a198ac;
+    border-radius: 20px 20px 0 0;
+    padding: 50px 14px 0 14px;
+    margin: 0 -20px 0 -20px;
+    @include md {
+        margin: 0;
+        border-radius: 20px;
+        padding: 8%;
+        height: 100%;
+        overflow: unset;
+    }
+
+    .logo {
+        width: 150px;
+        height: 50px;
+        object-fit: contain;
+        align-self: center;
+        display: none;
+        @include md {
+            display: block;
+            width: 300px;
+            height: 200px;
+        }
+    }
+
+    .animatedLogo {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+        margin: auto;
+        @include md {
+            display: none;
+        }
+    }
+
+    > div {
+        margin-top: 2%;
+
+        > p {
+            &:nth-of-type(1) {
+                font-family: var(--font-patron);
+                font-style: normal;
+                font-weight: 700;
+                font-size: 31px;
+                line-height: 38px;
+                text-align: center;
+                letter-spacing: 0.002em;
+                color: var(--learn-purple-4);
+                @include md {
+                    font-size: 39px;
+                    line-height: 50px;
+                }
+            }
+
+            &:nth-of-type(2) {
+                font-family: var(--font-patron);
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                text-align: center;
+                letter-spacing: 0.003em;
+                color: var(--learn-purple-3);
+                max-width: 100%;
+                margin: auto;
+                margin-top: 14px;
+                @include md {
+                    margin-top: 1%;
+                    max-width: 65%;
+                    font-size: 25px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+
+    //font-size: 31px;
+    //line-height: 38px;
+    > h2 {
+        font-family: var(--font-patron);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 39px;
+        line-height: 50px;
+        text-align: center;
+        letter-spacing: 0.002em;
+        color: #1d1b21;
+    }
+
+    .progressContainer {
+        width: 100%;
+        height: 9px;
+        background: rgba(80, 73, 90, 0.2);
+        border-radius: 100px;
+        margin-bottom: 50px;
+        @include md {
+            width: 50%;
+            margin: auto;
+            margin-bottom: unset;
+        }
+        @include xxl {
+            width: 60%;
+        }
+
+        .progress {
+            height: 100%;
+            background: #cbfb62;
+            border-radius: 100px;
+        }
+    }
+}

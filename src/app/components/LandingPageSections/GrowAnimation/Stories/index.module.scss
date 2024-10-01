@@ -1,0 +1,137 @@
+@import "../../../../styles/_mixins.scss";
+
+.stories {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+
+    @include hideScrollbar();
+
+    .thumbnailWrapper {
+        display: none;
+
+        @include md {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        > button {
+            outline: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transform: none;
+            transition: transform 0.25s ease-in-out;
+
+            img {
+                // width: 32px;
+                // height: auto;
+                object-fit: cover;
+
+                // @include maxHeightWithDpr(1.5) {
+                //     width: 35px;
+                // }
+            }
+
+            &:not(:first-of-type) {
+                margin-top: 20px;
+            }
+
+            &:hover {
+                transition: transform 0.25s ease-in-out;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .storyCard {
+        position: relative;
+        width: auto;
+
+        @include md {
+            width: 77%;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            @include md {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .playBtnWrapper {
+            position: absolute;
+            top: 48.7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1c2014;
+            border-radius: 50%;
+            padding: 8px;
+            cursor: pointer;
+            z-index: 1;
+            opacity: 0;
+
+            @include md {
+                width: 23%;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                width: 19%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .desktopVideos {
+        display: none;
+
+        @include md {
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .mobileVideos {
+        flex: none;
+
+        &:not(:nth-child(3)) {
+            margin-left: 14px;
+        }
+
+        @include md {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.udemyCard {
+    border-radius: 19px;
+    background: rgba(161, 152, 172, 0.25);
+    padding: 20px;
+
+    .courseImage {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        > p {
+            padding: 2px 7px;
+            border-radius: 6px;
+            background: var(--Learn-Purple-1, #a198ac);
+            color: var(--Learn-Purple-2, #f5f4f6);
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px; /* 166.667% */
+            letter-spacing: -0.012px;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+    }
+
+    .courseDescription {
+        color: var(--Learn-Purple-3, #50495a);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px; /* 142.857% */
+        letter-spacing: -0.014px;
+        margin-top: 12px;
+
+        > span {
+            color: var(--Learn-Purple-3, #50495a);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: -0.014px;
+        }
+    }
+
+    .courseCTA {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: var(--Learn-Purple-4, #1d1b21);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px; /* 142.857% */
+        letter-spacing: -0.014px;
+        gap: 6px;
+        margin-top: 12px;
+    }
+}

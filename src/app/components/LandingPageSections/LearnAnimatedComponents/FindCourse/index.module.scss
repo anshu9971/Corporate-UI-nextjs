@@ -1,0 +1,262 @@
+@import "../../../../styles/mixins";
+
+.findCourseContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // max-height: 454px;
+
+    @include md {
+        max-height: unset;
+        margin: 0;
+        height: 100%;
+    }
+
+    .stepLabel {
+        display: none;
+
+        @include md {
+            display: block;
+            position: absolute;
+            left: 15%;
+            top: 60%;
+            transform: translateY(-57%);
+        }
+
+        > p {
+            font-family: var(--font-quintus);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 52px;
+            color: var(--discover-brick-2);
+            transform: rotate(2.85deg) translateX(-30%);
+        }
+    }
+
+    .staticCard {
+        transform: rotate(-8deg);
+        width: 85%;
+        height: 85%;
+        position: relative;
+        background: none;
+        border-radius: 16px;
+        @include md {
+            width: 45%;
+            height: 68%;
+            transform: rotate(-15deg) translateY(0px);
+            top: -7%;
+            background: none;
+            left: 3%;
+
+            button {
+                transition-delay: 0.1s;
+                transition: all 0.3s ease-out;
+            }
+
+            &:hover {
+                > div {
+                    box-shadow: -11.31412px 10.3258px 0px rgba(0, 0, 0, 0.25);
+                    transform: rotate(10.456deg) !important;
+                }
+                button {
+                    color: var(--primary-dark-1) !important;
+                    // background-color: transparent;
+
+                    &::before {
+                        transition: width 0.3s ease-out;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @include maxHeightWithDpr(1.25) {
+            width: 40%;
+            height: 75%;
+            top: -5%;
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            width: 45%;
+            height: 75%;
+            top: -5%;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            // justify-content: space-between;
+            flex-direction: column;
+            overflow: hidden;
+            cursor: default;
+
+            @include md {
+                width: 100%;
+                height: 100%;
+                background: var(--learn-purple-2);
+                justify-content: flex-start;
+                transition: 0.3s all linear;
+            }
+
+            > .bgVideo {
+                width: 80%;
+                position: absolute;
+                bottom: 0;
+                margin: auto;
+                left: 20%;
+                z-index: 0;
+
+                @include md {
+                    width: 80%;
+                    position: absolute;
+                    bottom: 0;
+                    margin: auto;
+                    left: 20%;
+                }
+
+                @include maxHeightWithDpr(1.25) {
+                    width: 70%;
+                    left: 30%;
+                }
+
+                // @include maxHeightWithDpr(1.5) {
+                //     width: 70%;
+                //     left: 30%;
+                // }
+            }
+
+            > img {
+                position: absolute;
+                width: 90%;
+                height: 90%;
+                right: -94px;
+                bottom: -110px;
+                object-fit: contain;
+                pointer-events: none;
+
+                @include md {
+                    transform: translateX(-50%);
+                    position: absolute;
+                    width: 70%;
+                    height: 100%;
+                    object-fit: contain;
+                    left: 60%;
+                    bottom: -101px;
+                }
+            }
+
+            .exploreBtn {
+                background-color: var(--primary-accent-1);
+                color: var(--learn-purple-4);
+                // font-size: 14px;
+                // font-weight: 500;
+                // line-height: 20.088px;
+                // letter-spacing: -0.078px;
+                // height: auto;
+                padding: 10px 40px !important;
+
+                @include md {
+                    background-color: var(--primary-dark-1);
+                    color: var(--neutral-white);
+                }
+            }
+
+            // &:after {
+            //     content: " ";
+            //     background-image: url("../../../../assets/images/findCourseIllustration.png");
+            //     background-repeat: no-repeat;
+            //     background-size: 100% 100%;
+            //     position: absolute;
+            //     width: 180%;
+            //     height: 100%;
+            //     transform: rotate(7.65deg);
+            //     left: -130px;
+            //     bottom: -110px;
+            //     pointer-events: none;
+
+            //     @include md {
+            //         display: none;
+            //     }
+            // }
+
+            > div {
+                z-index: 1;
+                @include md {
+                    margin-top: 10%;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    margin-top: 5%;
+                }
+
+                &:nth-of-type(1) {
+                    > h2 {
+                        font-family: var(--font-patron);
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 25px;
+                        line-height: 32px;
+                        letter-spacing: 0.003em;
+                        color: var(--learn-purple-4);
+
+                        @include md {
+                            font-size: 31px;
+                            line-height: 40px;
+                            letter-spacing: 0.002em;
+                            color: var(--learn-purple-4);
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 26px;
+                            line-height: 30px;
+                        }
+                    }
+
+                    > p {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 20px;
+                        letter-spacing: -0.001em;
+                        color: var(--learn-purple-3);
+                        margin-top: 6px;
+                        // max-width: 60%;
+
+                        @include md {
+                            max-width: 100%;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 12px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    margin-top: 18px;
+
+                    > p {
+                        font-family: var(--font-quintus);
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 17px;
+                        line-height: 52px;
+                        color: var(--learn-purple-3);
+                        transform: rotate(2.85deg);
+                        @include md {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

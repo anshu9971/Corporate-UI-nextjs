@@ -1,0 +1,42 @@
+@import "src/app/styles/mixins";
+
+.breadcrumbs {
+    display: flex;
+    width: 95dvw;
+    overflow-x: auto;
+    padding-right: 16px;
+
+    @include md {
+        width: fit-content;
+        padding-right: unset;
+    }
+    .link,
+    p {
+        color: var(--learn-purple-4, #1d1b21);
+        font-family: var(--font-inter);
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: -0.012px;
+        text-transform: uppercase;
+        min-width: max-content;
+
+        @include sm {
+            font-size: 12px;
+        }
+    }
+    .link::after {
+        content: "/";
+        margin: 0px 5px;
+    }
+    p {
+        cursor: default;
+        opacity: 0.8;
+    }
+
+    .divider::after {
+        content: "/";
+        margin: 0px 5px;
+    }
+}

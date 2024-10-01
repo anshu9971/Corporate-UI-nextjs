@@ -1,0 +1,360 @@
+@import "../../../styles/mixins";
+
+.discoverAnimation {
+    // background-image: url("../../../assets/images/landingPageMeshPeach.png");
+    position: relative;
+    height: 100%;
+    max-height: 454px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include hideScrollbar();
+
+    @include md {
+        background-image: url("../../../assets/images/landingPageMeshPeach.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        max-height: unset;
+    }
+
+    @include maxHeightWithDpr(1.25) {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .mobileBg {
+        background-image: url("../../../assets/images/landingPageMeshPeach.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 20px;
+        position: sticky;
+        width: 100%;
+        height: 100%;
+        flex: none;
+        left: 0;
+
+        @include md {
+            display: none;
+        }
+    }
+
+    .static {
+        border-radius: 10px;
+        z-index: 1;
+        overflow: hidden;
+        width: 70%;
+        height: 85%;
+        flex: none;
+        @include md {
+            position: absolute;
+            width: 314px;
+            height: 431px;
+            border-radius: 20px;
+            box-shadow: none;
+            overflow: unset;
+
+            &:hover {
+                & button {
+                    color: var(--primary-dark-1);
+                    background-color: transparent;
+                    transition: background-color 1.3s ease-out;
+
+                    &::before {
+                        transition: width 0.2s ease-out;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            width: 270px;
+            height: 360px;
+        }
+        &.career {
+            margin-left: calc(-100% + 20px);
+            @include md {
+                left: 70px;
+                top: 30px;
+                margin: 0;
+
+                &:hover {
+                    > div {
+                        box-shadow: -14px 20px 0px rgba(0, 0, 0, 0.2);
+                        transform: rotate(-13deg) translateY(10%) !important;
+                        // top: 10% !important;
+                        &::before {
+                            left: 30%;
+                            top: 8%;
+                            opacity: 1;
+                            transform: rotate(16deg) translateZ(-1px);
+                        }
+                    }
+                }
+                &[data-hover-class="expertise"] {
+                    left: -20%;
+                    transform: rotate(7deg);
+                }
+            }
+        }
+        &.expertise {
+            bottom: 10px;
+            right: 14px;
+            transform: rotate(7deg);
+            margin-left: 30px;
+            @include md {
+                right: 50px;
+                bottom: 50px;
+                margin: 0;
+                background-color: unset;
+
+                &:hover {
+                    > div {
+                        box-shadow: -15.2px 21.5px 0px rgba(0, 0, 0, 0.2);
+                        transform: rotate(13deg) !important;
+
+                        &::before {
+                            left: -30%;
+                            top: -5%;
+                            opacity: 1;
+                            transform: rotate(-23deg) translateZ(-1px);
+                        }
+                    }
+                }
+
+                &[data-hover-class="career"] {
+                    right: -25%;
+                    transform: rotate(7deg);
+                }
+            }
+            @include maxHeightWithDpr(1.5) {
+                bottom: 8%;
+            }
+        }
+        .card {
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            will-change: transform;
+            overflow: hidden;
+            transform: none !important;
+            flex: none;
+            width: 100%;
+            height: 100%;
+            @include md {
+                position: absolute;
+                width: 314px;
+                height: 431px;
+                padding: 24px 24px 24px;
+                border-radius: 20px;
+                box-shadow: none;
+                transition: 0.3s all ease-in-out;
+                transform-style: preserve-3d;
+                overflow: unset;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                width: 270px;
+                height: 360px;
+            }
+
+            .bgVideo {
+                bottom: -10px;
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+                border-radius: 20px;
+
+                @include md {
+                    bottom: 0;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &.career {
+                background-color: #b7704e;
+                @include md {
+                    margin: 0;
+
+                    &::before {
+                        content: "";
+                        opacity: 0;
+                        display: block;
+                        position: absolute;
+                        transform: translateZ(-1px);
+                        transform-origin: bottom right;
+                        top: 0;
+                        left: 0;
+                        width: inherit;
+                        height: inherit;
+                        background-image: url("../../../assets/images/careerDiscoverBackBG.png");
+                        background-size: contain;
+                        border-radius: inherit;
+                        transition: inherit;
+                        background-repeat: no-repeat;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            &.expertise {
+                background-color: #be6e45;
+
+                @include md {
+                    margin: 0;
+                    background-color: unset;
+                }
+
+                &::before {
+                    content: "";
+                    opacity: 0;
+                    display: block;
+                    position: absolute;
+                    transform: translateZ(-1px);
+                    transform-origin: bottom right;
+                    top: 0;
+                    left: 0;
+                    width: inherit;
+                    height: inherit;
+                    background-image: url("../../../assets/images/expertiseDiscoverBackBG.png");
+                    background-size: contain;
+                    border-radius: inherit;
+                    transition: inherit;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+    .tag {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.001em;
+        color: var(--primary-dark-2);
+        padding: 4px 10px;
+        background-color: #f9f3f01a;
+        border-radius: 35px;
+        display: inline-block;
+
+        @include md {
+            padding: 5px 15px;
+            font-size: 14px;
+            line-height: 23px;
+            color: var(--discover-brick-2);
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    .heading {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0.075px;
+        color: var(--primary-dark-2);
+        font-family: var(--font-patron);
+        margin-top: 10px;
+
+        @include md {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 40px;
+            color: var(--discover-brick-2);
+            margin: 12px 0 15px;
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    .description {
+        // display: none;
+        color: var(--discover-brick-2);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.001em;
+        margin-top: 10px;
+        width: 70%;
+
+        @include md {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.001em;
+            color: var(--discover-brick-2);
+            display: block;
+            font-family: var(--font-inter);
+            width: 80%;
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    .button {
+        width: 75%;
+        background: var(--primary-accent-1);
+        color: var(--discover-brick-4);
+
+        @include md {
+            width: 60%;
+            display: block;
+            margin-bottom: 10px;
+            background-color: initial;
+            color: initial;
+            background-color: var(--primary-dark-1);
+            color: var(--neutral-white);
+        }
+    }
+
+    .tagline {
+        color: var(--discover-brick-2, #f9f3f0);
+        // font-size: 12px;
+        font-family: var(--font-quintus);
+        // font-weight: 700;
+        // line-height: 35.721px;
+        transform: rotate(2.852deg);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 52px;
+
+        @include md {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 30px;
+            color: #f9f3f0;
+            transform: rotate(4deg);
+            font-family: var(--font-quintus);
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            font-size: 13px;
+            line-height: 24px;
+        }
+    }
+}

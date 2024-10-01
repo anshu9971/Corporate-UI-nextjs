@@ -1,0 +1,411 @@
+@import "../../styles/mixins";
+
+.video-player-div {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+
+    @include md {
+        background: rgba(28, 32, 20, 0.7);
+        backdrop-filter: blur(18.5px);
+    }
+
+    .heading {
+        font-family: Barlow;
+        font-size: 22px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.19px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 10px;
+
+        &.sub {
+            font-size: 19px;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+    }
+
+    #videoPlayerWrapper {
+        position: relative;
+        border-radius: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background: rgba(28, 32, 20, 0.7);
+        backdrop-filter: blur(18.5px);
+        -webkit-backdrop-filter: blur(18.5px);
+        justify-content: center;
+        display: flex;
+        @include md {
+            margin: 0 8px;
+            border-radius: 40px;
+            width: 82vw;
+            height: 80vh;
+        }
+        @include xxl {
+            width: 85vw;
+            height: 85vh;
+        }
+
+        video {
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+
+            @include mobile {
+                object-fit: contain;
+                height: 40%;
+                width: 90%;
+                margin-top: 90px;
+            }
+        }
+
+        &:fullscreen {
+            video {
+                border-radius: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .videoControlsWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &:-moz-full-screen {
+                position: fixed;
+            }
+
+            &:-webkit-full-screen {
+                position: fixed;
+            }
+
+            &:-ms-fullscreen {
+                position: fixed;
+            }
+
+            &:fullscreen {
+                position: fixed;
+            }
+
+            &.hide {
+                display: none;
+
+                @include mobile {
+                    // display: block;
+                }
+            }
+
+            .headerControls {
+                position: absolute;
+                top: 25px;
+                right: 40px;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(217, 217, 217, 0.2);
+                border: 1px solid #000000;
+                padding: 20px;
+
+                > img {
+                    width: 16px;
+                    height: 16px;
+                    @include mobile {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+
+                @include mobile {
+                    width: 24px;
+                    height: 24px;
+                    padding: 0;
+                }
+            }
+
+            .videoLoader {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 5;
+
+                .loader > div {
+                    background: #ddd;
+                }
+            }
+
+            .footerControls {
+                position: absolute;
+                bottom: 150px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 90%;
+                padding: 0;
+                border-radius: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include md {
+                    width: 65%;
+                    bottom: 40px;
+                }
+                @include xxl {
+                    width: 70%;
+                }
+
+                .controls {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+
+                    .video-title {
+                        > p {
+                            &:nth-of-type(1) {
+                                color: var(--primary-light-1);
+                                font-family: var(--font-patron);
+                                font-style: normal;
+                                font-weight: 700;
+                                letter-spacing: 0.078px;
+                                font-size: 20px;
+                                line-height: 27px;
+                                @include md {
+                                    font-size: 32px;
+                                    line-height: 42px;
+                                }
+                                @include xxl {
+                                    font-size: 39px;
+                                    line-height: 50px;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                color: var(--primary-light-1);
+                                font-family: var(--font-patron);
+                                font-style: normal;
+                                font-weight: 500;
+                                letter-spacing: -0.12px;
+                                font-size: 14px;
+                                line-height: 20px;
+                                opacity: 0.6;
+                                @include md {
+                                    font-size: 20px;
+                                    line-height: 31px;
+                                }
+                            }
+                        }
+                    }
+
+                    .playback {
+                        align-items: center;
+                        display: none;
+                        @include md {
+                            display: flex;
+                        }
+
+                        > div {
+                            font-size: 12px;
+                            color: #fff;
+                        }
+
+                        > img {
+                            cursor: pointer;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+
+                #videoProgressBar {
+                    outline: none;
+                    border: none;
+                    width: 100%;
+                    height: 6px;
+                    margin: 0 0 10px;
+                    border-radius: 10px;
+                    background: rgba(217, 217, 217, 0.3);
+
+                    #videoFillBar {
+                        width: 0;
+                        background: #fff;
+                        height: 100%;
+                        border-radius: 30px;
+                    }
+                }
+
+                .videoControls {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .time {
+                        cursor: default;
+                        color: #f8f5f2;
+                        font-family: var(--font-inter);
+                        font-size: 16px;
+                        line-height: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        letter-spacing: -0.12px;
+                        @include md {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+
+                    > img {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .mobileControls {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: 40px;
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%);
+
+                > img {
+                    &:nth-of-type(1) {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .playBtnWrapper {
+                    margin: 0 30px;
+
+                    &.pause {
+                        > div {
+                            padding: 22px;
+
+                            > img {
+                                width: 27px;
+                                height: 27px;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+
+                @include md {
+                    display: none;
+                }
+            }
+
+            .playBtnWrapper {
+                outline: none;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                @include md {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 30px;
+                }
+
+                > div {
+                    overflow: hidden;
+                    padding: 8px;
+                    border-radius: 77.509px;
+                    background: #1c2014;
+                    backdrop-filter: blur(26.890968322753906px);
+                    @include md {
+                        padding: 10px;
+                    }
+
+                    > img {
+                        width: 35px;
+                        height: 35px;
+                        @include md {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+
+                    .pause {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                &.pause {
+                    > div {
+                        @include md {
+                            padding: 25px;
+                        }
+                    }
+                }
+            }
+
+            .volume-btn {
+                cursor: pointer;
+                position: absolute;
+                bottom: 40px;
+                right: 40px;
+                width: 25px;
+                height: 25px;
+                display: none;
+                @include md {
+                    display: block;
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+
+            .logo {
+                cursor: pointer;
+                position: absolute;
+                bottom: 40px;
+                left: 40px;
+                background-color: var(--primary-accent-1);
+                border-radius: 50%;
+                width: 130px;
+                height: 130px;
+                align-items: center;
+                justify-content: center;
+                display: none;
+                @include md {
+                    display: flex;
+                }
+
+                > img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}

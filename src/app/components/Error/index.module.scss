@@ -1,0 +1,23 @@
+@import "../../styles/mixins";
+
+.error {
+    color: var(--text-error) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-inter) !important;
+    margin: 10px 0 !important;
+}
+
+.hideOnMobile {
+    display: block;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.hideOnDesktop {
+    display: block;
+    @include md {
+        display: none;
+    }
+}

@@ -1,0 +1,72 @@
+@import "styles/_mixins.scss";
+.coursesCarousalContainer {
+    // background-color: var(--learn-purple-2);
+    background-color: var(--primary-light-1, #f8f5f2);
+    position: relative;
+    max-width: 100%;
+    padding: 36px 0px 43px 0px;
+    @include lg {
+        width: 100%;
+        padding: 83px 0px 83px 0px;
+    }
+
+    @include xxl {
+        padding: 117px 0 85px 0;
+    }
+
+    h2.title {
+        color: var(--learn-purple-4);
+        padding: 0 16px 30px 16px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 27px;
+        @include lg {
+            font-size: 31px;
+            line-height: 38px;
+            margin-bottom: 50px;
+            padding: 0 50px;
+        }
+
+        @include xxl {
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 38px;
+            margin-bottom: 69px;
+            padding: 0 161px;
+        }
+    }
+
+    .card {
+        height: 100%;
+        > div {
+            height: 100%;
+            > div:nth-of-type(4) {
+                margin-top: auto;
+            }
+        }
+        @include lg {
+            max-height: 380px;
+            border-radius: 20px;
+        }
+    }
+
+    // &:first-child {
+    //     @include lg {
+    //         margin-left: 50px;
+    //     }
+
+    //     @include xxl {
+    //         margin-left: 154.5px;
+    //     }
+    // }
+
+    // &:last-child {
+    //     @include lg {
+    //         margin-right: 50px;
+    //     }
+
+    //     @include xxl {
+    //         margin-right: 154.5px;
+    //     }
+    // }
+}

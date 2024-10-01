@@ -1,0 +1,125 @@
+@import "../../styles/mixins";
+
+.faqContainer {
+    width: 100%;
+    padding: 34px 16px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    background: var(--neutral-white);
+    // flex-direction: column;
+
+    @include lg {
+        width: 100%;
+        padding: 83px 50px 83px 50px;
+        // margin: 0 20px;
+        margin-bottom: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @include xxl {
+        padding: 117px 161px 117px 161px;
+    }
+
+    .left {
+        width: 100%;
+        @include lg {
+            width: 29.6%;
+            height: 100%;
+        }
+
+        h2.title {
+            color: var(--learn-purple-4);
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 32px;
+            margin-bottom: 7px;
+            max-width: 280px;
+            @include md {
+                font-size: 20px;
+                line-height: 27px;
+                margin-bottom: 10px;
+            }
+            @include lg {
+                font-size: 31px;
+                line-height: 38px;
+                margin-bottom: 22px;
+            }
+        }
+
+        .subtitle {
+            color: var(--learn-purple-1);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 36px;
+            @include md {
+                font-size: 16px;
+                margin-bottom: 30px;
+                line-height: 23px;
+            }
+            @include lg {
+                margin-bottom: unset;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 7px;
+
+        & > div {
+            background: #f5f4f6;
+            border-radius: 8px;
+            border: none;
+
+            & > div {
+                border: none;
+            }
+        }
+
+        @include lg {
+            width: 63.5%;
+            height: 100%;
+
+            gap: 16px;
+            // max-height: 500px;
+            // overflow-y: auto;
+            & > div {
+                border: 1px solid #f5f4f6;
+                background: #f5f4f6;
+                border-radius: 12px;
+            }
+        }
+
+        :global(.mantine-Accordion-chevron) {
+            // background-color: red !important;
+            &[data-rotate="true"] {
+                > img {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .lbl {
+        color: "#1D1B21";
+        font-weight: 700;
+        font-size: "16px";
+        background-color: "red";
+
+        // @include lg{
+        //     font-size: "25px";
+        //     background-color: "red";
+        // }
+    }
+
+    .answerText {
+        white-space: pre-line;
+    }
+}

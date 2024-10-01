@@ -1,0 +1,98 @@
+@import "styles/_mixins.scss";
+
+.tileContainer {
+    display: flex;
+
+    // margin: 0 0 10px 0;
+    align-items: start;
+    background-color: var(--neutral-white);
+    gap: 8px;
+    border-radius: 12px;
+    padding: 15px 14px;
+    width: 300px;
+    align-self: stretch;
+    @include md {
+        width: 400px;
+    }
+    @include lg {
+        // width: 300px;
+        margin: initial;
+        gap: 24px;
+        padding: 27px 23.4px;
+    }
+
+    @include xxl {
+        width: 446px;
+        padding: 30px 26px;
+    }
+
+    @include hdplus {
+        width: unset;
+    }
+
+    &:first-child {
+        //add
+        // margin: 32px 0 10px 0;
+
+        // @include lg {
+        //     margin: initial;
+        // }
+    }
+
+    .textContent {
+        font-weight: 700;
+
+        color: var(--learn-purple-4);
+        font-size: 16px;
+        width: fit-content;
+        line-height: 21px;
+        word-wrap: break-word;
+        // word-break: break-all;
+        @include lg {
+            width: initial;
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 280px;
+        }
+
+        @include xxl {
+            font-size: 20px;
+            line-height: 32px;
+            max-width: 350px;
+        }
+    }
+
+    .tileIcon {
+        display: none;
+
+        @include lg {
+            display: initial;
+            position: relative;
+            background: var(--learn-purple-1);
+            border-radius: 12px;
+            padding: 6px;
+            width: 43px;
+            height: 43px;
+            position: relative;
+            top: 5px;
+        }
+        @include lg {
+            padding: 6px;
+            width: 56px;
+            height: 56px;
+        }
+    }
+
+    .verticalPointer {
+        display: initial;
+        position: relative;
+        top: 4.5px;
+        width: 5px;
+        height: 32px;
+        border-radius: 30px;
+        background-color: #bacfe8;
+        @include lg {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,307 @@
+@import "src/app/styles/mixins";
+
+.listingContainer {
+    background: var(--neutral-white);
+    padding-top: 50px;
+
+    @include md {
+        background: var(--learn-purple-2);
+        padding-top: 35px;
+    }
+
+    @include lg {
+        background: var(--learn-purple-2);
+        width: calc(100% - 40px);
+        padding: 83px 50px 95px 50px;
+        // margin: 0 20px;
+        border-radius: 30px;
+    }
+
+    @include xxl {
+        padding: 83px 161px 95px 161px;
+    }
+
+    .head {
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 25px;
+        padding: 0 16px 6px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 16px 0 0;
+            margin-left: 16px;
+        }
+
+        .compareButton {
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0px;
+            color: black;
+            width: fit-content;
+
+            @include mobile {
+                width: 100% !important;
+                margin-bottom: 16px;
+                margin-top: 10px;
+                display: block;
+            }
+
+            h6 {
+                color: black !important;
+                font-weight: 600;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+
+            svg {
+                path {
+                    fill: black;
+                }
+            }
+
+            p {
+                color: #fff;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+
+                @include lg {
+                    font-size: 16px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 23px;
+                }
+            }
+        }
+
+        .pinCodeContainer {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+
+            p {
+                font-size: 14px;
+                // color: var(--learn-purple-1);
+                font-weight: 500;
+            }
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        @include md {
+            padding: 0 0 30px 16px;
+        }
+
+        @include lg {
+            font-size: 39px;
+            color: var(--learn-purple-4);
+            padding: 0 20px 50px 0;
+        }
+
+        h2 {
+            display: inline;
+            font-weight: 700;
+            font-size: 25px;
+
+            @include lg {
+                font-size: 39px;
+                color: var(--learn-purple-4);
+            }
+        }
+
+        .power {
+            display: none;
+            font-size: 22px;
+            padding-left: 4px;
+
+            @include lg {
+                display: initial;
+                color: var(--learn-purple-4);
+                font-family: var(--font-patron);
+                font-size: 25px;
+                font-style: normal;
+                line-height: 32px;
+                letter-spacing: 0.078px;
+                padding-left: 8px;
+            }
+        }
+
+        .powerMobile {
+            display: initial;
+            font-size: 22px;
+            padding-left: 4px;
+            color: var(--learn-purple-4);
+            font-family: var(--font-patron);
+
+            @include lg {
+                display: none;
+            }
+        }
+
+        .searchHead {
+            color: var(--learn-purple-3);
+            font-family: var(--font-patron);
+            font-size: 20px;
+            line-height: 27px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 0.078px;
+
+            > span {
+                color: var(--learn-purple-4);
+            }
+
+            @include md {
+                font-size: 39px;
+                line-height: 50px;
+            }
+        }
+    }
+
+    .filterParent {
+        display: flex;
+
+        .productBox {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                width: 100%;
+            }
+
+            @include lg {
+                width: calc(100% - 346px);
+                padding-left: 17px;
+            }
+
+            @include xxl {
+                padding-left: 31px;
+                padding-right: 31px;
+            }
+
+            .cardContainer {
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                height: 100%;
+
+                @include md {
+                    margin: 0 16px;
+                    gap: 10px;
+                }
+
+                @include lg {
+                    margin: 0;
+                }
+
+                @include xxl {
+                    gap: 19px;
+                }
+
+                & > div {
+                    width: 100%;
+                    height: fit-content;
+                    border-radius: 0px !important;
+
+                    &:first-child {
+                        border-top: 1px solid #eceaee;
+
+                        @include md {
+                            border: none;
+                        }
+                    }
+
+                    @include md {
+                        width: calc(50% - 5px);
+                        max-width: 484px;
+                        min-width: 275px;
+                        border-radius: 20px !important;
+                    }
+
+                    @include lg {
+                        width: calc(50% - 9.5px);
+                    }
+                }
+            }
+
+            .paginate {
+                &.disabled {
+                    opacity: 0.4;
+                    cursor: not-allowed;
+
+                    * {
+                        cursor: not-allowed !important;
+                    }
+                }
+
+                @include lg {
+                    width: 100%;
+                    border: none;
+                    background-color: #cbc6d160;
+                    margin-top: 28px;
+                    padding: 26px 0;
+                    border-radius: 20px;
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+                @include xxl {
+                    padding: 31px 0;
+                }
+            }
+
+            .desktopShowMore {
+                display: none;
+
+                @include lg {
+                    display: block;
+                    color: var(--learn-purple-4);
+                    border: none;
+                    width: 100%;
+                    background-color: #cbc6d160;
+                    margin-top: 28px;
+                    padding: 26px 0;
+                    border-radius: 20px;
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+                @include xxl {
+                    padding: 31px 0;
+                }
+            }
+
+            .mobilePagination {
+                // margin: 19px 12%;
+                // display: flex;
+                // align-items: center;
+                margin: 29px auto;
+                width: fit-content;
+                border-radius: 90px;
+                border: 1px solid #d9d9d9;
+                // padding: 7px 2px;
+                padding: 0px 16px;
+                padding-right: 22px;
+
+                @include lg {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,710 @@
+@import "src/app/styles/mixins";
+
+.domains {
+    @include lg {
+        padding: 0 50px;
+    }
+
+    @include xxl {
+        padding: 0 161px;
+    }
+
+    .onboardingStep {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        // max-height: calc(100vh - 200px);
+        margin-top: 20px;
+        @include mobile {
+            margin-top: 0;
+            height: 100%;
+            // max-height: calc(100vh - 72px);
+            overflow-y: unset;
+            padding-left: 0;
+        }
+        @include hideScrollbar();
+
+        .gridContent {
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+            padding-bottom: 0;
+            gap: 40px;
+            align-items: center;
+
+            @include md {
+                gap: 6px;
+                align-items: initial;
+                display: grid;
+                max-height: initial;
+                grid-template-columns: 0.4fr 1fr;
+
+                padding-bottom: 5%;
+            }
+
+            @include lg {
+                gap: 25px;
+            }
+
+            .left {
+                padding: 0 16px;
+                padding-top: 7%;
+                @include mobile {
+                    padding-top: 0;
+                }
+
+                > h1 {
+                    font-style: normal;
+                    font-weight: 700;
+                    text-align: center;
+                    letter-spacing: 0.002em;
+                    color: #1d1b21;
+                    font-size: 31px;
+                    line-height: 38px;
+                    @include md {
+                        text-align: left;
+                        font-size: 34px;
+                        line-height: 45px;
+                    }
+                    @include xxl {
+                        text-align: left;
+                        font-size: 39px;
+                        line-height: 50px;
+                    }
+                }
+
+                > p {
+                    font-style: normal;
+                    font-weight: 500;
+
+                    letter-spacing: -0.001em;
+                    color: var(--learn-purple-1);
+                    margin-top: 18px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-align: center;
+                    max-width: 100%;
+
+                    @include md {
+                        margin-top: 4%;
+                        text-align: left;
+                        max-width: 90%;
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+
+                    @include lg {
+                        margin-top: 4%;
+                        text-align: left;
+                        max-width: 90%;
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+                }
+
+                .storyCard {
+                    margin-top: 25px;
+                    position: relative;
+                    padding: 0 61px;
+                    height: 316px;
+                    text-align: center;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    @include md {
+                        height: initial;
+                        padding: initial;
+                        display: block;
+                        width: 100%;
+                    }
+
+                    @include lg {
+                        width: 75%;
+                    }
+
+                    .indicators {
+                        position: absolute;
+                        top: 5%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        gap: 2.1%;
+                        border-radius: 10px;
+                        display: none;
+
+                        @include md {
+                            display: flex;
+                        }
+
+                        .indicator {
+                            width: 19%;
+                            height: 4px;
+
+                            background-color: #f8f5f2;
+                            border-radius: 10px;
+
+                            &:first-child {
+                                background-color: var(--primary-accent-1);
+                            }
+                        }
+                    }
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 236px;
+                        object-fit: cover;
+                        border-radius: 20px;
+
+                        @include lg {
+                            max-width: initial;
+                        }
+                    }
+
+                    .playBtnWrapper {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        scale: 0.8;
+
+                        @include md {
+                            //top: unset;
+                            //left: 30px;
+                            //bottom: 50px;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 30px;
+                        }
+
+                        > div {
+                            background: #1c2014;
+                            border-radius: 50%;
+                            padding: 8px;
+
+                            @include md {
+                                margin-right: 6px;
+                                padding: 0;
+                            }
+                        }
+
+                        h4 {
+                            display: none;
+
+                            @include md {
+                                display: block;
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 31px;
+                                letter-spacing: -0.006em;
+                                color: var(--primary-accent-4);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                background-image: url("../../assets/images/domainDetailbg.png");
+                background-size: cover;
+                background-color: #a698b8;
+                height: fit-content;
+                padding: 39px 26px 81px 26px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                border-radius: 30px;
+                position: relative;
+                align-items: center;
+
+                @include md {
+                    align-items: initial;
+                    background-image: initial;
+                    background-color: initial;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    padding: 10px;
+                    height: initial;
+                }
+
+                @include lg {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                > button {
+                    outline: none;
+                    background-color: transparent;
+                    border: none;
+                    -webkit-tap-highlight-color: transparent;
+                }
+
+                .skillCardsHead {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    align-items: center;
+
+                    .heading {
+                        color: var(--learn-purple-4);
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 27px;
+                        letter-spacing: 0.04px;
+                    }
+
+                    .description {
+                        color: var(--primary-dark-1, #161c20);
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 20px; /* 142.857% */
+                        letter-spacing: -0.014px;
+                        text-align: center;
+                        opacity: 0.699999988079071;
+                    }
+
+                    @include md {
+                        display: none;
+                    }
+                }
+
+                .cardBtn {
+                    border-radius: 16px;
+
+                    @include lg {
+                        margin-right: 15px;
+                        margin-bottom: 20px;
+                        &:hover {
+                            .skillCard {
+                                transition: background-color 0.3s ease-out,
+                                    transform 0.25s ease-out;
+                                background: var(--primary-accent-1);
+                                transform: rotate(3deg);
+                            }
+
+                            .fold {
+                                transform: translate(0%, 0%);
+                                display: block;
+                            }
+
+                            > p {
+                                color: var(--primary-accent-4);
+                                opacity: 0.8;
+                                transition: all 0.25s ease-out;
+                            }
+
+                            .images {
+                                .penIcon {
+                                    transform: translate(-50%, -55%)
+                                        rotate(-14deg) scale(1.3);
+                                }
+
+                                .bag {
+                                    transition: all 0.35s ease-out;
+                                    opacity: 1;
+
+                                    &:nth-of-type(2) {
+                                        left: 16%;
+                                        top: -9%;
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        left: 9%;
+                                        top: 63%;
+                                        transform: rotate(-45deg);
+                                    }
+
+                                    &:nth-of-type(4) {
+                                        left: 50%;
+                                        top: 80%;
+                                        transform: rotate(-75deg);
+                                    }
+
+                                    &:nth-of-type(5) {
+                                        left: 80%;
+                                        top: 60%;
+                                        transform: rotate(-10deg);
+                                    }
+
+                                    &:nth-of-type(6) {
+                                        left: 75%;
+                                        top: -15%;
+                                        transform: rotate(-52deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .skillCard {
+                    cursor: pointer;
+                    transition: background-color 0.3s ease-out,
+                        transform 0.25s ease-out;
+                    transform: none;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    background: #f5f4f6;
+                    border-radius: 16px;
+                    padding: 36px 16px 27px 16px;
+                    max-width: 338px;
+                    position: relative;
+
+                    @include md {
+                        height: 425px;
+                        // padding: initial;
+                        padding-top: 20px;
+                    }
+
+                    @include lg {
+                        // max-width: initial;
+                        padding: initial;
+                        // margin-right: 15px;
+                        // margin-bottom: 20px;
+                        padding-top: 20px;
+                        position: relative;
+                        height: 365px;
+                        gap: 35px;
+                        -webkit-tap-highlight-color: transparent;
+                    }
+
+                    .skillTag {
+                        position: absolute;
+                        right: 20px;
+                        top: 16px;
+                        padding: 4px 6px 2px 6px;
+                        border-radius: 10px;
+                        background-color: white;
+                        color: var(--learn-purple-1);
+                        font-size: 12px;
+                        font-weight: 600;
+                        font-family: var(--inter);
+                        text-transform: uppercase;
+                        text-align: center;
+                        margin: 0px;
+                    }
+
+                    .electiveTag {
+                        background-color: #a198ac;
+                        color: #f8f5f2;
+                    }
+
+                    .coreTag {
+                        background-color: #50495a;
+                        color: #f8f5f2;
+                    }
+
+                    .paragraph {
+                        text-transform: lowercase;
+                    }
+
+                    .paragraph::first-letter {
+                        text-transform: capitalize;
+                    }
+
+                    > div {
+                        padding: 0 8px 16px 8px;
+                        order: 1;
+
+                        @include md {
+                            padding: 15px 15px 0 15px;
+                        }
+
+                        @include lg {
+                            padding: 25px 15px 0 15px;
+                        }
+
+                        > h2 {
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 27px; /* 135% */
+                            letter-spacing: 0.04px;
+                            text-align: center;
+                            color: var(--learn-purple-4);
+                            @include lg {
+                                font-size: 20px;
+                                line-height: 27px;
+                                letter-spacing: 0.02px;
+                            }
+                        }
+
+                        > p {
+                            transition: all 0.25s ease-out;
+                            text-align: center;
+                            font-size: 13.2px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 19.8px; /* 150% */
+                            letter-spacing: -0.013px;
+                            margin-top: 3.5%;
+                            color: var(--learn-purple-1);
+
+                            @include md {
+                                min-height: 132px;
+                            }
+
+                            @include lg {
+                                min-height: unset;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 20px;
+                                letter-spacing: -0.014px;
+                                margin-top: 8%;
+                            }
+                        }
+
+                        * {
+                            user-select: none;
+                        }
+                    }
+
+                    .images {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 90px;
+                        padding-top: 16px;
+                        order: 1;
+                        @include lg {
+                            min-height: 140px;
+                            padding: 0;
+                        }
+
+                        .penIcon {
+                            position: relative;
+                            z-index: 1;
+                            width: 180px;
+                            height: 178px;
+                            transition: all 0.25s ease-out;
+                            @include md {
+                                width: 100px;
+                                height: 100px;
+                                position: absolute;
+                                top: 65%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            @include lg {
+                                width: 120px;
+                                height: 120px;
+                                top: 34%;
+                                left: 50%;
+                            }
+                        }
+
+                        .bag {
+                            width: 32px;
+                            height: 38px;
+                            position: absolute;
+                            opacity: 1;
+
+                            &:nth-of-type(2) {
+                                left: 12%;
+                                top: 25%;
+                            }
+
+                            &:nth-of-type(3) {
+                                left: 9%;
+                                top: 63%;
+                                transform: rotate(-45deg);
+                            }
+
+                            &:nth-of-type(4) {
+                                left: 49%;
+                                top: 90%;
+                                transform: rotate(-75deg);
+                            }
+
+                            &:nth-of-type(5) {
+                                left: 80%;
+                                top: 60%;
+                                transform: rotate(-10deg);
+                            }
+
+                            &:nth-of-type(6) {
+                                left: 79%;
+                                top: 15%;
+                                transform: rotate(-52deg);
+                            }
+
+                            @include md {
+                                &:nth-of-type(2) {
+                                    left: 12%;
+                                    top: 40%;
+                                }
+
+                                &:nth-of-type(3) {
+                                    left: 9%;
+                                    top: 93%;
+                                    transform: rotate(-45deg);
+                                }
+
+                                &:nth-of-type(4) {
+                                    left: 49%;
+                                    top: 120%;
+                                    transform: rotate(-45deg);
+                                }
+
+                                &:nth-of-type(5) {
+                                    left: 80%;
+                                    top: 93%;
+                                    transform: rotate(-10deg);
+                                }
+
+                                &:nth-of-type(6) {
+                                    left: 79%;
+                                    top: 40%;
+                                    transform: rotate(-52deg);
+                                }
+                            }
+
+                            @include lg {
+                                width: 40px;
+                                height: 48px;
+                                z-index: 0;
+
+                                opacity: 0;
+                                transition: all 0.35s ease-out;
+
+                                &:nth-of-type(n) {
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            }
+                        }
+                    }
+
+                    .cta {
+                        display: block;
+                        margin-top: auto;
+                        order: 2;
+                        background-color: var(--learn-purple-3);
+
+                        span {
+                            color: var(--learn-purple-2, #f5f4f6);
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 20px; /* 142.857% */
+                            letter-spacing: -0.014px;
+                        }
+
+                        @include lg {
+                            display: none;
+                        }
+                    }
+
+                    .viewDetails {
+                        position: absolute;
+                        bottom: 0;
+                        margin: 23px 10%;
+                        border: 1px solid black;
+                        // margin: 23px 19px;
+                    }
+
+                    .fold {
+                        position: absolute;
+                        bottom: -2px;
+                        right: -2px;
+                        z-index: 2;
+                        transform: translate(100%, 100%);
+                        transition: all 0.3s ease-out;
+                    }
+
+                    @include lg {
+                        &:hover {
+                            transition: background-color 0.3s ease-out,
+                                transform 0.25s ease-out;
+                            background: var(--primary-accent-1);
+                            transform: rotate(3deg);
+
+                            .fold {
+                                transform: translate(0%, 0%);
+                                display: block;
+                            }
+
+                            .electiveTag {
+                                background-color: #edf0f1;
+                                color: #161c20;
+                            }
+
+                            .coreTag {
+                                background-color: #161c20;
+                            }
+
+                            > p {
+                                color: var(--primary-accent-4);
+                                opacity: 0.8;
+                                transition: all 0.25s ease-out;
+                            }
+
+                            .images {
+                                .penIcon {
+                                    transform: translate(-50%, -55%)
+                                        rotate(-14deg) scale(1.3);
+                                }
+
+                                .bag {
+                                    transition: all 0.35s ease-out;
+                                    opacity: 1;
+
+                                    &:nth-of-type(2) {
+                                        left: 16%;
+                                        top: -9%;
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        left: 9%;
+                                        top: 63%;
+                                        transform: rotate(-45deg);
+                                    }
+
+                                    &:nth-of-type(4) {
+                                        left: 50%;
+                                        top: 80%;
+                                        transform: rotate(-75deg);
+                                    }
+
+                                    &:nth-of-type(5) {
+                                        left: 80%;
+                                        top: 60%;
+                                        transform: rotate(-10deg);
+                                    }
+
+                                    &:nth-of-type(6) {
+                                        left: 75%;
+                                        top: -15%;
+                                        transform: rotate(-52deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swipe {
+                    position: absolute;
+                    bottom: 18.5px;
+                    text-align: center;
+                    color: var(--primary-dark-1, #161c20);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 20px; /* 142.857% */
+                    letter-spacing: -0.014px;
+
+                    @include md {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import "../../styles/mixins";
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5.6px;
+    font-size: 20px;
+
+    @include lg {
+        font-size: 24px;
+        gap: 6.6px;
+    }
+
+    h4 {
+        font-size: 16px;
+
+        @include lg {
+            font-size: 20px;
+        }
+    }
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-right: 27px;
+
+        h1 {
+            color: var(--learn-purple-4);
+
+            @include lg {
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 28px;
+            }
+
+            @include xxl {
+                font-weight: 700;
+                font-size: 31px;
+                line-height: 38px;
+            }
+        }
+        span {
+            color: var(--learn-purple-1);
+            @include lg {
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 28px;
+            }
+
+            @include xxl {
+                font-weight: 700;
+                font-size: 31px;
+                line-height: 38px;
+            }
+        }
+        p {
+            color: var(--learn-purple-3);
+
+            @include lg {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            @include xxl {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+            }
+        }
+    }
+
+    .multilineImg {
+        width: 28px;
+        height: 27px;
+    }
+}

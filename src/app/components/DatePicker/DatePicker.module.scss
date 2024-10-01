@@ -1,0 +1,81 @@
+@import "src/app/styles/mixins";
+
+.datePickerRoot {
+    .datePickerWrapper {
+        width: 100%;
+        @include md {
+            width: unset;
+        }
+
+        .datePickerInput {
+            outline: none;
+            border-radius: 10px;
+            background: #ffffff;
+            border: 1px solid #cac8cd;
+            height: 44px;
+            margin-top: 0;
+
+            &.error {
+                border: 1px solid var(--text-error);
+            }
+
+            @include md {
+                height: 50px;
+            }
+        }
+    }
+
+    > div {
+        &:nth-of-type(2) {
+            padding: 0.05rem 1rem !important;
+            //top: 40px !important;
+        }
+    }
+}
+
+.datePickerDay {
+    font-family: var(--font-patron);
+    font-size: 16px;
+    @include md {
+        font-size: 18px;
+    }
+    @include md-maxHeight {
+        font-size: 16px;
+    }
+
+    &[data-selected] {
+        background-color: var(--primary-accent-4);
+    }
+}
+
+.monthCell {
+    padding: 3.5px !important;
+    @include md-maxHeight {
+        padding: 1px !important;
+    }
+}
+
+.datePickerCalendarHeader {
+    max-width: 100%;
+
+    > button {
+        > svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:nth-of-type(2) {
+            font-family: var(--font-patron);
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}
+
+.datePickerWeekday {
+    font-size: 17px;
+    line-height: 21px;
+    font-family: var(--font-patron);
+    color: var(--learn-purple-3);
+    opacity: 0.8;
+}

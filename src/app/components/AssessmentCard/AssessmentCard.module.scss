@@ -1,0 +1,174 @@
+@import "src/app/styles/mixins";
+
+.skillCard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 324px;
+    background-color: #f3f4f5;
+    border-radius: 12px;
+    padding: 18px 16px;
+
+    @include mobile {
+        padding: 18px 8px;
+    }
+
+    .cardHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > h2 {
+            width: 100%;
+            text-overflow: ellipsis; // .tooltip issue
+            text-wrap: nowrap;
+            white-space: nowrap;
+            overflow: hidden;
+            color: var(--discover-brick-4, #2b1911);
+            font-family: var(--font-patron);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 27px; /* 135% */
+            letter-spacing: 0.04px;
+        }
+
+        > p {
+            text-wrap: nowrap;
+            margin-left: 25px;
+            color: var(--neutral-light-grey, #999);
+            text-align: right;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: -0.014px;
+        }
+    }
+
+    .fitScore {
+        position: relative;
+        width: 100%;
+        // height: 20px;
+        background-color: rgba(131, 143, 151, 0.1);
+        border-radius: 12px;
+        padding: 10px 15px;
+
+        .progress {
+            position: absolute;
+            width: 61%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            // background-color: #f5dc80;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        p {
+            color: var(--discover-brick-4, #2b1911);
+            position: relative;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 23px;
+            /* 143.75% */
+            letter-spacing: -0.016px;
+            z-index: 2;
+        }
+    }
+
+    hr {
+        background-color: rgba(43, 25, 17, 1);
+        opacity: 0.2;
+        height: 1px;
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 15px;
+
+        .title {
+            color: var(--discover-brick-4, #2b1911);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            /* 142.857% */
+            letter-spacing: -0.014px;
+            opacity: 0.7;
+        }
+
+        .skillNames {
+            display: flex;
+            gap: 6px;
+
+            p {
+                display: inline;
+                padding: 9px 11px;
+                background-color: var(--neutral-white, #fff);
+                border-radius: 9px;
+                color: #211d0c;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 23px;
+                /* 143.75% */
+                letter-spacing: -0.016px;
+                text-wrap: nowrap;
+                text-overflow: ellipsis;
+                width: min-content;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .ctaContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+
+        .takeNextLevel {
+            background-color: var(--primary-accent-1);
+            padding: 8px 12px;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-width: fit-content;
+            color: var(--learn-purple-4, #1d1b21);
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.014px;
+
+            @include mobile {
+                gap: 2px;
+                padding: 8px 8px;
+            }
+        }
+
+        .viewReport {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            min-width: fit-content;
+            color: var(--learn-purple-4, #1d1b21);
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: -0.014px;
+            img {
+                display: inline;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

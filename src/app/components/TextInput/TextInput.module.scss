@@ -1,0 +1,38 @@
+@import "src/app/styles/mixins";
+
+.textInputRoot {
+    .textInputInput {
+        background-color: #ffffff;
+        border: 1px solid #cac8cd;
+        width: 100%;
+        height: 44px;
+        padding: 15px 20px;
+        outline: none;
+        transition: all 0.22s linear;
+        font-size: 16px;
+        font-family: var(--font-inter);
+
+        &.error {
+            border: 1px solid var(--text-error);
+        }
+
+        @include md {
+            height: 50px;
+        }
+
+        &::placeholder {
+            color: #161c20;
+            opacity: 0.2;
+        }
+
+        &:focus {
+            transition: all 0.22s linear;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #cac8cd;
+        }
+    }
+
+    .rightSection {
+        padding-right: 0 !important;
+    }
+}

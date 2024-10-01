@@ -1,0 +1,137 @@
+.onboardingModal {
+    background: red;
+
+    .loginContent {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 4%;
+            width: 100%;
+            padding: 0 23px;
+            height: auto;
+
+            .icon {
+                &:nth-of-type(2) {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            .close {
+            }
+        }
+
+        > div {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 0.6fr;
+            height: 100%;
+
+            .left {
+                padding: 15% 10% 10% 12%;
+
+                .tag {
+                    background: #cbfb62;
+                    border-radius: 62px;
+                    transform: rotate(-0.56deg);
+                    padding: 10px 16px;
+                    width: fit-content;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 23px;
+                    letter-spacing: -0.001em;
+                    color: #292f1e;
+                }
+
+                .content {
+                    margin-top: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                    padding-bottom: 20px;
+
+                    p {
+                        &:nth-of-type(1) {
+                            //font-family: 'Patron';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 25px;
+                            line-height: 32px;
+                            letter-spacing: 0.003em;
+                            color: #1d1b21;
+                        }
+
+                        &:nth-of-type(2) {
+                            margin-top: 10px;
+                            //font-family: 'Inter';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 23px;
+                            letter-spacing: -0.001em;
+                            color: var(--learn-purple-1);
+                        }
+                    }
+
+                    .phoneInput {
+                        margin-top: 10%;
+
+                        input {
+                            width: 80%;
+                        }
+                    }
+
+                    .resentText {
+                        margin-top: 2%;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 25px;
+                        letter-spacing: -0.001em;
+                        color: #50495a;
+
+                        span {
+                            text-decoration-line: underline;
+                            color: #1d1b21;
+                        }
+                    }
+
+                    button {
+                        margin-top: 15%;
+                        width: fit-content;
+                    }
+
+                    .tnc {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 23px;
+                        letter-spacing: -0.001em;
+                        color: var(--learn-purple-1);
+
+                        .bold {
+                            color: #111;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                background-image: url("../../assets/images/illusModalLogin.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

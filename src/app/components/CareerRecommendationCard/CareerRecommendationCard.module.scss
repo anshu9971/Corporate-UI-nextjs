@@ -1,0 +1,162 @@
+@import "src/app/styles/mixins";
+.card {
+    border-radius: 16px;
+    background: var(--discover-brick-2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 20px 17px;
+    min-width: 270px;
+
+    @include md {
+        max-width: 255px;
+        min-width: unset;
+        width: 60vw;
+    }
+
+    .firstLine {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .tag {
+            border-radius: 100px;
+            background: rgba(223, 177, 157, 0.7);
+            width: fit-content;
+            height: fit-content;
+            padding: 6px 12px;
+            color: var(--discover-brick-4);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1; /* 166.667% */
+            margin-left: auto;
+        }
+
+        > img {
+            width: 28px;
+            height: 28px;
+
+            @include xl {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    h3 {
+        color: var(--primary-dark-1, #161c20);
+        font-family: var(--font-patron);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px; /* 131.25% */
+        letter-spacing: 0.032px;
+        margin-bottom: 16px;
+        text-align: start;
+        margin-top: 20px;
+        border-bottom: 1px solid rgba(43, 25, 17, 0.1);
+
+        @include md {
+            //min-height: 64px;
+            color: var(--learn-purple-4);
+            font-weight: 700;
+            letter-spacing: 0.032px;
+            font-size: 25px;
+            font-style: normal;
+            line-height: 32px; /* 128% */
+            letter-spacing: 0.075px;
+            padding-bottom: 16px;
+            margin-top: 90px;
+        }
+        // @include xl {
+        //     font-size: 20px;
+        //     line-height: 27px;
+        //     letter-spacing: 0.04px;
+        // }
+    }
+    p,
+    ul {
+        color: var(--discover-brick-4, #2b1911);
+        font-size: 12px;
+        font-family: var(--font-inter);
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.012px;
+        // margin-top: auto;
+        // margin-bottom: auto;
+        font-style: normal;
+
+        @include md {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.014px;
+        }
+    }
+    ul {
+        margin-left: 32px;
+        margin-top: 16px;
+        @include md {
+            margin-bottom: 60px;
+        }
+    }
+
+    // .courseCTA {
+    //     margin-top: 20px;
+    //     background-color: var(--discover-brick-3);
+    //     border: none;
+    //     border-radius: 600px;
+    //     padding: 8px 14px;
+    //     cursor: pointer;
+    //     display: flex;
+    //     align-items: flex-end;
+    //     justify-content: center;
+
+    //     color: var(--neutral-white);
+    //     font-family: var(--font-patron);
+    //     font-size: 12px;
+    //     font-style: normal;
+    //     font-weight: 700;
+    //     line-height: 1; /* 266.667% */
+    //     letter-spacing: 0.036px;
+    //     @include md {
+    //         padding: 10px 16px;
+    //     }
+
+    //     > span {
+    //         @include md {
+    //             display: inline;
+    //         }
+    //     }
+
+    //     svg {
+    //         width: 10px;
+    //         height: 10px;
+    //         margin-left: 6px;
+    //     }
+    // }
+
+    // .pill {
+    //     position: absolute;
+    //     top: -2%;
+    //     left: 4%;
+    //     border-radius: 6px;
+    //     background-color: var(--primary-accent-1, #cbfb62) !important;
+    //     transform: rotate(-2deg);
+    //     > span {
+    //         font-size: 12px;
+    //         font-family: var(--font-inter);
+    //         font-weight: 500;
+    //         line-height: 18px;
+    //         letter-spacing: -0.012px;
+    //         color: var(--learn-purple-3, #50495a);
+    //         @include xl {
+    //             font-size: 14px;
+    //             line-height: 20px;
+    //             letter-spacing: -0.014px;
+    //         }
+    //     }
+    // }
+}

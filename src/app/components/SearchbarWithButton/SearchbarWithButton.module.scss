@@ -1,0 +1,111 @@
+@import "src/app/styles/mixins";
+
+.inputVisible {
+    flex: 1 1 !important;
+}
+.searchBar {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0;
+    // flex-basis: 0px;
+    @include md {
+        position: relative;
+    }
+    .callUs {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: #161c20;
+            display: flex;
+            min-width: max-content;
+            opacity: 0.7;
+            @include lg {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 30px;
+            }
+            .number {
+                display: none;
+                @include lg {
+                    display: block;
+                }
+            }
+            .callIcon,
+            .callIconFilled {
+                width: 34px;
+                height: 34px;
+                margin-left: 4px;
+                background-color: var(--primary-light-3);
+                border-radius: 100%;
+                padding: 4px;
+                display: none;
+                @include md {
+                    display: block;
+                    background-color: transparent;
+                }
+            }
+            .callIconFilled {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-right: 5px;
+                padding-top: 5px;
+                @include md {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .inputWrapper {
+        overflow: hidden;
+        margin-right: 10px;
+        max-width: calc(100% - 52px);
+
+        input {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-radius: 100px;
+            border: 1px solid var(--primary-light-4);
+            min-height: unset;
+            height: 42px;
+            font-size: 16px;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .searchIcon {
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+            @include mobile {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        @include mobile {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

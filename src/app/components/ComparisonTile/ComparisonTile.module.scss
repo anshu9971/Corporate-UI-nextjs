@@ -1,0 +1,376 @@
+@import "../../styles/mixins";
+
+.comparisonTileContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+
+    top: 0;
+
+    width: 100vw;
+    height: 100%;
+    z-index: 100;
+    transition: all 1s ease-in;
+
+    .blurComp {
+        position: relative;
+        height: 258px;
+        width: 100%;
+        background: black;
+        filter: opacity(0.2) blur(140px);
+    }
+
+    .cardsHead {
+        transition: all 1s ease-in;
+        @include lg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: #ffffff;
+            // background: #ffffff;
+            padding: 31px 0;
+            border: 1px solid #a198ac;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .tile {
+            @include lg {
+                &:nth-child(even) {
+                    border-left: 4px solid #edf0f1;
+                    border-right: 4px solid #edf0f1;
+                }
+            }
+            .courseParent {
+                @include lg {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    //width: 258px;
+                    // background-color: green;
+                    padding: 0 25px;
+                    gap: 14px;
+                }
+
+                @include xxl {
+                    padding: 0 39px;
+                }
+
+                p {
+                    @include lg {
+                        width: 17px;
+                        height: 17px;
+                        font-size: 12px;
+                        background-color: #cbfb62;
+                        border-radius: 50%;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                .course {
+                    @include lg {
+                        width: 173px;
+                        // background: grey;
+                    }
+                }
+
+                button {
+                    @include lg {
+                        border: none;
+                        cursor: pointer;
+                        margin-left: 26px;
+                        background: transparent;
+                    }
+                }
+            }
+
+            .emptyParent {
+                @include lg {
+                    background-color: #f5f4f6;
+                    display: flex;
+                    align-items: center;
+                    gap: 7.5px;
+                    border: 1px dashed #a198ac;
+                    border-radius: 7px;
+                    padding: 10.5px 22px;
+                    margin: 0 25px;
+                }
+
+                @include xxl {
+                    margin: 0 39px;
+                }
+
+                img {
+                    @include lg {
+                        border: none;
+                        cursor: pointer;
+                        margin-left: 0;
+                    }
+                }
+                .emptyText {
+                    font-size: 12px;
+                    color: #a198ac;
+                }
+            }
+        }
+
+        .compareBtn {
+            text-align: center;
+
+            @include lg {
+                margin: 0 40px;
+            }
+
+            @include xxl {
+                margin: 0 80px;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            img {
+                margin-left: 10px;
+            }
+        }
+
+        .crossBtn {
+            position: absolute;
+            right: 40px;
+            top: 39px;
+            border: none;
+            border-radius: 50%;
+            //margin-left: 70px;
+        }
+    }
+
+    .detailedComparisonHead {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        background: #ffffff;
+        align-items: center;
+        padding: 34px 0 52px 0;
+
+        z-index: 5;
+        transition: all 1s ease-in;
+
+        .tile {
+            display: flex;
+            flex-direction: column;
+
+            @include lg {
+                &:nth-child(even) {
+                    border-left: 4px solid #edf0f1;
+                    border-right: 4px solid #edf0f1;
+                }
+            }
+            .courseParent {
+                @include lg {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+
+                    //width: 258px;
+                    // background-color: green;
+                    padding: 0 25px;
+                    gap: 14px;
+                }
+
+                @include xxl {
+                    padding: 0 39px;
+                }
+
+                p {
+                    @include lg {
+                        width: 17px;
+                        height: 17px;
+                        font-size: 12px;
+                        background-color: #cbfb62;
+                        border-radius: 50%;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                .course {
+                    @include lg {
+                        width: 183px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 21px;
+                        height: 67px;
+                        // background: grey;
+                    }
+                }
+
+                button {
+                    @include lg {
+                        border: none;
+                        cursor: pointer;
+                        margin-left: 26px;
+                        background: transparent;
+                    }
+                }
+            }
+            .enrollBtn {
+                margin-left: 56px;
+                width: fit-content;
+
+                @include lg {
+                    margin-top: 20px;
+                }
+
+                @include xxl {
+                    margin-top: 30px;
+                }
+            }
+
+            .emptyParent {
+                @include lg {
+                    background-color: #f5f4f6;
+                    display: flex;
+                    align-items: center;
+                    gap: 7.5px;
+                    border: 1px dashed #a198ac;
+                    border-radius: 7px;
+                    padding: 10.5px 22px;
+                    margin: 0 25px;
+                }
+
+                @include xxl {
+                    margin: 0 39px;
+                }
+
+                img {
+                    @include lg {
+                        border: none;
+                        cursor: pointer;
+                        margin-left: 0;
+                    }
+                }
+                .emptyText {
+                    font-size: 12px;
+                    color: #a198ac;
+                }
+            }
+        }
+
+        button.dismissBtn {
+            cursor: pointer;
+            position: absolute;
+            right: 34px;
+            top: 34px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            gap: 11px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: var(--learn-purple-4);
+            opacity: 0.56;
+
+            img {
+                padding: 4px;
+                border-radius: 50%;
+                background-color: var(--learn-purple-2);
+            }
+        }
+    }
+
+    .comparisons {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        overflow-y: scroll;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 0 40px;
+        gap: 16px;
+        padding-bottom: 269px;
+        transition: all 1s ease-in;
+        .comparisonRow {
+            width: 100%;
+
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            display: flex;
+            gap: 24px;
+            //justify-content: center;
+            align-items: center;
+            padding: 28px 34px;
+
+            // & > div {
+            //     width: 20%;
+            // }
+
+            // .specValue:last-child{
+            //     background-color: aqua;
+            //     text-align: right;
+
+            // }
+
+            .specName {
+                color: var(--learn-purple-3);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+                width: 15%;
+                // margin-right: 4%;
+            }
+
+            .specValue {
+                position: relative;
+                align-items: center;
+
+                width: 25%;
+                text-align: left;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 23px;
+                color: var(--learn-purple-4);
+
+                .check {
+                    margin-right: 5px;
+                }
+
+                img.logo {
+                    position: absolute;
+                    // left: -28px;
+                    object-fit: contain;
+                    transform: scale(2.5);
+                }
+                img.logoUp {
+                    position: absolute;
+                    left: -28px;
+                    object-fit: contain;
+                    transform: scale(2.5);
+                }
+            }
+        }
+    }
+
+    .hideComparison {
+        display: none;
+        transition: all 1s ease-in;
+    }
+}
+
+.hideComparisonContainer {
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    height: unset;
+    transition: all 1s ease-in;
+}

@@ -1,0 +1,149 @@
+@import "/src/app/styles/mixins";
+
+.jobRolesContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+
+    .rolesContainer {
+        padding: 20px 20px 0 20px;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+
+        @include lg {
+            padding: 0 20px;
+            align-items: center;
+            flex-wrap: unset;
+        }
+
+        .rolesRow {
+            display: none;
+            display: flex;
+            width: 100%;
+
+            @include lg {
+                gap: 14px;
+            }
+
+            .role {
+                .rolePill {
+                    // padding: 15px 20px;
+                    padding: 7.5px 10px;
+                    border-radius: 93.465px;
+
+                    p {
+                        width: max-content;
+                        // text-align: center;
+                        font-size: 15.5px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 19px;
+                        /* 122.581% */
+                        letter-spacing: 0.031px;
+                        max-width: 250px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-wrap: nowrap;
+                    }
+                }
+            }
+        }
+
+        .resRole {
+            display: none;
+            // width: fit-content;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            // flex-direction: column;
+            // flex-wrap: wrap;
+            @include lg {
+                display: none;
+            }
+
+            .rolePill {
+                padding: 7px 7px;
+                border-radius: 65.465px;
+                max-width: 120px;
+
+                p {
+                    text-align: center;
+                    font-size: 10.812px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 13.253px;
+                    /* 122.581% */
+                    letter-spacing: 0.022px;
+                    max-width: 250px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-wrap: nowrap;
+                }
+            }
+        }
+    }
+}
+
+div.arrows {
+    display: none;
+    position: relative;
+    left: -20%;
+    left: 0;
+    bottom: -10px;
+
+    @include lg {
+        display: block;
+    }
+
+    img {
+        &:nth-child(2n) {
+            transform: rotateY(180deg);
+            margin-left: 20px;
+        }
+    }
+}
+
+// .allJobRolesContainer {
+//     width: 100%;
+//     height: 100%;
+//     background: blue;
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 21;
+
+//     .allJobRoles {
+//         width: 100%;
+//         height: 40%;
+//         bottom: 0;
+//         position: absolute;
+//         background: red;
+//         border-radius: 24px 24px 0px 0px;
+//         padding: 24px 16px 33px 16px;
+
+//         .head {
+//             position: relative;
+//             text-align: center;
+//             color: var(--neutral-dark-midnight-1, #161C20);
+//             font-size: 20px;
+//             font-style: normal;
+//             font-weight: 700;
+//             line-height: 27px;
+//             /* 135% */
+//             letter-spacing: 0.04px;
+
+//             .cross{
+//                 position: absolute;
+// right: 0;
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,32 @@
+@import "src/app/styles/mixins";
+
+.resentText {
+    margin-top: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.001em;
+    color: #50495a;
+    @include md {
+        margin-top: 3%;
+    }
+    @include xxl {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    > button {
+        margin-top: 0 !important;
+        background: transparent;
+        outline: none;
+        border: none;
+
+        span {
+            font-family: var(--font-inter);
+            font-weight: bold;
+            text-decoration-line: underline;
+            color: #1d1b21;
+        }
+    }
+}

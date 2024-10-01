@@ -1,0 +1,768 @@
+@import "styles/_mixins.scss";
+
+.courseDetailBanner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    background-color: var(--learn-purple-2);
+    padding: 28px 16px 48px 16px;
+
+    @include lg {
+        gap: 22px;
+        padding: 32px 50px 67px 50px;
+    }
+
+    @include xxl {
+        padding: 40px 161px 67px 161px;
+    }
+
+    .checker {
+        display: none;
+
+        @include lg {
+            display: initial;
+            position: absolute;
+            left: 48%;
+            top: -4%;
+
+            clip-path: inset(0% 10% 3% 20%);
+
+            // /* box-shadow: 0 0 2px black, 0 0 25px blue, 0 0 5px darkblue inset; */
+            // box-shadow: 0px 0px 6px 86px #f5f4f6 inset;
+        }
+
+        @include xxl {
+            left: 47%;
+
+            clip-path: inset(0% 10% 3% 24%);
+        }
+
+        //         img{
+        // width: 552px;
+        // height: 619px;
+
+        //         }
+    }
+
+    .path {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        color: var(--learn-purple-4);
+        padding-bottom: 3px;
+
+        @include lg {
+            display: none;
+            font-size: 16px;
+            line-height: 23px;
+        }
+
+        span {
+            color: var(--learn-purple-1);
+        }
+    }
+
+    .courseName {
+        color: var(--primary-dark-1);
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 32px;
+
+        @include lg {
+            color: var(--learn-purple-4);
+            max-width: 629px;
+            font-size: 36px;
+            line-height: 46px;
+            padding-bottom: 5px;
+        }
+
+        @include xxl {
+            font-size: 39px;
+            line-height: 50px;
+        }
+    }
+
+    .courseProvider {
+        padding-top: 7px;
+        display: flex;
+        position: relative;
+        gap: 10px;
+        padding-top: 10px;
+        align-items: center;
+
+        @include lg {
+            padding-top: 0;
+        }
+
+        .courseProviderLogo {
+            object-fit: contain;
+        }
+
+        .providerName {
+            color: var(--learn-purple-1);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+
+            @include lg {
+                font-size: 16px;
+                line-height: 23px;
+                color: var(--learn-purple-1);
+            }
+        }
+    }
+
+    .description {
+        padding-top: 7px;
+        color: var(--learn-purple-1);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        @include lg {
+            padding-top: 10px;
+            font-size: 16px;
+            max-width: 690px;
+            line-height: 23px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    }
+    .udemyBanner {
+        display: none;
+
+        @include mobile {
+            display: block;
+            padding-top: 30px;
+        }
+    }
+
+    .courseStickerContainer {
+        @include lg {
+            margin-bottom: 37px;
+        }
+    }
+    .courseStickers {
+        display: flex;
+        gap: 12px;
+        overflow: scroll;
+        position: relative;
+        right: 16px;
+        width: calc(100% + 32px);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include lg {
+            left: 0;
+            gap: 16px;
+            width: initial;
+            margin-top: 20px;
+            width: calc(100% - 380px);
+        }
+
+        .sticker {
+            position: relative;
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+            padding: 66px 16px 14px 16px;
+            background-color: var(--neutral-white);
+            border-radius: 12px;
+            justify-content: end;
+            width: fit-content;
+
+            @include lg {
+                flex: 1;
+                position: relative;
+                display: flex;
+                gap: 2px;
+                flex-direction: column;
+                max-width: 214px;
+                // width: calc(100% - 32px);
+                // width: 139px;
+                background-color: var(--neutral-white);
+                border-radius: 12px;
+                justify-content: end;
+            }
+
+            @media screen and (max-width: 1300px) {
+                width: 150px;
+            }
+
+            .tortoise {
+                transform: scale(0.7);
+            }
+
+            &:first-child {
+                margin-left: 12px;
+
+                @include lg {
+                    margin-left: 0;
+                }
+            }
+            &:last-child {
+                margin-right: 12px;
+
+                @include lg {
+                    margin-right: 0;
+                }
+            }
+
+            h4 {
+                color: var(--primary-dark-1);
+                font-size: 18px;
+                font-weight: 700;
+                width: 132px;
+
+                @include lg {
+                    width: 149px;
+                    font-size: 20px;
+                    line-height: 27px;
+                }
+            }
+
+            p {
+                color: var(--learn-purple-1);
+                font-weight: 500;
+                line-height: 23px;
+            }
+
+            img {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 56px;
+                height: 56px;
+
+                @include lg {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+
+    .certification {
+        position: relative;
+        display: flex;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 8px 0px rgba(29, 27, 33, 0.07);
+        margin: 26px 0;
+        justify-content: space-between;
+        // max-height: 89px;
+
+        @include lg {
+            // max-height: 142px;
+            margin: initial initial;
+            border-radius: 12px;
+            max-width: 640px;
+            padding-top: 15px;
+        }
+
+        @include lg {
+            max-width: 675px;
+        }
+
+        .greenSticker {
+            position: absolute;
+            top: -6px;
+            left: 8px;
+
+            img {
+                @include lg {
+                    top: -3px;
+                    width: 25px;
+                    height: 43px;
+                    object-fit: contain;
+                    left: 11px;
+                }
+            }
+        }
+
+        .text {
+            padding: 11px 0 13px 33px;
+            @include lg {
+                padding: 20px 0 20px 46px;
+            }
+
+            @include xxl {
+                padding: 22px 0 21px 58px;
+            }
+
+            .certificationText {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                color: var(--learn-purple-1);
+                @include lg {
+                    font-size: 16px;
+                    line-height: 23px;
+                }
+            }
+
+            .courseText {
+                padding-top: 7px;
+                color: var(--learn-purple-3);
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 21px;
+                max-width: 185px;
+
+                @include lg {
+                    font-size: 20px;
+                    line-height: 27px;
+                    max-width: 291px;
+                }
+            }
+        }
+        .certificate {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            border-radius: 5px;
+            background-color: #c9c4d0;
+            // height: 84px;
+            min-width: 127px;
+
+            @include lg {
+                max-width: 280px;
+                align-self: end;
+                height: 100%;
+                align-items: flex-end;
+                flex-grow: 1;
+                min-width: initial;
+                border-radius: 20px;
+            }
+
+            .certificateImg {
+                position: absolute;
+                filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.15));
+                border-radius: 5px;
+                object-fit: cover;
+                width: calc(100% - 18px);
+                bottom: 8px;
+                height: 87px;
+                cursor: zoom-in;
+                @include lg {
+                    object-fit: contain;
+                    height: 162px;
+                    width: 220px;
+
+                    filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.15));
+                    border-radius: 5px;
+                    bottom: -3px;
+                }
+
+                // margin: 0 54px;
+            }
+
+            // img{
+            //     object-fit: contain;
+            // }
+        }
+    }
+
+    .enrollMentResponsive {
+        margin-top: 13px;
+
+        background-color: var(--learn-purple-2);
+
+        @include lg {
+            display: none;
+        }
+
+        .specs {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .pricingComponent {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+
+                @include lg {
+                    gap: 5px;
+                    padding: 15px 15px 18px 15px;
+                }
+
+                @include xxl {
+                    gap: 10px;
+                    padding: 24px 26px 22px 26px;
+                }
+
+                .zeroCostSticker {
+                    position: absolute;
+                    top: -10px;
+                    right: 22px;
+                }
+
+                .startingText,
+                .total {
+                    color: #50495a;
+                    font-weight: 500;
+                    line-height: 23px;
+
+                    @include lg {
+                        font-size: 14px;
+                        line-height: 25px;
+                    }
+
+                    @include xxl {
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+                }
+
+                .price {
+                    font-weight: 700;
+
+                    color: #1d1b21;
+
+                    @include lg {
+                        font-size: 25px;
+                        line-height: 28px;
+                    }
+
+                    @include xxl {
+                        font-size: 31px;
+                        line-height: 38px;
+                    }
+
+                    .monthly {
+                        color: var(--learn-purple-1);
+                        font-weight: 700;
+
+                        @include lg {
+                            font-size: 18px;
+                            line-height: 25px;
+                        }
+
+                        @include xxl {
+                            font-size: 20px;
+                            line-height: 27px;
+                        }
+                    }
+                }
+            }
+
+            .specifications {
+                padding: 24px 0 24px 0;
+                border-top: 2px solid #a198ac20;
+                // border-bottom: 2px solid #a198ac20;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 17px;
+
+                &:first-child {
+                    border-bottom: none;
+                }
+                // border-top: 2px solid #e4e3e7;
+                @include lg {
+                    gap: 7px;
+                    padding: 10px 15px 12px;
+                }
+
+                @include xxl {
+                    gap: 10px;
+                    padding: 18px 28.8px 22px;
+                }
+
+                .spechHead {
+                    color: var(--learn-purple-4);
+                    padding-bottom: 10px;
+                }
+
+                .bullet {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--primary-accent-1);
+                    padding: 2px;
+                    border-radius: 4px;
+
+                    img {
+                        width: 13px;
+                        height: 13px;
+                        object-fit: contain;
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    bottom: -8px;
+                    align-self: center;
+                    border: none;
+                    background-color: var(--learn-purple-2);
+                    padding: 0 5px;
+                    font-size: 12px;
+
+                    font-weight: 500;
+                    line-height: 18px;
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                .specRow {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 20px;
+
+                    @include lg {
+                        font-size: 14px;
+                        line-height: 23px;
+                    }
+
+                    @include xxl {
+                        font-size: 16px;
+                    }
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                        @include lg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                        @include xxl {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+
+                    .specIcon {
+                        margin-right: 6px;
+                    }
+                    .spec {
+                        color: var(--learn-purple-1);
+                    }
+
+                    .eligibilityVal {
+                        color: var(--learn-purple-4);
+                        padding-left: 4px;
+                    }
+
+                    .value {
+                        color: var(--learn-purple-4);
+                    }
+                }
+                .content {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .bullet {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--primary-accent-1);
+                        padding: 5px;
+                        border-radius: 4px;
+                    }
+
+                    .text {
+                        font-weight: 500;
+                        color: var(--learn-purple-3);
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 20px;
+
+                        ::after {
+                            content: " :  ";
+                        }
+                        span {
+                            color: var(--learn-purple-1);
+                        }
+                    }
+                }
+                .showMore {
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    height: 1px;
+                    margin-top: 8px;
+                    background-color: var(--learn-purple-1);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0.5;
+
+                    @include lg {
+                        position: absolute;
+                        bottom: 0;
+                        width: calc(100% - 57.6px);
+                        margin-bottom: 16px;
+                    }
+
+                    .content {
+                        position: relative;
+                        bottom: 1px;
+                        background-color: var(--learn-purple-2);
+
+                        padding: 0 10px;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: var(--learn-purple-3);
+
+                        .chevron {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 50%;
+                            background-color: var(--learn-purple-2);
+
+                            img {
+                                position: relative;
+                                left: 0.55px;
+                                object-fit: contain;
+                                width: 100%;
+                                height: 100%;
+                                // transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buttonRow {
+                display: flex;
+                gap: 27px;
+
+                .enrollButton {
+                    @include lg {
+                        font-weight: 500;
+                        padding: 12px 30px;
+
+                        font-size: 16px;
+                    }
+
+                    @include xxl {
+                        padding: 20px 80px;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 31px;
+                        height: unset;
+                    }
+
+                    span {
+                        @include xxl {
+                            height: unset;
+                        }
+                    }
+                }
+
+                .likeBtn {
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .readHide {
+        border: none;
+        color: var(--learn-purple-4);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        background-color: transparent;
+    }
+    // .bgImg{
+    //     position: absolute;
+    //     border-radius: 50%;
+    //     top: 30%;
+    //     right: 11%;
+    //     width: 280px;
+    //     height: 280px;
+    //     overflow: hidden;
+    //     filter: blur(1px);
+    //     box-shadow: 3px 3px 3px #e78267 inset;
+
+    //     .bannerBg{
+
+    //     }
+    // }
+}
+.instituteCertificatePreviewModal {
+    :global(.mantine-Modal-body),
+    :global(.mantine-Modal-content) {
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        overflow: visible !important;
+    }
+    .contentContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 4px;
+        overflow: visible !important;
+        > .certificateImage {
+            width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            @include md {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 0px;
+                max-height: none;
+            }
+        }
+        > .closeIcon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: 8px;
+            top: -32px;
+            @include md {
+                top: -24px;
+                right: -52px;
+            }
+            cursor: pointer;
+        }
+    }
+}
+
+.courseDescriptionText {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    .readMore {
+        background-color: #f5f4f6;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-left: 5px;
+    }
+}
+.hideText {
+    -webkit-line-clamp: 3;
+}
+
+.showText {
+    -webkit-line-clamp: unset;
+}

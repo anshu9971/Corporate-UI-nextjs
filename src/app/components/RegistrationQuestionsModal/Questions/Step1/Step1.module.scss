@@ -1,0 +1,423 @@
+@import "src/app/styles/mixins";
+
+.content {
+    height: 100%;
+    overflow-y: auto;
+    padding: 32px 70px;
+
+    .logo {
+        position: relative;
+        top: -10px;
+        left: -30px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 12px;
+        .formHeading {
+            color: var(--learn-purple-4, #1d1b21);
+            font-family: var(--var-patron);
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: 0.075px;
+        }
+        label {
+            color: var(--learn-purple-3, #50495a);
+            font-family: var(--font-inter);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: -0.016px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex: 1;
+
+            > div {
+                width: 100%;
+            }
+
+            input,
+            select,
+            input::placeholder,
+            select::placeholder {
+                font-family: var(--font-inter);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: -0.014px;
+                height: 52px;
+                @include md {
+                    height: 50px;
+                    font-size: 500;
+                }
+            }
+            @include md {
+                gap: 6px;
+                font-family: var(--font-inter);
+                font-size: 16px;
+                line-height: 23px;
+                letter-spacing: -0.016px;
+            }
+            .error {
+                color: var(--text-error);
+            }
+        }
+
+        .otpSentText {
+            color: var(--discover-brick-3, #b7704e);
+            text-align: center;
+            font-family: var(--font-inter);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: -0.012px;
+            @include md {
+                font-size: 16px;
+                line-height: 23px;
+                letter-spacing: -0.016px;
+            }
+        }
+        .error {
+            color: var(--text-error);
+        }
+        .firstNameLastName,
+        .dobGender,
+        .experienceQualification,
+        .companyFunction,
+        .jobBandPincode,
+        .pinCodeMobile {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            @include md {
+                gap: 12px;
+                flex-direction: row;
+            }
+        }
+        .locationText {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .dobGender > div {
+            flex: 1;
+        }
+
+        .datePicker {
+            width: 100%;
+            max-width: none;
+            margin-top: 6px;
+            // * {
+            //     height: 52px;
+            //     width: 100%;
+            //     @include md {
+            //         height: 50px;
+            //     }
+            // }
+        }
+        .phoneInput {
+            background-color: var(--neutral-white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 12px;
+            border-radius: 12px;
+            border: 1px solid #cac8cd;
+            transition: all 0.22s linear;
+            width: 100%;
+            position: relative;
+            > div {
+                background-color: transparent;
+                background: transparent;
+                border: none;
+                border-radius: 0px;
+                outline: none;
+                flex-grow: 1;
+                flex-shrink: 1;
+                width: 100px;
+                @include md {
+                    width: auto;
+                }
+                * {
+                    background-color: transparent;
+                    background: transparent;
+                    border: none;
+                    border-radius: 0px;
+                    outline: none;
+                    width: auto;
+                    box-shadow: none;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+            > button {
+                color: var(--primary-light-1, #f8f5f2);
+                font-family: var(--font-inter);
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: -0.011px;
+                padding: 0px 20px;
+                > span {
+                    padding: 10px 0px;
+                }
+                @include md {
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    letter-spacing: -0.012px;
+                }
+            }
+            .timer {
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: translateY(-110%);
+            }
+        }
+        .submitBtn {
+            order: 1;
+            margin-top: 16px;
+            @include md {
+                margin-top: unset;
+                order: 0;
+            }
+            > img {
+                display: none;
+                position: absolute;
+                top: -50%;
+                right: -53%;
+                z-index: 3;
+                @include md {
+                    display: initial;
+                }
+            }
+        }
+        .checkbox {
+            label {
+                color: #2b1911;
+                text-align: right;
+                font-family: var(--font-inter);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 23px;
+                letter-spacing: -0.016px;
+            }
+        }
+        .desclaimer {
+            color: rgba(43, 25, 17, 0.5);
+            font-family: var(--font-inter);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: -0.012px;
+            margin: -6px 0px;
+            @include md {
+                font-size: 16px;
+                line-height: 23px;
+                letter-spacing: -0.016px;
+            }
+            > button {
+                cursor: pointer;
+                color: var(--discover-brick-3, #b7704e);
+                font-family: var(--font-inter);
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px;
+                letter-spacing: -0.012px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                @include md {
+                    font-size: 16px;
+                    line-height: 23px;
+                    letter-spacing: -0.016px;
+                }
+            }
+        }
+    }
+
+    .otpScreen {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding-top: 5px;
+        .verifyPhonePill {
+            color: var(--primary-accent-4, #292f1e);
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 23px;
+            letter-spacing: -0.016px;
+            border-radius: 62px;
+            background: var(--primary-accent-1, #cbfb62);
+            display: inline-flex;
+            transform: rotate(2deg);
+            padding: 6px 16px;
+            align-items: flex-start;
+            gap: 10px;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+        > div {
+            .editPhone {
+                border: none;
+                outline: none;
+                background: transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                > span {
+                    font-family: var(--font-inter);
+                    font-weight: 500;
+                    text-decoration: underline;
+                    color: var(--learn-purple-4);
+                    padding: 0 4px;
+                    cursor: pointer;
+                }
+            }
+
+            > div {
+                margin-top: 6%;
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+        .sentHeading {
+            font-family: var(--font-patron);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 31px;
+            letter-spacing: 0.003em;
+            color: #1d1b21;
+            @include md {
+                font-size: 21px;
+                line-height: 29px;
+            }
+            @include xxl {
+                font-size: 25px;
+                line-height: 32px;
+            }
+        }
+
+        .numberText {
+            font-family: var(--font-inter);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.001em;
+            color: var(--learn-purple-1);
+            margin-top: 2px;
+            @include md {
+                margin-top: 5px;
+            }
+            @include xxl {
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+            > span {
+                font-family: var(--font-inter);
+                font-weight: 500;
+                text-decoration: underline;
+                color: var(--learn-purple-4);
+                padding: 0 4px;
+                cursor: pointer;
+            }
+        }
+
+        .input {
+            > div {
+                width: 100%;
+            }
+
+            input {
+                width: 100%;
+                border-radius: 9px;
+                border: 1px solid var(--learn-purple-1);
+                background: #fefefe;
+                box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+
+                &::placeholder {
+                    color: var(--learn-purple-1);
+                    font-size: 16px;
+                    font-family: var(--font-inter);
+                    font-weight: 500;
+                    line-height: 20px;
+                    letter-spacing: -0.014px;
+                }
+            }
+        }
+        .verifyOtpCta {
+            width: fit-content;
+            min-height: 42px;
+        }
+        .tnc {
+            font-family: var(--font-inter);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: -0.001em;
+            color: var(--learn-purple-1);
+            text-align: center;
+            // max-width: 70%;
+            align-self: center;
+            order: 2;
+            margin-top: auto;
+            margin-bottom: 20px;
+
+            button {
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+
+            @include md {
+                max-width: 100%;
+                font-size: 16px;
+                line-height: 23px;
+                text-align: left;
+                order: 3;
+                margin-top: unset;
+                margin-bottom: 0;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 14px;
+            }
+
+            .bold {
+                color: #111;
+            }
+
+            @include xxl {
+                font-size: 16px;
+                line-height: 23px;
+            }
+        }
+    }
+}

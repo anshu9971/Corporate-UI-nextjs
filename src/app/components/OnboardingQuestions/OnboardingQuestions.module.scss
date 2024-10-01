@@ -1,0 +1,26 @@
+@import "src/app/styles/mixins";
+
+.onboardingQuestions {
+    background: #fff;
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+
+    .onboardingContent {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    @include mobile {
+        overflow: unset;
+        height: calc(100vh - 66px);
+        place-self: flex-start;
+    }
+
+    @include maxHeightWithDpr(1.5) {
+        height: calc(100% - 20px);
+    }
+}

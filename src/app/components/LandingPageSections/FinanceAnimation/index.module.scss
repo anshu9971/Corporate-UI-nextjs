@@ -1,0 +1,555 @@
+@import "../../../styles/mixins";
+
+.financeAnimation {
+    height: 100%;
+    position: relative;
+
+    .card {
+        padding: 15px 25px 20px;
+        border-radius: 20px 20px 0px 0px;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        @include md {
+            margin: 0;
+            padding: 40px 40px 40px 120px;
+            border-radius: 40px 0px 0px 40px;
+            top: 0;
+            left: 0;
+
+            &:hover {
+                .firstBox {
+                    transform: rotate(6deg) scale(1.08);
+                }
+
+                .secondBox {
+                    transform: rotate(-6deg) scale(1.08);
+                }
+
+                // button {
+                //     transform: rotate(-6deg);
+                //     color: var(--primary-dark-1);
+                //     // background-color: transparent;
+
+                //     &::before {
+                //         transition: width 0.3s ease-out;
+                //         width: 100%;
+                //     }
+                // }
+            }
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            padding: 20px;
+            padding-left: 50px;
+            border-radius: 30px 0 0 30px;
+        }
+
+        @media only screen and (min-width: 1440px) {
+            padding-left: 100px;
+        }
+
+        .headingContainer {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .inlineInfo {
+            margin-bottom: 12px;
+            margin-left: 8px;
+        }
+
+        .label {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.002em;
+            color: var(--finance-blue-3);
+            font-family: var(--font-patron);
+            position: absolute;
+            top: 10px;
+
+            @include md {
+                transform-origin: top left;
+                transform: rotate(-90deg);
+                top: unset;
+                bottom: 5px;
+                left: 30px;
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+
+        .heading {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 0.075px;
+            color: var(--learn-purple-2);
+            font-family: var(--font-patron);
+            max-width: 750px;
+
+            @include mobile {
+                max-width: 92%;
+            }
+
+            @include md {
+                font-size: 24px;
+                line-height: 30px;
+                color: var(--neutral-white);
+            }
+
+            @include maxHeightWithDpr(1.25) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            @media only screen and (max-width: 650px) {
+                @media only screen and (max-height: 720px) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .description {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.001em;
+            color: #ffffff;
+            opacity: 0.9;
+            margin: 15px 0 20px;
+
+            @include md {
+                opacity: 1;
+                font-size: 14px;
+                line-height: 16px;
+                margin: 30px 0 53px;
+                width: 50%;
+            }
+
+            @include maxHeightWithDpr(1.25) {
+                margin: 15px 0 40px;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 12px;
+                line-height: 17px;
+                margin: 15px 0 30px;
+                width: 40%;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        .des2 {
+            margin-bottom: 20px;
+
+            @include mobile {
+                margin-bottom: 10px;
+            }
+        }
+
+        button {
+            transition: 0.2s transform ease-in-out;
+        }
+
+        .bgBox {
+            background: linear-gradient(180deg, #bdd9f1 0%, #102031 100%);
+            border-radius: 13px 13px 0px 0px;
+            position: absolute;
+            top: 10%;
+            left: 45%;
+            width: 40%;
+            height: 50%;
+            z-index: -1;
+
+            @include md {
+                border-radius: 30.8648px 30.8648px 0px 0px;
+                display: block;
+                top: 40px;
+                left: 30%;
+                width: 30%;
+                height: 60%;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                border-radius: 20px 20px 0px 0px;
+                width: 25%;
+                height: 65%;
+                top: 20px;
+                left: 26%;
+            }
+
+            .wizrCredLogo {
+                position: absolute;
+                top: 5%;
+                left: 10%;
+                width: 45px;
+                @include md {
+                    width: 84px;
+                }
+            }
+
+            .firstBox {
+                position: absolute;
+                top: 12px;
+                left: -80%;
+                padding: 11px 8.5px;
+                background-color: var(--neutral-white);
+                box-shadow: 0px 2.36044px 20.0638px rgba(0, 0, 0, 0.05);
+                border-radius: 7px;
+                display: flex;
+                flex-direction: column;
+                max-width: 132px;
+                transition: 0.2s transform ease-in-out;
+
+                @include md {
+                    padding: 20px 15px;
+                    top: 26px;
+                    left: -60%;
+                    border-radius: 16px;
+                    max-width: 220px;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    top: 20px;
+                    max-width: 170px;
+                    padding: 15px 10px;
+                    border-radius: 12px;
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 5.5px;
+                    width: 100%;
+                    background: linear-gradient(
+                        91.26deg,
+                        #d9d9d9 -4.7%,
+                        rgba(232, 232, 232, 0.39) 106.85%
+                    );
+                    border-radius: 32.75px;
+                    order: 3;
+                    margin: 10px 0 4px;
+                    width: 78%;
+
+                    @include md {
+                        height: 8px;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 5.5px;
+                    background: linear-gradient(
+                        91.26deg,
+                        #d9d9d9 -4.7%,
+                        rgba(232, 232, 232, 0.39) 106.85%
+                    );
+                    border-radius: 32.75px;
+                    order: 4;
+                    width: 55%;
+
+                    @include md {
+                        height: 8px;
+                    }
+                }
+
+                > div {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 20px;
+                        height: auto;
+                        margin-right: 2px;
+
+                        @include md {
+                            width: 30px;
+                            margin-right: 4px;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            width: 26px;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 11.4216px;
+                        line-height: 13px;
+                        color: #1a2431;
+
+                        @include md {
+                            font-size: 18px;
+                            line-height: 20px;
+                            width: 80%;
+                            font-family: var(--font-patron);
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+                }
+            }
+
+            .sanctionLimit {
+                position: absolute;
+                top: 12px;
+                left: -100%;
+                padding: 4px;
+                //background-color: var(--neutral-white);
+                box-shadow: 0px 2.36044px 20.0638px rgba(0, 0, 0, 0.05);
+                border-radius: 7px;
+                display: flex;
+                flex-direction: column;
+                max-width: 220px;
+                transition: 0.2s transform ease-in-out;
+                // transform: scale(.6);
+
+                @include md {
+                    padding: 20px 15px;
+                    top: 26px;
+                    left: -95%;
+                    border-radius: 16px;
+                    // max-width: 220px;
+                }
+
+                @media only screen and (min-width: 1440px) {
+                    left: -70%;
+                }
+            }
+            .secondBox {
+                position: absolute;
+                top: 50%;
+                right: -35%;
+                padding: 10px 11px;
+                background-color: #7f96ac;
+                box-shadow: 0px 2.88298px 24.5053px rgba(0, 0, 0, 0.05);
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                transition: 0.2s transform ease-in-out;
+
+                @include md {
+                    top: 60%;
+                    right: -25%;
+                    padding: 15px 20px;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    top: 50%;
+                    padding: 10px 18px;
+                    border-radius: 10px;
+                }
+
+                > div {
+                    order: 1;
+                    display: flex;
+                    align-items: flex-end;
+
+                    h5 {
+                        font-weight: 700;
+                        font-size: 21.6px;
+                        line-height: 24px;
+                        color: #d8fd87;
+                        font-family: var(--font-patron);
+
+                        @include md {
+                            font-size: 36px;
+                            line-height: 40px;
+                            letter-spacing: 0.003em;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 26px;
+                            line-height: 30px;
+                        }
+                    }
+
+                    img {
+                        height: auto;
+                        width: 30px;
+
+                        @include md {
+                            width: 50px;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            width: 40px;
+                        }
+                    }
+                }
+                p {
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 11px;
+                    color: var(--primary-light-1);
+
+                    @include md {
+                        font-size: 14px;
+                        line-height: 23px;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        font-size: 12px;
+                        line-height: 20px;
+                    }
+                }
+            }
+            .sparkleBall {
+                border-radius: 50%;
+                background-color: #d8fd87;
+                position: absolute;
+                top: 20%;
+                right: -10%;
+                padding: 12px;
+
+                @include md {
+                    padding: 20px;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    padding: 15px;
+                    right: -8%;
+                }
+
+                img {
+                    width: 28px;
+                    height: auto;
+
+                    @include md {
+                        width: 55px;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+
+        &.creditLimit {
+            background-color: var(--finance-blue-4);
+            top: 100%;
+            @include md {
+                left: calc(100% - 90px);
+                top: 0px;
+            }
+
+            .firstBox {
+                top: 23%;
+                @include md {
+                    top: 25%;
+                }
+            }
+            button {
+                background-color: #bdd9f180;
+            }
+        }
+        &.noCostEMI {
+            background-color: var(--finance-blue-1);
+            // top: calc(100% - 50px * 2);
+            // height: calc(100% - 50px);
+
+            @include md {
+                left: 0;
+                height: 100%;
+            }
+
+            .label {
+                color: var(--finance-blue-4);
+            }
+
+            .bgBox {
+                background: linear-gradient(180deg, #bdd9f1 0%, #5b8fcf 100%);
+                .secondBox {
+                    display: flex;
+                    background-color: #102031;
+                    > p {
+                        color: var(--finance-blue-3);
+                        // order: 1;
+                        margin-top: 6px;
+
+                        @include md {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+        &.marketplace {
+            background-color: var(--finance-blue-3);
+            // top: calc(100% - 50px);
+            top: 100%;
+            // height: calc(100% - 50px * 2);
+
+            @include md {
+                top: 0px;
+                left: calc(100% - 90px);
+                height: 100%;
+            }
+
+            .description,
+            .heading {
+                color: var(--finance-blue-4);
+            }
+
+            .description {
+                opacity: 0.7;
+            }
+
+            .bgBox {
+                background: linear-gradient(180deg, #ffffff 0%, #bdd9f1 100%);
+
+                .sparkleBall {
+                    top: 10%;
+                }
+
+                .secondBox {
+                    display: flex;
+                    background-color: var(--primary-dark-1);
+                    top: 40%;
+
+                    > p {
+                        order: 1;
+                        color: var(--primary-light-1);
+                        text-align: right;
+                        margin-top: 6px;
+
+                        @include md {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

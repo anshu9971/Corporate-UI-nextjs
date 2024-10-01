@@ -1,0 +1,15 @@
+.pill {
+    border-radius: 6px;
+    padding: 1px 12px;
+    width: fit-content;
+    margin-right: 10px;
+
+    span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.001em;
+        color: #f5f4f6;
+    }
+}

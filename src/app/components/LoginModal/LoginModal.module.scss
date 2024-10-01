@@ -1,0 +1,394 @@
+@import "src/app/styles/mixins";
+
+.spaceForKeyboard {
+    :global(.mantine-Modal-inner) {
+        @media (max-width: 600px) {
+            .loginContent {
+                padding-bottom: 90%;
+                overflow: visible;
+            }
+        }
+    }
+}
+
+.loginModal {
+    :global(.mantine-Modal-content) {
+        overflow-y: visible !important;
+    }
+    .loginContent {
+        position: relative;
+        height: 100%;
+        overflow: visible;
+        background-color: white;
+        border-radius: 16px 16px 0 0;
+        @include md {
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            top: -12%;
+            width: 100%;
+            padding: 0 16px;
+            height: auto;
+            z-index: 1;
+            overflow-y: visible;
+            flex-direction: row-reverse;
+
+            @include md {
+                overflow-y: unset;
+                top: 4%;
+                justify-content: space-between;
+                flex-direction: row;
+            }
+
+            .wizrIcon {
+                width: 172px;
+                height: 32px;
+            }
+
+            .icon {
+                z-index: 1;
+
+                &:nth-of-type(1) {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    //top: -115px;
+                    // width: 70px;
+                    @include md {
+                        position: relative;
+                        transform: unset;
+                        left: unset;
+                        top: unset;
+                        display: block;
+                        width: unset;
+                        // height: 35px;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    position: relative;
+                    //top: -110px;
+                    @include md {
+                        width: 25px;
+                        height: 25px;
+                        top: 0;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    left: 16px;
+                    //top: -110px;
+                    @include md {
+                        display: none;
+                    }
+                }
+            }
+
+            .close {
+            }
+        }
+
+        > div {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100%;
+            overflow-y: auto;
+            @include md {
+                overflow-y: hidden;
+                grid-template-columns: 1fr 0.6fr;
+            }
+
+            .left {
+                padding: 32px 20px;
+                @include md {
+                    padding: 15% 10% 10% 12%;
+                }
+
+                .tag {
+                    background: #cbfb62;
+                    border-radius: 62px;
+                    font-family: var(--font-inter);
+                    transform: rotate(-3deg);
+                    padding: 4px 12px;
+                    width: fit-content;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: -0.001em;
+                    color: #292f1e;
+                    @include md {
+                        font-size: 14px;
+                        line-height: 20px;
+                        padding: 5px 16px;
+                    }
+                    @include xxl {
+                        font-size: 16px;
+                        line-height: 23px;
+                    }
+                }
+
+                .content {
+                    padding-top: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    .contentWrapper {
+                        display: flex;
+                        flex-direction: column;
+                        height: fit-content;
+                        padding-top: 5px;
+
+                        > div {
+                            .editPhone {
+                                border: none;
+                                outline: none;
+                                background: transparent;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+
+                                > span {
+                                    font-family: var(--font-inter);
+                                    font-weight: 500;
+                                    text-decoration: underline;
+                                    color: var(--learn-purple-4);
+                                    padding: 0 4px;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            > div {
+                                margin-top: 6%;
+                                display: flex;
+                                justify-content: flex-start;
+                            }
+                        }
+
+                        p {
+                            &:nth-of-type(1) {
+                                font-family: var(--font-patron);
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 20px;
+                                line-height: 31px;
+                                letter-spacing: 0.003em;
+                                color: #1d1b21;
+                                @include md {
+                                    font-size: 21px;
+                                    line-height: 29px;
+                                }
+                                @include xxl {
+                                    font-size: 25px;
+                                    line-height: 32px;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                font-family: var(--font-inter);
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 20px;
+                                letter-spacing: -0.001em;
+                                color: var(--learn-purple-1);
+                                margin-top: 2px;
+                                @include md {
+                                    margin-top: 5px;
+                                }
+                                @include xxl {
+                                    font-size: 16px;
+                                    line-height: 23px;
+                                }
+
+                                > span {
+                                    font-family: var(--font-inter);
+                                    font-weight: 500;
+                                    text-decoration: underline;
+                                    color: var(--learn-purple-4);
+                                    padding: 0 4px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .input {
+                            > div {
+                                width: 100%;
+                            }
+
+                            input {
+                                width: 100%;
+                                border-radius: 9px;
+                                border: 1px solid var(--learn-purple-1);
+                                background: #fefefe;
+                                box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+
+                                &::placeholder {
+                                    color: var(--learn-purple-1);
+                                    font-size: 16px;
+                                    font-family: var(--font-inter);
+                                    font-weight: 500;
+                                    line-height: 20px;
+                                    letter-spacing: -0.014px;
+                                }
+                            }
+                        }
+
+                        .emailInput {
+                            margin-top: 8%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: stretch;
+                            input {
+                                width: 100%;
+                                border-radius: 9px;
+                                @include md {
+                                    // width: 80%;
+                                    border-radius: 12px;
+                                    max-width: 390px;
+                                }
+                            }
+                        }
+
+                        .phoneInput {
+                            input {
+                                width: 80%;
+                            }
+                        }
+                    }
+                    .otpCta {
+                        //margin-top: auto;
+                        width: 100%;
+                        height: 55px;
+                        margin-bottom: 70px;
+                        padding: 0 30px;
+                        font-family: var(--font-inter);
+                        order: 3;
+
+                        @media (max-width: 360px) {
+                            margin-bottom: 90px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                            line-height: 23px;
+                        }
+
+                        @include md {
+                            margin-bottom: 0;
+                            height: 45px !important;
+                            width: fit-content !important;
+                            order: 2;
+                        }
+                    }
+
+                    .tnc {
+                        font-family: var(--font-inter);
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 18px;
+                        letter-spacing: -0.001em;
+                        color: var(--learn-purple-1);
+                        text-align: center;
+                        // max-width: 70%;
+                        align-self: center;
+                        order: 2;
+                        margin-top: auto;
+                        margin-bottom: 20px;
+
+                        button {
+                            cursor: pointer;
+                            background: transparent;
+                            border: none;
+                            outline: none;
+                        }
+
+                        @include md {
+                            max-width: 100%;
+                            font-size: 16px;
+                            line-height: 23px;
+                            text-align: left;
+                            order: 3;
+                            margin-top: unset;
+                            margin-bottom: 0;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 14px;
+                        }
+
+                        .bold {
+                            color: #111;
+                        }
+
+                        @include xxl {
+                            font-size: 16px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                position: absolute;
+                z-index: -1;
+                top: -170px;
+                left: 0;
+                background-image: url("../../assets/images/illusModalLogin.png");
+                background-repeat: no-repeat;
+                background-size: 140% 100%;
+                justify-content: center;
+                align-items: center;
+
+                &:before {
+                    content: " ";
+                    background: linear-gradient(
+                        180deg,
+                        rgba(152, 142, 164, 0) 0%,
+                        #9e95a9 73.08%
+                    );
+                    transform: matrix(1, 0, 0, -1, 0, 0);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 55%;
+                    @include md {
+                        display: none;
+                    }
+                }
+
+                @include md {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    display: flex;
+                    z-index: unset;
+                    background-size: 100% 100%;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}

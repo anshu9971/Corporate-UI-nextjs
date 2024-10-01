@@ -1,0 +1,497 @@
+@import "src/app/styles/mixins";
+
+.mainCover {
+    height: 100%;
+    padding: 0;
+
+    @include sm {
+        padding: 0 18px 18px;
+    }
+
+    .content {
+        width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+        flex: 1 1 0px;
+        margin: 0;
+        padding: 20px;
+        background: var(--discover-brick-1);
+        position: relative;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        height: 100%;
+
+        @include sm {
+            height: 100%;
+            padding: 40px;
+            border-radius: 30px;
+        }
+        @include xl {
+            overflow: scroll;
+            padding: 60px;
+        }
+        @include md-maxHeight {
+            overflow: scroll;
+            // padding: 35px;
+        }
+
+        .foldWrapper {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+            height: calc(100% - 20px);
+            gap: 100px;
+
+            @include md {
+                height: 100%;
+                gap: 145px;
+            }
+            @include lg {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 12px;
+                height: calc(100% - 45px);
+            }
+
+            @include xxl-minHeight {
+                padding-bottom: 50px;
+            }
+
+            .leftFold {
+                @include md {
+                    padding-left: 30px;
+                    align-self: center;
+                    flex: 1;
+                }
+                @include xxl-minHeight {
+                    width: 60%;
+                    padding-left: 65px;
+                }
+
+                .title {
+                    font-family: var(--font-patron);
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 25px;
+                    letter-spacing: 0.002em;
+                    color: #1d1b21;
+                    margin-top: 16px;
+
+                    @include md {
+                        margin-top: 0;
+                        font-size: 32px;
+                        line-height: 42px;
+                    }
+
+                    @include xxl-minHeight {
+                        margin-top: 0;
+                        font-size: 31px;
+                        line-height: 50px;
+                    }
+                    @media (max-height: 770px) {
+                        @include md {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+
+                .desc {
+                    font-family: var(--font-inter);
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 23px;
+                    letter-spacing: -0.01em;
+                    color: var(--learn-purple-3);
+                    width: 100%;
+                    margin-top: 10px;
+                    @include md {
+                        width: 59ch;
+                        font-size: 13.341px;
+                        line-height: 22.513px; /* 168.75% */
+                        letter-spacing: -0.133px;
+                    }
+                }
+
+                .bulletPills {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-top: 32px;
+                    margin-bottom: 70px;
+
+                    @include sm {
+                        gap: 16px;
+                        margin-top: 42px;
+                        margin-bottom: 70px;
+                        max-width: unset;
+                    }
+
+                    @include xl {
+                        // flex-wrap: nowrap;
+                        flex-direction: column;
+                    }
+
+                    @include xxl-minHeight {
+                        max-width: 70%;
+                        flex-direction: column;
+                        gap: 24px;
+                        margin-bottom: 45px;
+                        // flex-wrap: nowrap;
+                    }
+                    @media (max-height: 770px) {
+                        margin-top: 16px;
+                        margin-bottom: 22px;
+                    }
+                    // @include md-maxHeight {
+                    //     max-width: 70%;
+                    // }
+
+                    > div {
+                        display: flex;
+                        align-items: center;
+                        border-radius: 35.8536px;
+                        gap: 16px;
+                        @include xxl-minHeight {
+                            gap: 18px;
+                        }
+                        h3 {
+                            color: var(--discover-brick-4, #2b1911);
+                            font-size: 16px;
+                            font-family: var(--font-patron);
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 21px;
+                            letter-spacing: 0.032px;
+                            @include xxl-minHeight {
+                                color: var(--learn-purple-4, #1d1b21);
+                                font-size: 24px;
+                                line-height: 1;
+                                letter-spacing: 0.062px;
+                            }
+                        }
+                        p {
+                            color: var(--discover-brick-4, #2b1911);
+                            font-size: 13.341px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 19.178px; /* 143.75% */
+                            letter-spacing: -0.013px;
+                            opacity: 0.7;
+                            margin-top: 6px;
+                            width: 90%;
+                        }
+
+                        > div:first-of-type {
+                            color: var(--primary-accent-4, #292f1e);
+                            text-align: center;
+                            font-family: var(--font-quintus);
+                            font-size: 21.679px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 1;
+                            padding: 8px 14px;
+                            border-radius: 50%;
+                            background-color: var(--primary-accent-1);
+                            margin-top: 3px;
+                        }
+                    }
+                }
+
+                .buttonContainer {
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: auto;
+                    width: 100%;
+
+                    > button {
+                        width: 45% !important;
+                        height: 55px;
+                        @include md {
+                            width: 194px;
+                        }
+                        @include md-maxHeight {
+                            height: 50px;
+                        }
+                    }
+
+                    @include md {
+                        justify-content: flex-start;
+                    }
+                    @include md-maxHeight {
+                        justify-content: flex-start;
+                    }
+                    @include xl {
+                        display: flex;
+                    }
+                }
+            }
+
+            .rightFold {
+                background-image: url("../../assets/svgs/cd-mesh.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 31.3775px;
+                position: relative;
+                flex: 1 1 auto;
+                height: 100%;
+                max-height: 350px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-self: flex-start;
+                max-width: 690px;
+                transform: translateY(-20px);
+                min-height: 250px;
+
+                @include md {
+                    min-height: 300px;
+                }
+
+                @media (min-width: 560px) {
+                    max-height: 425px;
+                }
+                @include sm {
+                    max-height: 500px;
+                }
+
+                @include md {
+                    margin-top: auto;
+                    align-self: center;
+                    flex: 1;
+                }
+
+                @include xxl-minHeight {
+                    margin-top: 50px;
+                    width: 650px;
+                    height: 500px;
+                }
+
+                .card {
+                    transform: rotate(9deg);
+                    background: #ffffff;
+                    border: 0.869183px solid #dfb19d;
+                    box-shadow: -19.8671px 24.8338px 0px rgba(0, 0, 0, 0.2);
+                    border-radius: 18px;
+                    position: absolute;
+                    top: -85px;
+                    left: 37%;
+                    overflow: hidden;
+                    width: 70%;
+                    height: 100%;
+                    padding: 20px;
+                    left: 25%;
+                    @include md {
+                        width: 50%;
+                        left: 42%;
+                        top: -35%;
+                    }
+                    @include lg {
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 56px 28px 0;
+                        left: unset;
+                        right: 45px;
+                        top: -60px;
+                        max-height: 443.6px;
+                        max-width: 336px;
+                        min-height: 400px;
+                    }
+
+                    > h3 {
+                        font-family: var(--font-patron);
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 27px;
+                        color: var(--learn-purple-4, #1d1b21);
+                        font-size: 20px;
+                        letter-spacing: 0.04px;
+
+                        @include md {
+                            font-size: 26px;
+                            line-height: 33px;
+                        }
+                        @include xxl-minHeight {
+                            font-size: 31px;
+                            line-height: 38px;
+                            letter-spacing: 0.062px;
+                        }
+                    }
+                    > p {
+                        margin-top: 10px;
+                        margin-bottom: 14.56px;
+                        font-family: var(--font-inter);
+                        font-style: normal;
+                        font-weight: 500;
+                        letter-spacing: -0.001em;
+                        color: var(--learn-purple-3);
+                        font-size: 14px;
+                        line-height: 23px;
+                        @include xxl-minHeight {
+                            font-size: 16px;
+                            line-height: 23px;
+                        }
+                    }
+                    .freeberryClipped {
+                        transform: rotate(-9deg);
+                        width: 84%;
+                        height: auto;
+                        position: absolute;
+                        right: -10px;
+                        bottom: -12px;
+                        @include sm {
+                            width: 80%;
+                        }
+                        @include md {
+                            bottom: -18px;
+                        }
+
+                        @include xl {
+                            height: auto;
+                        }
+                    }
+                }
+                .mobileButton {
+                    position: absolute;
+                    bottom: 20px;
+                    width: 80% !important;
+                    @include xl {
+                        display: none;
+                    }
+                }
+                .coursePreview {
+                    position: absolute;
+                    left: 20px;
+                    width: 66%;
+                    bottom: 20px;
+
+                    @include md {
+                        bottom: -50px;
+                        left: -80px;
+                    }
+
+                    @include xxl-minHeight {
+                        bottom: -50px;
+                        left: -100px;
+                    }
+                    @include md-maxHeight {
+                        bottom: -10px;
+                        left: -80px;
+                    }
+
+                    @include xl {
+                        border: none;
+                        bottom: -30px;
+                    }
+
+                    @include xl-minHeight {
+                        bottom: -40px;
+                        left: -100px;
+                    }
+
+                    .curledArrow {
+                        position: absolute;
+                        z-index: 1;
+                        top: -90px;
+                        transform: rotate(-10deg);
+                        left: 5px;
+                        display: none;
+
+                        @include lg {
+                            transform: rotate(2deg);
+                            top: -90px;
+                            left: 35%;
+                            display: flex;
+                        }
+                        @include xxl-minHeight {
+                            left: 50%;
+                            top: -100px;
+                        }
+                        @include md-maxHeight {
+                            left: 33%;
+                            top: -90px;
+                        }
+                    }
+
+                    .courseCard {
+                        border-radius: 9.047px;
+                        background: rgba(255, 255, 255, 0.7);
+                        backdrop-filter: blur(10.856725692749023px);
+                        padding: 15px 25px;
+                        width: 90%;
+                        display: none;
+                        @include md {
+                            width: 100%;
+                        }
+
+                        @include xl {
+                            display: flex;
+                            gap: 8px;
+                            padding: 8.14px 12.66px 12.67px 18.09px;
+                        }
+                        @media (max-height: 770px) {
+                            width: 120%;
+                        }
+                        > div {
+                            // background-color: red;
+                            .certified {
+                                display: flex;
+                                width: 100%;
+                                align-items: center;
+                                justify-content: flex-start;
+                                gap: 2px;
+                                > img {
+                                    width: 16px;
+                                    height: 16px;
+                                    object-fit: contain;
+                                }
+
+                                > p {
+                                    color: var(--discover-brick-3, #b7704e);
+                                    font-size: 14.476px;
+                                    font-family: var(--font-inter);
+                                    font-weight: 500;
+                                    line-height: 20.809px;
+                                    letter-spacing: -0.014px;
+                                }
+                            }
+                            .certificateName {
+                                color: var(
+                                    --primary-brand-neutral-dark-midnight-1,
+                                    #161c20
+                                );
+                                font-size: 18.095px;
+                                font-family: var(--font-patron);
+                                font-weight: 700;
+                                line-height: 24.428px;
+                                letter-spacing: 0.036px;
+                                margin-top: 8px;
+                            }
+                        }
+                        > button {
+                            background: none;
+                            margin: 0px;
+                            padding: 0px;
+                            background-color: transparent;
+                            border: none;
+                            cursor: zoom-in;
+                            width: 102.234px;
+                            height: 80.521px;
+                            align-self: center;
+                            .certificateImage {
+                                width: 102.234px;
+                                height: 80.521px;
+                                margin-top: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

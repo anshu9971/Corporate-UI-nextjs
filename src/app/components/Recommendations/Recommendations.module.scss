@@ -1,0 +1,204 @@
+@import "src/app/styles/mixins";
+
+.container {
+    background-image: url("../../assets/images/courseRecoIllus.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 16px;
+    border-radius: 20px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 32px);
+    align-items: center;
+
+    @include lg {
+        flex-direction: row;
+        margin: 20px;
+        margin-bottom: 0;
+        padding: 49px 50px 49px 73px;
+        width: unset;
+        gap: 12px;
+        padding-right: 0;
+        width: calc(100% - 32px);
+    }
+
+    @include hdplus {
+        padding: 61px 63px 61px 92px;
+    }
+
+    .back {
+        //display: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        @include lg {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff00;
+            border: none;
+            margin-bottom: 60px;
+        }
+
+        > img {
+            width: 25px;
+            height: 25px;
+            @include md {
+                width: initial;
+                height: initial;
+            }
+        }
+
+        > span {
+            font-family: var(--font-inter);
+            font-style: normal;
+            color: var(--learn-purple-2);
+            text-align: center;
+            letter-spacing: -0.01em;
+            margin-left: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            @include md {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 38px;
+            }
+        }
+    }
+
+    .left {
+        .pills {
+            display: flex;
+            margin-bottom: 12px;
+            > div {
+                padding: 4px 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                > span {
+                    display: inline-block;
+                    line-height: 17px;
+                    text-align: center;
+                }
+            }
+        }
+
+        h1 {
+            color: var(--learn-purple-2);
+            margin-bottom: 20px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 32px;
+            letter-spacing: 0.003em;
+            @include lg {
+                max-width: 671px;
+                font-size: 36px;
+                line-height: 46px;
+                letter-spacing: 0.002em;
+                margin-bottom: 25px;
+            }
+
+            @include hdplus {
+                font-size: 39px;
+                line-height: 50px;
+            }
+        }
+
+        p {
+            color: var(--learn-purple-2);
+            font-style: normal;
+            margin-bottom: 24px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.001em;
+            opacity: 0.7 !important;
+            @include lg {
+                font-size: 16px;
+                line-height: 27px;
+                letter-spacing: -0.01em;
+                margin-bottom: 58px;
+            }
+
+            position: relative;
+            > .arrow {
+                position: absolute;
+                bottom: -50px;
+                right: 0;
+                display: none;
+
+                @include lg {
+                    display: block;
+                }
+            }
+        }
+
+        .pinCodeContainer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+
+            > p {
+                margin-bottom: 0px;
+                cursor: pointer;
+                color: #fff !important;
+                font-size: 600;
+
+                &:hover {
+                    text-decoration: underline !important;
+                }
+            }
+
+            .pinText {
+                margin-bottom: 0px;
+                color: #fff !important;
+            }
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .viewAll {
+            display: none;
+            @include lg {
+                display: initial;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow: auto;
+
+        > div {
+            @include lg {
+                height: 380px;
+            }
+        }
+
+        & > div {
+            border-radius: 12px;
+        }
+
+        @include lg {
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @include xxl {
+            gap: 16px;
+        }
+    }
+}

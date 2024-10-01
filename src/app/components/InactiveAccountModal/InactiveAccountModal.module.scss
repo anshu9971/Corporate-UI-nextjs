@@ -1,0 +1,205 @@
+@import "src/app/styles/mixins";
+
+.spaceForKeyboard {
+    :global(.mantine-Modal-inner) {
+        @media (max-width: 600px) {
+            .loginContent {
+                padding-bottom: 90%;
+                overflow: visible;
+            }
+        }
+    }
+}
+
+.loginModal {
+    .loginContent {
+        position: relative;
+        height: 100%;
+        overflow: visible;
+        background: var(--learn-purple-2);
+        border-radius: 16px 16px 0 0;
+        @include md {
+            overflow: hidden;
+            border-radius: 30px;
+            padding: 25px 30px;
+        }
+        @include lg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            padding: 0 16px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            @include md {
+                justify-content: flex-end;
+            }
+
+            .icon {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            justify-content: center;
+            align-items: center;
+            max-height: 100%;
+            gap: 14px;
+            @include md {
+                overflow-y: hidden;
+                justify-content: space-evenly;
+                height: 100%;
+            }
+
+            > h3 {
+                margin-top: 30px;
+                color: var(--learn-purple-4);
+                text-align: center;
+                font-family: var(--font-patron);
+                font-style: normal;
+                font-weight: 700;
+                letter-spacing: 0.078px;
+                width: 80%;
+                font-size: 23px;
+                line-height: 32px;
+
+                @include md {
+                    font-size: 32px;
+                    line-height: 42px;
+                    width: 70%;
+                }
+
+                @include xxl {
+                    font-size: 39px;
+                    line-height: 50px;
+                    width: 70%;
+                }
+            }
+
+            > p {
+                color: var(--learn-purple-1);
+                font-family: var(--font-inter);
+                font-weight: 500;
+                letter-spacing: -0.016px;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                font-style: normal;
+                padding-bottom: 12px;
+                @include md {
+                    font-size: 16px;
+                    line-height: 23px;
+                    width: 60%;
+                    margin-top: 20px;
+                }
+            }
+
+            .cardContainer {
+                display: flex;
+                align-items: center;
+                padding-top: 14px;
+                flex-direction: column;
+                overflow-y: scroll;
+                max-height: 100%;
+                min-height: fit-content;
+                @include md {
+                    flex-direction: row;
+                    justify-content: center;
+                    max-height: max-content;
+                    flex-shrink: 0;
+                    overflow: visible;
+                    align-items: stretch;
+                }
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 16px;
+                    background: var(--neutral-white);
+                    flex-basis: 40%;
+                    width: auto;
+                    margin: 16px;
+                    padding: 14px;
+                    margin-top: 0px;
+                    position: relative;
+                    min-height: fit-content;
+                    @include md {
+                        margin-right: 20px;
+                    }
+                    .tag {
+                        color: var(--learn-purple-4);
+                        font-family: var(--font-inter);
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 20px;
+                        letter-spacing: -0.014px;
+                        border-radius: 35.854px;
+                        background: var(--learn-purple-2);
+                        padding: 9px 11px;
+                        width: fit-content;
+                    }
+
+                    .icon {
+                        overflow: hidden;
+                        position: absolute;
+                        right: 14px;
+                        @include md {
+                            top: 19px;
+                        }
+                    }
+
+                    > h4 {
+                        color: var(--learn-purple-4);
+                        font-family: var(--font-patron);
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 27px;
+                        letter-spacing: 0.04px;
+                        max-width: 50%;
+                        margin-top: 14px;
+                        @include md {
+                            margin-top: 20px;
+                        }
+                    }
+
+                    > p {
+                        color: var(--learn-purple-3, #50495a);
+                        font-family: var(--font-inter);
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 23px;
+                        letter-spacing: -0.016px;
+                        margin-top: 14px;
+                        margin-bottom: 16px;
+                        @include md {
+                            margin-top: 20px;
+                            margin-bottom: 30px;
+                        }
+                    }
+
+                    .btn {
+                        width: fit-content;
+                        padding: 0 25px;
+                        @include md {
+                            margin-top: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

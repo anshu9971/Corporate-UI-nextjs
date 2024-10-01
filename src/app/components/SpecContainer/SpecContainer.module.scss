@@ -1,0 +1,100 @@
+@import "../../styles/mixins";
+
+.learningContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 36px 16px 28px 16px;
+    gap: 10px;
+    row-gap: 0;
+
+    // flex-direction: column; //
+
+    @include lg {
+        row-gap: initial;
+        padding-left: 0;
+        padding-right: 0;
+        flex-wrap: initial;
+        // background-color: var(--neutral-white);
+        padding: 52px 460px 48px 50px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 13px;
+        flex-direction: column;
+    }
+
+    @include xxl {
+        padding: 67px 460px 54px 161px;
+        gap: 21px;
+    }
+
+    img {
+        width: 19px;
+        height: 18px;
+
+        @include lg {
+            width: 30px;
+            height: 41px;
+            // width: initial;
+            // height: initial;
+        }
+    }
+
+    .head {
+        color: var(--learn-purple-4, #1d1b21);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 27px;
+        @include lg {
+            font-size: 31px;
+            line-height: 38px;
+            margin-bottom: 25px;
+        }
+
+        @include xxl {
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 38px;
+            margin-bottom: 36px;
+        }
+
+        /* or 123% */
+    }
+}
+
+.borderBtm {
+    border-bottom: 1px solid #e4e2e7;
+
+    @include lg {
+        border-bottom: none;
+    }
+}
+
+.noHorizontalPad {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include lg {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include xxl {
+        padding-left: 161px;
+        padding-right: 161px;
+    }
+}
+
+.horizontalPad {
+    margin-left: 16px;
+
+    @include lg {
+        margin-left: 0;
+    }
+
+    @include xxl {
+        margin-left: 0;
+    }
+}

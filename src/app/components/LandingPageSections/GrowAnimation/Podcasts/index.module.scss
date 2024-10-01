@@ -1,0 +1,213 @@
+@import "../../../../styles/mixins";
+
+.podcastGrid {
+    margin-bottom: 10px;
+    overflow-x: auto;
+    display: flex;
+    flex: 2;
+
+    @include hideScrollbar;
+
+    @include md {
+        flex: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 12.5px;
+        row-gap: 25px;
+        height: 70%;
+        overflow-x: unset;
+        padding-left: 0px !important;
+    }
+    @include maxHeightWithDpr(1) {
+        transform: scale(0.8);
+        transform-origin: right;
+    }
+    @include maxHeightWithDpr(1.5) {
+        row-gap: 10px;
+        column-gap: 10px;
+        margin-bottom: 0;
+        transform: scale(1);
+        transform-origin: right;
+    }
+    .staticCard {
+        display: block;
+        margin-right: 15px;
+        min-width: 200px;
+        height: 90%;
+        border-radius: 14px;
+        background-color: transparent;
+
+        &:nth-child(2) {
+            .podcastCard {
+                > h4 {
+                    color: var(--neutral-white);
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .podcastCard {
+                > h4 {
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0px;
+
+            .podcastCard {
+                background-position: top right;
+
+                h4 {
+                    color: var(--primary-light-2);
+                    margin-top: 20px;
+                    @include md {
+                        margin-top: 30px;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        margin-top: 0px;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            > div {
+                filter: drop-shadow(-12px 12px 0px rgba(0, 0, 0, 0.2));
+                transform: rotate(-4deg);
+            }
+        }
+
+        @include md {
+            height: 100%;
+            min-width: unset;
+            min-height: unset;
+            margin-right: 0;
+        }
+
+        .podcastCard {
+            width: 100%;
+            height: 100%;
+            box-shadow: -5.5778703689575195px 12.563199043273926px 0px 0px
+                rgba(0, 0, 0, 0.25);
+            background-color: var(--neutral-white);
+            border-radius: 14px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.2s all ease-in-out;
+            background-size: cover;
+            background-position: left bottom;
+
+            @include md {
+                box-shadow: none;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                height: unset;
+            }
+
+            > h4 {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+                margin-top: 50px;
+                // margin-bottom: 10px;
+                color: var(--primary-accent-4);
+
+                @include md {
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-top: 60px;
+                    margin-bottom: 10px;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    font-size: 14px;
+                    line-height: 18px;
+                    margin-top: 30px;
+                }
+            }
+
+            .infoWithPlay {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 34px;
+                @include md {
+                    min-height: 38px;
+                }
+                .creator {
+                    display: flex;
+                    align-items: center;
+
+                    > h4 {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 22px;
+                        letter-spacing: -0.001em;
+                        color: var(--primary-accent-4);
+
+                        @include maxHeightWithDpr(1.5) {
+                            font-size: 12px;
+                            line-height: 20px;
+                        }
+                    }
+
+                    > img {
+                        margin-right: 6px;
+                        width: 25px;
+                        height: auto;
+                        border-radius: 50%;
+                    }
+                }
+
+                .playBtn {
+                    padding: 4px;
+                    background-color: #1c2014;
+                    border-radius: 50%;
+
+                    @include maxHeightWithDpr(1.5) {
+                        padding: 2px;
+                    }
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+
+                        @include md {
+                            width: unset;
+                            height: unset;
+                        }
+
+                        @include maxHeightWithDpr(1.5) {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+            .comingSoon {
+                background-color: var(--primary-accent-1);
+                border-radius: 34px;
+                padding: 4px 10px;
+                color: var(--primary-dark-1);
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+        > div {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            @include md {
+                background-position: center;
+            }
+        }
+    }
+}

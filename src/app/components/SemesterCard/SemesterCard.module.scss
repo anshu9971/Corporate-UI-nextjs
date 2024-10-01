@@ -1,0 +1,186 @@
+@import "styles/_mixins.scss";
+
+.semesterCardContainer {
+    position: relative;
+    max-width: 95%;
+    padding: 16px 12px 30px 16px;
+    background: var(--neutral-white);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &::before {
+        display: none;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 2px;
+        left: -24px;
+        background-color: #e1d7c9;
+        border-radius: 20px;
+        top: 0;
+        width: 2px;
+        content: " ";
+
+        @include lg {
+            display: unset;
+            height: calc(100% + 26px);
+            height: calc(100% + 26px);
+            left: -54px;
+        }
+
+        @include xxl {
+            height: calc(100% + 36px);
+        }
+    }
+
+    &:last-child {
+        @include lg {
+            margin-bottom: 0;
+        }
+        ::before {
+            height: 100%;
+        }
+    }
+
+    @include lg {
+        gap: 16px;
+        max-width: 700px;
+        margin-top: initial;
+        margin-left: 55px;
+        margin-bottom: 26px;
+        padding: 33px 38px;
+    }
+
+    @include xxl {
+        margin-bottom: 36px;
+    }
+
+    .pointer {
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        top: 50%;
+        left: -32px;
+        display: none;
+        background-color: #f5f4f6;
+        @include lg {
+            display: flex;
+            height: 28px;
+            width: 28px;
+            left: -67px;
+            z-index: 1;
+            left: -67px;
+        }
+
+        .point {
+            background-color: var(--learn-purple-1);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            @include lg {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    .title {
+        display: none;
+        color: var(--learn-purple-4);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 21px;
+        @include lg {
+            font-size: 25px;
+            line-height: 32px;
+        }
+    }
+
+    .content {
+        display: flex;
+        gap: 8px;
+        width: 72%;
+        @include lg {
+            width: unset;
+            align-items: center;
+        }
+
+        .point {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-accent-1);
+            margin-top: 5px;
+            @include lg {
+                margin-top: initial;
+                margin-right: 7px;
+            }
+        }
+
+        .courseCount {
+            font-weight: 500;
+            color: var(--learn-purple-3);
+            font-size: 14px;
+            line-height: 20px;
+            width: 115px;
+            @include lg {
+                width: 81px;
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+
+        .courseName {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--learn-purple-1);
+            line-height: 20px;
+            width: 88%;
+            @include lg {
+                width: initial;
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    .overlayt {
+        position: absolute;
+        top: 0;
+        height: 50px;
+        width: 25px;
+        left: -35px;
+        background-color: #f4f5f6;
+        //border: 1px solid red;
+        box-shadow: 0 0 20px 10px #f4f5f6;
+
+        @include lg {
+            left: -54px;
+            box-shadow: 0 0 20px 20px rgb(248, 245, 242);
+            width: 2px;
+        }
+    }
+    .overlayp {
+        position: absolute;
+        bottom: -40px;
+        //border: 1px solid red;
+        width: 25px;
+        left: -35px;
+        height: 70px;
+        background-color: #f4f5f6;
+        box-shadow: 0 0 20px 10px #f4f5f6;
+
+        @include lg {
+            left: -54px;
+            box-shadow: 0 0 20px 20px rgb(248, 245, 242);
+            width: 2px;
+        }
+    }
+}

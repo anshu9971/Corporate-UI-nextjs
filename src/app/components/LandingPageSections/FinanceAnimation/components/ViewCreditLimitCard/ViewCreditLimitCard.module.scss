@@ -1,0 +1,301 @@
+@import "src/app/styles/mixins";
+
+.card {
+    margin-top: 0px;
+    // padding: 21px 19px;
+    // background: #ffffff;
+    border-radius: 16px;
+    width: fit-content;
+    min-width: 350px;
+
+    @include mobile {
+        min-width: 60%;
+    }
+
+    @include maxHeightWithDpr(1.5) {
+        min-width: 250px;
+    }
+
+    &:nth-of-type(3) {
+        margin-top: 20px;
+    }
+
+    .creditLimitTextWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > div {
+            flex: 1;
+        }
+
+        .textHeading {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: -0.08px;
+            margin-bottom: 20px;
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 14px;
+            }
+
+            @include mobile {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+        }
+
+        .creditLimitTitle {
+            font-family: var(--font-inter);
+            color: var(--Primary-Brand-Neutral-Dark-Midnight-1, #161c20);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 27px; /* 135% */
+            letter-spacing: 0.04px;
+            opacity: 0.8;
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 16px;
+            }
+
+            @include mobile {
+                font-size: 16px;
+                line-height: 16px;
+                width: 100%;
+            }
+        }
+
+        .creditLimit {
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 56px;
+            letter-spacing: 0.144px;
+            margin-top: 6px;
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 24px;
+                line-height: 26px;
+            }
+
+            @include mobile {
+                font-size: 24px;
+                line-height: 26px;
+            }
+        }
+
+        .walletImg {
+            background-color: #cbfb62;
+            border-radius: 70px;
+            padding: 5px;
+            height: 80px;
+            width: 80px;
+            transform: rotate(35deg);
+
+            @include maxHeightWithDpr(1.5) {
+                height: 60px;
+                width: 60px;
+            }
+
+            @include mobile {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+    > p {
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -0.005em;
+        color: var(--primary-dark-3);
+    }
+
+    .creditLimitWrap {
+        padding: 20px;
+
+        @include md {
+            padding: 33px;
+        }
+    }
+
+    > div {
+        &:nth-of-type(1) {
+            background: #eff5fa;
+            border-radius: 12px;
+            padding: 17px 20px 17px 17px;
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                padding: 10px;
+            }
+
+            > img {
+                width: 54px;
+                height: 54px;
+            }
+
+            > div {
+                margin-left: 10px;
+                width: 100%;
+
+                > p {
+                    font-family: var(--font-patron);
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 17px;
+                    line-height: 24px;
+                    letter-spacing: 0.002em;
+                    color: var(--discover-brick-4);
+                    max-width: 80%;
+                }
+
+                .cta {
+                    height: 32px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            margin-top: 14px;
+            overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+            }
+
+            .cardTopText {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding-bottom: 60px;
+
+                .noWrap {
+                    white-space: nowrap;
+                }
+
+                > div {
+                    > span {
+                        color: #ffffff;
+                        display: block;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 20px; /* 166.667% */
+                        letter-spacing: -0.012px;
+                        text-transform: uppercase;
+                    }
+
+                    > p {
+                        font-family: var(--font-patron);
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 31px;
+                        line-height: 42px;
+                        letter-spacing: 0.097px;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .icon {
+                top: 10px;
+                left: unset;
+                right: 20px;
+                width: 70px;
+                height: 70px;
+            }
+
+            > h1 {
+                position: relative;
+                font-family: var(--font-patron);
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 27px;
+                letter-spacing: 0.04px;
+                color: #ffffff;
+            }
+
+            > p {
+                position: relative;
+                font-family: var(--font-patron);
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 27px;
+                letter-spacing: 0.04px;
+                color: #ffffff;
+            }
+
+            .activatedCreditLimitCount {
+                color: var(--Neutral-White, #fff);
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 41.333px; /* 128% */
+                letter-spacing: 0.097px;
+            }
+
+            .activatedCreditLimitText {
+                color: var(--Neutral-White, #fff);
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 34.875px; /* 135% */
+                letter-spacing: 0.052px;
+            }
+
+            .marketPlaceContainer {
+                margin-top: 30px;
+                max-width: 90%;
+                overflow-x: auto;
+                display: flex;
+                align-items: center;
+                overflow-y: hidden;
+                padding: 0 10px;
+                @include hideScrollbar();
+
+                > div {
+                    margin-right: 8px;
+
+                    > img {
+                        border-radius: 12px;
+                        width: 150px;
+                        height: 150px;
+                        object-fit: contain;
+                    }
+
+                    > p {
+                        font-family: var(--font-patron);
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 27px;
+                        letter-spacing: 0.002em;
+                        color: var(--learn-purple-4);
+                    }
+                }
+            }
+        }
+    }
+}

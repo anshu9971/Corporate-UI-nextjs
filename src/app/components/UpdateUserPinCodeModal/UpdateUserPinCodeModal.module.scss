@@ -1,0 +1,123 @@
+@import "src/app/styles/mixins";
+
+.userPincodeModal {
+    @include md {
+        :global(.mantine-Modal-content) {
+            border-radius: 22px;
+            height: fit-content !important;
+            max-width: fit-content !important;
+        }
+    }
+
+    @media only screen and (max-width: 780px) {
+        :global(.mantine-Modal-inner) {
+            padding-left: 5vw;
+            padding-right: 5vw;
+            padding-bottom: 5vh;
+            align-items: center;
+        }
+
+        :global(.mantine-Modal-content) {
+            border-radius: 22px !important;
+            height: fit-content !important;
+            max-width: 250px !important;
+            width: fit-content !important;
+            height: fit-content;
+        }
+    }
+
+    .pincodeModalContent {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        padding: 50px 30px;
+        position: relative;
+        gap: 20px;
+
+        @media only screen and (max-width: 780px) {
+            border-radius: 22px;
+        }
+
+        .closeIcon {
+            position: absolute;
+            cursor: pointer;
+            right: 20px;
+            top: 20px;
+        }
+
+        > h2 {
+            color: var(--learn-purple-4, #1d1b21);
+            font-family: var(--font-patron);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: 0.075px;
+            text-align: center;
+            @include md {
+                font-size: 25px;
+            }
+        }
+
+        .pinInput {
+            border-radius: 12px;
+            background: #fefefe;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+            border: 1.5px solid var(--primary-dark-3);
+            padding: 0px 10px;
+            width: 100%;
+            font-size: 16px;
+
+            * {
+                border: none;
+                outline: none;
+            }
+            max-width: 300px;
+            &.error {
+                border: 1.5px solid var(--ui-colors-alert-red, #e15555);
+            }
+            &.success {
+                border: 1.5px solid #cbff59;
+            }
+        }
+
+        .location {
+            color: #cbff59;
+            text-align: center;
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 23px;
+            letter-spacing: -0.016px;
+        }
+
+        .locationContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: -22px;
+
+            .locationText {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                text-align: center;
+                max-width: max-content;
+                width: fit-content;
+            }
+        }
+        .button {
+            height: 42px;
+            width: 130px;
+        }
+    }
+}

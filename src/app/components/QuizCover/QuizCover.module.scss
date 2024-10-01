@@ -1,0 +1,261 @@
+@import "src/app/styles/mixins";
+
+.quizCoverWrapper {
+    z-index: 999;
+    width: 100dvw;
+    min-height: 100dvh;
+    background-color: #f9f3f0;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    overflow-y: auto;
+}
+
+.closeIcon {
+    position: fixed;
+    top: 8px;
+    right: calc(50% - 15px);
+    z-index: 1000;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+
+    @include md {
+        top: 68px;
+        right: 46px;
+    }
+
+    @media screen and (max-height: 600px) {
+        top: 30px;
+    }
+}
+
+.quizContainer {
+    padding: 100px 90px 40px 90px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+
+    @include mobile {
+        align-items: center;
+        padding: 60px 10px 30px 10px;
+        position: absolute;
+    }
+
+    @media screen and (max-height: 600px) {
+        padding: 60px 60px 30px 60px;
+    }
+}
+
+.quizHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    button {
+        padding: 0 34px;
+        z-index: 99999;
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
+
+.heading {
+    > h1 {
+        color: var(--discover-brick-4, #2b1911);
+        // font-family: var(--font-patron);
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        @include mobile {
+            font-size: 32px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        @media screen and (max-height: 600px) {
+            font-size: 52px;
+        }
+    }
+
+    > p {
+        color: var(--discover-brick-4, #2b1911);
+        // font-family: var(--font-patron);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.6px;
+        max-width: 560px;
+
+        @include mobile {
+            font-size: 16px;
+            text-align: center;
+
+            @include mobile {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.cta {
+    margin-top: 32px;
+}
+
+.timeContainer {
+    display: flex;
+    padding: 22px 28px 23px 29px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    width: fit-content;
+    border-radius: 12px;
+    background: #e1d7c8;
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    @include mobile {
+        margin: 24px auto;
+    }
+
+    @media screen and (max-height: 600px) {
+        padding: 16px;
+        margin-top: 20px;
+        margin-bottom: 26px;
+    }
+
+    > div {
+        p:nth-child(1) {
+            color: #000;
+            // font-family: var(--font-patron);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        p:nth-child(2) {
+            color: #000;
+            //font-family: var(--font-patron);
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        span {
+            color: #6c6665;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-left: 4px;
+        }
+    }
+}
+
+.meshBackground {
+    position: relative;
+    height: 100%;
+    display: block;
+
+    @include mobile {
+        display: none;
+    }
+
+    .keyboard {
+        position: absolute;
+        left: 100px;
+        top: -50px;
+
+        @media screen and (max-height: 600px) {
+            left: 60px;
+            height: 280px;
+            width: fit-content;
+        }
+    }
+
+    .backgroundImg {
+        position: relative;
+
+        @media screen and (max-height: 600px) {
+            height: 280px;
+            width: fit-content;
+        }
+    }
+}
+
+.content {
+    > h1 {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -0.032px;
+
+        @media screen and (max-height: 600px) {
+            font-size: 26px;
+            padding: 15px 0;
+        }
+    }
+
+    .traitsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    .traitBox {
+        border-radius: 12px;
+        background: #e1d6c7;
+        padding: 23px 30px;
+        // font-family: var(--font-patron);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 27px; /* 135% */
+        letter-spacing: 0.04px;
+
+        @include mobile {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    background-image: linear-gradient(
+        180deg,
+        rgba(227, 197, 156, 0) 11.5%,
+        #e3c59c 95%,
+        #e3c59c 100%
+    );
+
+    @include mobile {
+        display: none;
+    }
+    //background-image: linear-gradient(red, yellow);
+}

@@ -1,0 +1,357 @@
+@import "../../../styles/mixins";
+
+.GrowAnimation {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    @include md {
+        overflow: unset;
+    }
+
+    .folder {
+        padding: 20px 0;
+        border-radius: 20px 20px 0px 0px;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+
+        &:not(:first-child) {
+            > .podcastGrid {
+                display: none;
+            }
+        }
+
+        @include md {
+            padding: 24px 20px;
+            flex-direction: row;
+            border-radius: 40px;
+
+            & > div:nth-child(2) {
+                order: 2;
+                flex: 3;
+            }
+
+            &:not(:first-child) {
+                > .podcastGrid {
+                    display: grid;
+                }
+            }
+        }
+
+        @include maxHeightWithDpr(1.5) {
+            border-radius: 30px;
+            padding: 20px 20px;
+        }
+
+        & > div {
+            padding: 0 20px;
+
+            &:nth-child(2) {
+                flex: 2;
+            }
+
+            &:last-of-type {
+                flex: 1;
+                order: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+
+        .tab {
+            display: none;
+
+            @include md {
+                display: block;
+                padding: 8px 40px 5px;
+                position: absolute;
+                bottom: 99%;
+                background-color: inherit;
+                color: var(--primary-accent-4);
+                border-radius: 30px 30px 0 0;
+                left: 10%;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: -0.006em;
+                color: #1c2014;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    right: 96.5%;
+                    width: 20px;
+                    height: 76%;
+                    background-color: inherit;
+                    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 96.5%;
+                    width: 20px;
+                    height: 76%;
+                    background-color: inherit;
+                    clip-path: polygon(0% 0, 0% 100%, 100% 100%);
+                }
+
+                & > .circle {
+                    background: var(--primary-accent-1);
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: 6px;
+                }
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 14px;
+                line-height: 20px;
+                padding: 6px 30px 3px;
+                border-radius: 20px 20px 0 0;
+
+                &::before {
+                    right: 97%;
+                    height: 78%;
+                }
+                &::after {
+                    left: 97%;
+                    height: 78%;
+                }
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 12px;
+
+            @include md {
+                margin-bottom: 24px;
+            }
+
+            @include maxHeightWithDpr(1.25) {
+                margin-bottom: 20px;
+            }
+
+            .heading {
+                flex: 1;
+
+                svg {
+                    width: 53px;
+
+                    @include md {
+                        width: 84px;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        width: 68px;
+                    }
+                }
+                & > h2 {
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 40px;
+                    letter-spacing: 0.003em;
+                    color: var(--primary-accent-4);
+                    margin-top: -18px;
+                    margin-left: 20px;
+                    font-family: var(--font-patron);
+
+                    @include md {
+                        font-size: 48px;
+                        line-height: 56px;
+                        margin-left: 30px;
+                    }
+
+                    @include maxHeightWithDpr(1.25) {
+                        font-size: 40px;
+                        line-height: 52px;
+                        margin-left: 34px;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        font-size: 34px;
+                        line-height: 40px;
+                        margin-left: 28px;
+                    }
+                }
+            }
+
+            .btn {
+                flex: 1;
+                margin-left: 40px;
+                min-width: fit-content !important;
+                @include md {
+                    position: absolute;
+                    bottom: 40px;
+                    right: 40px;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    bottom: 20px;
+                }
+
+                > div > span {
+                    overflow: visible;
+                }
+                &:hover {
+                    transform: rotate(4deg);
+                }
+            }
+        }
+
+        .description {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.001em;
+            color: #1d2032;
+            opacity: 0.5;
+
+            @include md {
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+            @include maxHeightWithDpr(1.5) {
+                font-size: 12px;
+                line-height: 17px;
+                width: 80%;
+            }
+        }
+
+        &.learners {
+            background-color: var(--primary-accent-4);
+            top: 0;
+
+            .tab {
+                color: var(--primary-light-1);
+            }
+
+            .infoWrapper {
+                @include md {
+                    padding-bottom: 15%;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    // padding: 0 20px 15% 20px;
+                }
+
+                .heading {
+                    & > h2 {
+                        color: var(--primary-accent-2);
+                    }
+                }
+
+                .description {
+                    color: var(--primary-accent-2);
+                }
+
+                .btn {
+                    border-radius: 1000px;
+                    @include md {
+                        position: absolute;
+                        bottom: 40px;
+                        left: 0;
+                        right: unset;
+                        height: unset !important;
+                        padding: 20px 40px;
+                        background-color: var(--primary-accent-1);
+                        color: var(--primary-dark-1);
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 20px;
+                        letter-spacing: -0.006em;
+                    }
+
+                    @include maxHeightWithDpr(1.5) {
+                        font-size: 16px;
+                        padding: 12px 30px;
+                        min-width: 21% !important;
+                    }
+                }
+            }
+        }
+        &.voices {
+            background-color: var(--primary-accent-0);
+            // top: calc(41px * 2 - 40px);
+            top: 150%;
+
+            @include md {
+                height: calc(100% - 41px);
+            }
+
+            .tab {
+                left: 20%;
+            }
+
+            .description {
+                @include md {
+                    width: 240%;
+                }
+
+                @include maxHeightWithDpr(1.25) {
+                    width: 170%;
+                }
+
+                @include maxHeightWithDpr(1.5) {
+                    width: 160%;
+                }
+            }
+            .infoWrapper {
+                @include md {
+                    padding-right: 0px;
+                }
+            }
+        }
+        &.insights {
+            background-color: var(--primary-accent-3);
+            // top: calc(41px * 3 - 40px);
+            top: 150%;
+
+            @include md {
+                height: calc(100% - 41px * 2);
+                flex-direction: column;
+
+                > div:last-of-type {
+                    order: 3;
+                    max-width: 55%;
+                }
+            }
+
+            .tab {
+                left: 30%;
+            }
+        }
+    }
+
+    .iframe {
+        width: 100vw;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.761);
+        z-index: 100;
+    }
+}
