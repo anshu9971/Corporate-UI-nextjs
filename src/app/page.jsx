@@ -1,15 +1,23 @@
 "use client";
 
+import LoanProcess from "components/LandingPageSections/applyLoan";
+import ExclusiveBenefits from "components/LandingPageSections/benefits";
+import DownloadApp from "components/LandingPageSections/downloadApp";
+import Hero from "components/LandingPageSections/Hero";
+import NewsRoom from "components/LandingPageSections/newsRoom";
+import PartneredBenefits from "components/LandingPageSections/partneredBenefits";
 import Script from "next/script";
-
-
-
 
 export default function Home() {
     return (
         <main>
             <div>
-              HOME
+                <Hero />
+                <LoanProcess />
+                <ExclusiveBenefits />
+                <PartneredBenefits />
+                <DownloadApp />
+                <NewsRoom />
             </div>
             <Script id="og-scripts" type="application/ld+json">
                 {`{

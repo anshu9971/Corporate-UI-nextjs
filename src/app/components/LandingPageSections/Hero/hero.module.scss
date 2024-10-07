@@ -1,0 +1,24 @@
+/* src/Carousel.css */
+/* src/Carousel.css */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 1920px;
+    height: 50px; /* Adjust height as needed */
+    margin: auto;
+}
+
+.embla {
+    overflow: hidden;
+    width: 100%;
+}
+.emblaContainer {
+    display: flex;
+    width: 100%;
+}
+.emblaSlide {
+    flex: 0 0 100%;
+    min-width: 0;
+    width: 100%;
+}

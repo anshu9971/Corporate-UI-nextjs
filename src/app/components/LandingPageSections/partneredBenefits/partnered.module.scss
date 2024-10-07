@@ -1,0 +1,52 @@
+@import "styles/_mixins.scss";
+
+.partneredBenefits {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5faff;
+    max-width: 1170px;
+    margin: auto;
+}
+
+.benefitsContent {
+    max-width: 1000px;
+    margin-left: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.benefitsImage {
+    .icon {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.benefitsList {
+    margin-left: 10%;
+    text-align: left;
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        font-size: 21px;
+        margin-bottom: 12px;
+        list-style-type: disc;
+        strong {
+            color: #0099cc;
+        }
+    }
+}
+
+.getInTouchbtn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}

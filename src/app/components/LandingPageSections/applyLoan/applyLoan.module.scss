@@ -1,0 +1,56 @@
+@import "styles/_mixins.scss";
+
+.loanProcess {
+    text-align: center;
+    padding: 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    p {
+        margin-top: 12px;
+    }
+}
+
+.stepsGrid {
+    display: grid;
+    margin-top: 20px;
+
+    @include md {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    @include lg {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+}
+
+.step {
+    padding: 16px;
+    border-radius: 8px;
+
+    img {
+        margin-top: 20px;
+        height: 80px;
+        width: 80px;
+    }
+}
+
+.stepIcon {
+    width: 100px;
+    height: 100px;
+}
+
+.applyButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    &:hover {
+        background-color: #0056b3;
+    }
+}
