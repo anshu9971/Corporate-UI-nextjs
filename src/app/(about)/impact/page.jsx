@@ -10,7 +10,7 @@ export default function Impact() {
             <section className={styles.section1}>
                 <div className={styles.div2}>
                     <h2>OUR</h2>
-                    <h1>Impact</h1>
+                    <h1>IMPACT</h1>
                     <p>
                         We re democratising access to quality education. Over
                         the last few years, we have touched the lives of

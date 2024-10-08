@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import "src/app/styles/mixins";
 // 
 //blue -> #09c
@@ -8,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: inherit !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: large;
     .section1 {
         display: flex;
@@ -19,6 +20,7 @@
         width: 90%;
         color: var(--primary-dark-3);
         min-height: 90vh;
+        
         > div {
             width: 100%;
             @include lg {
@@ -32,24 +34,34 @@
             color: var(--primary-dark-3);
             text-align: start;
             width: 100%;
+            
             >h2 {
-                font-size: 3.2rem;
+                font-size: 2rem;
                 margin: 0px;
-
+                margin-top: 40px !important;
+                padding: 0%;
+                font-weight: 400 !important;
             }
             >h1 {
-                font-size: 4rem;
+                font-size: 3rem;
+                font-weight: 400;
                 color: #09c;
                 margin: 0px;
-                // font-family: var(--font-patro);
+                padding: 0%;
             }
             > p {
-                padding-top: 10px;
+                padding: 0px;
+                margin: 0px;
+                font-weight: 400;
+                font-size: 14px;
             } 
             @include lg {
                 width: 60%;
+                >h2 {
+                    margin-top: 0px !important;
+                }
                 >h1 {
-                    font-size: 8rem;
+                    font-size: 3rem;
                 }
             }
         }
@@ -92,7 +104,8 @@
                     gap: 10px;
                     font-size: 2rem;
                     line-height: 1rem;
-                    font-weight: bold;
+                    font-weight: 500;
+                    color: #37474F;
                 }
             }
             @include lg {
@@ -116,6 +129,7 @@
             color: #09c;
             text-align: start;
             width: 90%;
+            font-weight: 400;
         }
         >div {
             width: 90%;
@@ -135,14 +149,18 @@
                 .name {
                     gap: 30px;
                     align-items: center;
+                    text-wrap: wrap;
                     >div {
                         > h5 {
                             margin: 0px;
                             padding: 0px;
+                            font-weight: 500;
                         }
                         >p {
                             margin: 0px;
                             padding: 0px;
+                            font-weight: 200;
+                            font-size: smaller;
                         }
                     }
                     >img {
@@ -157,6 +175,7 @@
                     border-radius: 5px;
                     margin-top: 4px;
                     
+                    
                     .course {
                         padding: 10px;
                         > h6 {
@@ -164,18 +183,21 @@
                             padding: 0px;
                             color: #37474F;
                             font-size: 13px;
-
+                            font-weight: 300;
                         }
                         >p {
                             margin: 0px;
                             padding: 0px;
                             font-size: 14px;
+                            font-weight: 300;
                         }
                     }
                 }
                 >p {
                     width: 90%;
                     text-wrap: wrap;
+                    font-weight: 300;
+                    font-size: smaller;
                 }
             }
         }
@@ -191,6 +213,8 @@
             color: #09c;
             text-align: start;
             width: 90%;
+            font-weight: 300;
+            font-size: 3rem;
         }
 
         > div {
@@ -200,12 +224,14 @@
             flex-direction: column;
             .csrImage {
                 object-fit: cover;
+
             }
             >p {
-                width: 100% ;
+                width: 90% ;
                 text-wrap: wrap;
-                font-size: 1.5rem;
+                font-size: 1rem;
                 text-align: start;
+                font-weight: 400;
             }
 
         }
@@ -216,7 +242,7 @@
                 width: 100%;
                 flex-direction: row;
                 >p {
-                    width: 70% !important;
+                    width: 65% !important;
                 }
             }
             

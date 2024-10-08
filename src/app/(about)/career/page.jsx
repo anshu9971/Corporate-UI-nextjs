@@ -29,8 +29,7 @@ export default function Impact() {
                         src="https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/hiring.png"
                         alt="about section image"
                         width={500}
-                        height={600}
-                        layout="responsive"
+                        height={400}
                     />
                 </div>
             </section>

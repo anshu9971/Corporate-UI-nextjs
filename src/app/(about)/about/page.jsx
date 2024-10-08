@@ -70,7 +70,11 @@ export default function About() {
                                     {team.name &&
                                         team.name.split(" ") &&
                                         team.name.split(" ")[0]}{" "}
-                                    <span>Chopra</span>
+                                    <span>{
+                                        team.name &&
+                                        team.name.split(" ") &&
+                                        team.name.split(" ")[1]
+                                    }</span>
                                 </div>
                                 <div className={styles.position}>
                                     {team.positon}
