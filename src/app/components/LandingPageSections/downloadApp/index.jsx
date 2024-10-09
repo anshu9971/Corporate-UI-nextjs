@@ -41,14 +41,14 @@ const DownloadApp = () => {
                 </div>
             </div>
 
-            <div className={styles.qrContainer}>
+            {/* <div className={styles.qrContainer}>
                 <p>Scan the QR Code to Download Our App</p>
                 <img
                     src="https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/QR%20CODE.png"
                     alt="QR Code"
                     className={styles.qrCode}
                 />
-            </div>
+            </div> */}
         </section>
     );
 };

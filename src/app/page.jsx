@@ -7,17 +7,103 @@ import Hero from "components/LandingPageSections/Hero";
 import NewsRoom from "components/LandingPageSections/newsRoom";
 import PartneredBenefits from "components/LandingPageSections/partneredBenefits";
 import Script from "next/script";
+import styles from "./page.module.scss";
+import FeaturesSLider from "components/LandingPageSections/featuresSlider";
+import LendingPartners from "components/LandingPageSections/LendingPartners";
 
 export default function Home() {
     return (
         <main>
             <div>
                 <Hero />
+                <div
+                    style={{
+                        backgroundColor: "#074764",
+                        textAlign: "center",
+                        padding: "6px 0px",
+                    }}
+                >
+                    <p style={{ color: "#ffffff" }}>
+                        To connect with us over a call click on
+                        www.eduvanz.com/contact.
+                    </p>
+                </div>
+                <section className={styles.section2}>
+                    <div>
+                        <p>CALCULATE THE COST OF YOUR LOAN!</p>
+                        <button type="button">EMI Calculator</button>
+                    </div>
+                </section>
+                <FeaturesSLider />
                 <LoanProcess />
                 <ExclusiveBenefits />
                 <PartneredBenefits />
                 <DownloadApp />
+                <section className={styles.creditSection}>
+                    <div className={styles.creditContainer}>
+                        <div className={styles.creditHead}>
+                            <h3>CREDIT RATING</h3>
+                            <p>
+                                Eduvanz has been rated by CRISIL Limited and
+                                enjoys BBB- (minus) rating for Long-Term
+                                borrowings.
+                            </p>
+                        </div>
+                        <div
+                            className={styles.creditButtonContainer}
+                            align="center"
+                        >
+                            <div class="col-sm-12">
+                                <a
+                                    href="https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/EduvanzFinancingPrivateLimited_March%2030,%202022_RR_288556.html"
+                                    target="_blank"
+                                    class="btn btnAllBlue"
+                                >
+                                    Know More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <LendingPartners />
                 <NewsRoom />
+                <section className={styles.testimonialSection}>
+                    <div className={styles.testimonialContainer}>
+                        <div className={styles.testimonialRow}>
+                            <div>
+                                <span>We are Backed By:</span>
+                            </div>
+                            <div>
+                                <span>
+                                    <img
+                                        loading="lazy"
+                                        src="https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/sequoia-capital-logo.png"
+                                        alt="sequoia Capital"
+                                        title="sequoia Capital"
+                                        width="260"
+                                        height="40"
+                                    />
+                                </span>
+                            </div>
+                            <div>
+                                <span>and</span>
+                            </div>
+                            <div>
+                                <span>
+                                    <img
+                                        loading="lazy"
+                                        src="https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/Capria-logo-icon_horizontal.png"
+                                        alt="unitus"
+                                        title="unitus"
+                                        class="img-responsive unitus-logo"
+                                        width="154"
+                                        height="60"
+                                    />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
             <Script id="og-scripts" type="application/ld+json">
                 {`{

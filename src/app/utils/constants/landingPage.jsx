@@ -1,42 +1,61 @@
 // import PartnerSection from "PartnerSection";
 // import PartnerSection from "PartnerSection";
-import { Footer } from "components/Footer";
-import { DiscoverAnimation } from "components/LandingPageSections/DiscoverAnimation";
-import { FinanceAnimation } from "components/LandingPageSections/FinanceAnimation";
-// import { FinanceAnimation } from "components/LandingPageSections/FinanceAnimation";
-// import GrowAnimation from "components/LandingPageSections/GrowAnimation";
-import { LearnAnimation } from "components/LandingPageSections/LearnAnimatedComponents";
 
-export const SNAP_SECTION = [
+export const FEATURES_SLIDERS = [
     {
-        title: "Discover",
-        subTitle: "Your Potential",
-        description: `Unleash your inner superhero!\nDiscover your mental make-up and find out how skilled you are. Get top-notch career & skill recommendations.`,
-        animatedComponent: DiscoverAnimation,
+        header: "How can you apply?",
+        subHeader: "Pick Any Option as Per Your Comfort!",
+        image: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/Slider-3.png",
+        bullets: [
+            {
+                text: "Email/Call:",
+                subText: "Reach Out to Us",
+                type: "link",
+            },
+            {
+                text: "Mobile App/Website:",
+                subText: "Download the App or Apply Here",
+                type: "link",
+            },
+        ],
     },
     {
-        title: "Learn",
-        subTitle: "with purpose",
-        description: `Receive unbiased and personalized course recommendations from across India and the world. Filter, compare and enrol for a course that fits your unique needs.`,
-        secondSnapDescription:
-            "We have partnered with the top institutes from India and around the world to bring your the best upskilling opportunities and learning experiences.",
-        animatedComponent: LearnAnimation,
-        // animatedComponent: ChooseSubject,
-        // showNsdcPartnerShipButton: true,
+        header: "HELPING YOU FULFIL YOUR DREAMS",
+        subHeader: "Eduvanz Makes It Easy & Simple for You",
+        image: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/slider-1.png",
+        bullets: [
+            {
+                text: "Over hundreds of verified training partners",
+                subText: "The Best Institutes",
+            },
+            {
+                text: "Select from the best in-demand skills",
+                subText: "Select from the best in-demand skills",
+            },
+            {
+                text: "Easy and convenient loans",
+                subText: "Across India's Top 20 Cities",
+            },
+        ],
     },
-    // { component: PartnerSection },
     {
-        title: "Finance",
-        subTitle: "your Goals",
-        description: `Break free from financial limitations! Unlock your success with No-cost EMI to pay your course fees.`,
-        animatedComponent: FinanceAnimation,
-        isFinanceCard: true,
+        header: "ARE YOU ELIGIBLE?",
+        subHeader:
+            "Check Your Eligibility to Get Financial Assistance Plan at Low Cost EMI",
+        image: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/slider-2.png",
+        bullets: [
+            {
+                text: "Do you have ID proofs?",
+                subText: "Aadhaar/PAN card",
+            },
+            {
+                text: "Do you have an active bank account?",
+                subText: "Bank Statements",
+            },
+            {
+                text: "Do you have address proofs?",
+                subText: "Utility Bills",
+            },
+        ],
     },
-    // {
-    //     title: "Grow",
-    //     subTitle: "beyond limits",
-    //     description: `Fuel your growth with inspiring content! Listen to podcasts, receive mentor advice, and gain insights from our blog. Unleash your potential now!`,
-    //     animatedComponent: GrowAnimation,
-    // },
-    { component: Footer },
 ];

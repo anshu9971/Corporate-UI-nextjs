@@ -6,7 +6,9 @@
 
     .title {
         font-size: 2rem;
-        color: #1f2d3d;
+        line-height: 2.1rem;
+        color: #074764;
+        letter-spacing: 0.5px;
         margin-bottom: 0.5rem;
     }
 
@@ -22,6 +24,9 @@
         align-items: center;
         justify-content: space-between;
         overflow-x: hidden;
+        max-width: 750px;
+        margin: auto;
+        gap: 2rem;
 
         .form {
             max-width: 400px;
@@ -39,8 +44,13 @@
 
             .inputGroup {
                 display: flex;
+                flex-direction: column;
                 gap: 0.5rem;
                 margin-bottom: 1rem;
+
+                @include md {
+                    flex-direction: row;
+                }
 
                 .input {
                     flex-grow: 1;
@@ -71,19 +81,8 @@
             }
         }
 
-        .imageContainer {
-            img {
-                width: 300px;
-                max-width: 100%;
-
-                @include md {
-                    width: 400px;
-                }
-            }
-        }
-
         @include md {
-            flex-direction: row;
+            flex-direction: row-reverse;
             justify-content: space-around;
         }
     }

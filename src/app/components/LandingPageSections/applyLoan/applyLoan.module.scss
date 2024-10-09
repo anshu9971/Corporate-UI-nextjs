@@ -6,8 +6,17 @@
     max-width: 1170px;
     margin: 0 auto;
 
+    h2 {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        color: #074764;
+    }
+
     p {
         margin-top: 12px;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        color: #455a64;
     }
 }
 
@@ -43,13 +52,17 @@
 }
 
 .applyButton {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+    color: #ffffff;
+    background-color: #0099cc;
+    font-size: 18px;
+    line-height: 25.7px;
+    text-align: center;
+    padding: 6px 62px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #ffffff;
+    max-width: 270px;
+    margin: 12px auto;
     &:hover {
         background-color: #0056b3;
     }

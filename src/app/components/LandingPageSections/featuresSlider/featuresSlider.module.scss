@@ -1,0 +1,68 @@
+@import "styles/_mixins.scss";
+
+.Carousel {
+    height: 800px;
+
+    @include md {
+        height: 500px;
+    }
+}
+
+.slideSection {
+    padding: 60px 40px;
+    background-color: #f3fafc;
+    max-width: 1140px;
+    margin: auto;
+
+    .slideHeader {
+        letter-spacing: 0.5px;
+        text-align: center;
+
+        h1 {
+            font-size: 32px;
+            line-height: 35px;
+            color: #074764;
+        }
+        h4 {
+            font-size: 18px;
+            line-height: 25px;
+            color: #455a64;
+            margin-top: 20px;
+        }
+    }
+
+    .slideContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 1140px;
+        margin: auto;
+        align-items: center;
+        padding-top: 40px;
+        @include md {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .slideContent {
+            div {
+                margin-top: 20px;
+                h2 {
+                    font-size: 20px;
+                    text-align: left;
+                    color: #074764;
+
+                    @include md {
+                        font-size: 25px;
+                        line-height: 27.5px;
+                    }
+                }
+                h5 {
+                    margin-top: 4px;
+                    font-size: 16px;
+                    line-height: 22.8px;
+                    color: #4a5568;
+                }
+            }
+        }
+    }
+}

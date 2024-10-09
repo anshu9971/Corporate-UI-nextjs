@@ -6,18 +6,36 @@
     background-color: #f5faff;
     max-width: 1170px;
     margin: auto;
+
+    h2 {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        color: #074764;
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        color: #455a64;
+    }
 }
 
 .benefitsContent {
     max-width: 1000px;
-    margin-left: 12%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     margin-top: 30px;
+    gap: 12px;
+
+    @include xl {
+        flex-direction: row;
+    }
 }
 
 .benefitsImage {
+    flex-basis: 50%;
     .icon {
         width: 200px;
         height: auto;
@@ -25,6 +43,7 @@
 }
 
 .benefitsList {
+    flex-basis: 50%;
     margin-left: 10%;
     text-align: left;
     ul {
@@ -42,11 +61,15 @@
 }
 
 .getInTouchbtn {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 30px;
+    color: #ffffff;
+    background-color: #0099cc;
+    font-size: 18px;
+    line-height: 25.7px;
+    text-align: center;
+    padding: 6px 62px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #ffffff;
+    max-width: 270px;
+    margin: 12px auto;
 }

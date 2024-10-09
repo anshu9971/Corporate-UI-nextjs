@@ -1,11 +1,14 @@
 /* src/Carousel.css */
 /* src/Carousel.css */
 
+@import "styles/_mixins";
+
 .carousel {
     position: relative;
     overflow: hidden;
-    width: 1920px;
-    height: 50px; /* Adjust height as needed */
+    width: 100vw;
+    max-width: 1920px;
+    height: fit-content; /* Adjust height as needed */
     margin: auto;
 }
 
@@ -21,4 +24,20 @@
     flex: 0 0 100%;
     min-width: 0;
     width: 100%;
+
+    .desktop {
+        display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .mobile {
+        display: block;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
 }
