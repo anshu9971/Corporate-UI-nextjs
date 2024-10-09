@@ -144,7 +144,7 @@
                 padding: 10px;
                 >div {
                     display: flex;
-                    width: 90%;
+                    width: 100%;
                 }
                 .name {
                     gap: 30px;
@@ -190,6 +190,7 @@
                             padding: 0px;
                             font-size: 14px;
                             font-weight: 300;
+                            text-wrap: wrap;
                         }
                     }
                 }
