@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+@import "src/app/styles/mixins";
+// 
+//blue -> #09c
+// 
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins, ExtraLight !important;
+    font-size: large;
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(rgb(229, 248, 255) 0px, rgb(255, 255, 255) 100%);
+    .section1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        width: 90%;
+        color: var(--primary-dark-3);
+        padding: 100px 0px;
+        margin: 0px;
+        
+        > div {
+            width: 100%;
+            object-fit: cover;
+            >img {
+                display: none;
+            }
+            @include lg {
+                width: 60%;
+                height: 60%;
+                >img {
+                    display: block;
+                }
+                >p {
+                    width: 80%;
+                }
+            }
+        }
+        .div2 {
+            color: var(--primary-dark-3);
+            text-align: start;
+            width: 100%;
+            >h6 {
+                font-size: 1rem;
+                margin: 0px;
+
+            }
+            >h1 {
+                // font-size: 4rem;
+                color: #09c;
+                margin: 0px;
+                // font-family: var(--font-patro);
+            }
+            > p {
+                padding-top: 10px;
+                margin: 0px;
+                font-size: small;
+                font-weight: 600 !important;
+            }
+            >button {
+                margin-top: 5rem;
+                background: #09c; 
+                border-radius: 0px;
+                color: #fff;
+                padding: 0px 25px;
+                font-weight: 200;
+            } 
+            @include lg {
+                width: 60%;
+            }
+        }
+
+        @include lg {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 200px;
+            max-height: 100vh !important;
+            padding: 50px 0px 0px 0px;
+        }
+    }
+
+    .section2 {
+        background-color: #09c;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        padding-top: 20px;
+        padding-bottom: 8rem;
+        > div {
+            width: 90%;
+            color: #fff;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+        @include lg {
+            text-wrap: nowrap;
+        }
+    }
+
+    @include lg {
+        justify-content: end;
+        align-items: end;
+    }
+ 
+}

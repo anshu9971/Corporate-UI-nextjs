@@ -1,0 +1,130 @@
+$screen-sm-min: 640px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1280px;
+$screen-2xl-min: 1536px;
+$screen-hdplus: 1600px;
+
+// Mobile First Approach Mixins
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin md-maxHeight {
+    @media (min-width: #{$screen-md-min}) and (max-height: 725px) {
+        @content;
+    }
+}
+
+@mixin xxl-minHeight {
+    @media (min-width: #{$screen-2xl-min}) and (min-height: 725px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin xl-minHeight {
+    @media (min-width: #{$screen-xl-min}) and (min-height: 725px) {
+        @content;
+    }
+}
+
+// Large Desktops
+@mixin xxl {
+    @media (min-width: #{$screen-2xl-min}) {
+        @content;
+    }
+}
+
+// 1600x900 Desktops
+@mixin hdplus {
+    @media (min-width: #{$screen-hdplus}) {
+        @content;
+    }
+}
+
+// Desktop ---> Mobile Mixins
+//TODO: Remove this,
+@mixin mobile {
+    @media (max-width: #{$screen-md-min - 1px}) {
+        @content;
+    }
+}
+
+// Desktop Mixin
+@mixin desktop {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Large Desktops
+@mixin desktop-lg {
+    @media (min-width: #{$screen-2xl-min}) {
+        @content;
+    }
+}
+
+@mixin hideScrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@mixin customScrollbar {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f0eae4;
+        width: 5px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--primary-accent-1);
+        border-radius: 12px;
+        width: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+// mixin for min device pixel ratio
+@mixin dpr($pixelRatio) {
+    @media (-webkit-min-device-pixel-ratio: $pixelRatio) {
+        @content;
+    }
+}
+
+@mixin maxHeightWithDpr($pixelRatio) {
+    @include md-maxHeight() {
+        @include dpr($pixelRatio) {
+            @content;
+        }
+    }
+}

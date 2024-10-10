@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import "src/app/styles/mixins";
+// 
+//blue -> #09c
+// 
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: large;
+    .section1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column-reverse;
+        width: 90%;
+        color: var(--primary-dark-3);
+        min-height: 90vh;
+        
+        > div {
+            width: 100%;
+            @include lg {
+                width: 50%;
+                >p {
+                    width: 80%;
+                }
+            }
+        }
+        .div2 {
+            color: var(--primary-dark-3);
+            text-align: start;
+            width: 100%;
+            
+            >h2 {
+                font-size: 2rem;
+                margin: 0px;
+                margin-top: 40px !important;
+                padding: 0%;
+                font-weight: 400 !important;
+            }
+            >h1 {
+                font-size: 3rem;
+                font-weight: 400;
+                color: #09c;
+                margin: 0px;
+                padding: 0%;
+            }
+            > p {
+                padding: 0px;
+                margin: 0px;
+                font-weight: 400;
+                font-size: 14px;
+            } 
+            @include lg {
+                width: 60%;
+                >h2 {
+                    margin-top: 0px !important;
+                }
+                >h1 {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        @include lg {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .section2 {
+        background-color: #f5f5f5;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px 0px;
+        
+        .statWrapper {
+            width: 90%;
+            display: grid;
+            grid-template-columns: 1fr;
+            > div {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 20px 0px;
+                >h4 {
+                    margin: 2px;
+                    font-weight: 300; 
+                    font-size: 20px;  
+                }
+                > div {
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 2rem;
+                    line-height: 1rem;
+                    font-weight: 500;
+                    color: #37474F;
+                }
+            }
+            @include lg {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        @include lg {
+            text-wrap: nowrap;
+            
+        }
+    }
+
+    .section3 {
+        @extend .section2;
+        background-color: #f3fafc;
+        flex-direction: column;
+        text-align: start;
+        
+        >h1 {
+            color: #09c;
+            text-align: start;
+            width: 90%;
+            font-weight: 400;
+        }
+        >div {
+            width: 90%;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(1,minmax(0,1fr));
+            @include lg {
+                grid-template-columns: repeat(3,minmax(0,1fr));
+            }
+            .wrapper{
+                background-color: #fff;
+                padding: 10px;
+                >div {
+                    display: flex;
+                    width: 100%;
+                }
+                .name {
+                    gap: 30px;
+                    align-items: center;
+                    text-wrap: wrap;
+                    >div {
+                        > h5 {
+                            margin: 0px;
+                            padding: 0px;
+                            font-weight: 500;
+                        }
+                        >p {
+                            margin: 0px;
+                            padding: 0px;
+                            font-weight: 200;
+                            font-size: smaller;
+                        }
+                    }
+                    >img {
+                        border-radius: 100%;
+                    }
+                }
+                .education {
+                    background-color: #dcf7ff;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 5px;
+                    margin-top: 4px;
+                    
+                    
+                    .course {
+                        padding: 10px;
+                        > h6 {
+                            margin: 0px;
+                            padding: 0px;
+                            color: #37474F;
+                            font-size: 13px;
+                            font-weight: 300;
+                        }
+                        >p {
+                            margin: 0px;
+                            padding: 0px;
+                            font-size: 14px;
+                            font-weight: 300;
+                            text-wrap: wrap;
+                        }
+                    }
+                }
+                >p {
+                    width: 90%;
+                    text-wrap: wrap;
+                    font-weight: 300;
+                    font-size: smaller;
+                }
+            }
+        }
+    }
+    .section4 {
+        // @extend .section2;
+        background-color: #fff;
+        padding: 55px 0px;
+        gap: 5px;
+        flex-direction: column;
+        width: 90% !important;
+        > h1 {
+            color: #09c;
+            text-align: start;
+            width: 90%;
+            font-weight: 300;
+            font-size: 3rem;
+        }
+
+        > div {
+            display: flex;
+            width: 90%;
+            gap: 30px;
+            flex-direction: column;
+            .csrImage {
+                object-fit: cover;
+
+            }
+            >p {
+                width: 90% ;
+                text-wrap: wrap;
+                font-size: 1rem;
+                text-align: start;
+                font-weight: 400;
+            }
+
+        }
+
+        @include lg{
+
+            > div {
+                width: 100%;
+                flex-direction: row;
+                >p {
+                    width: 65% !important;
+                }
+            }
+            
+        }
+       
+    }
+
+    // .section5 {
+
+    // }
+}
