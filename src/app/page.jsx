@@ -37,7 +37,7 @@ export default function Home() {
                 <FeaturesSLider />
                 <LoanProcess />
                 <ExclusiveBenefits />
-                <PartneredBenefits />
+
                 <DownloadApp />
                 <section className={styles.creditSection}>
                     <div className={styles.creditContainer}>
@@ -65,6 +65,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+                <PartneredBenefits />
                 <LendingPartners />
                 <NewsRoom />
                 <section className={styles.testimonialSection}>

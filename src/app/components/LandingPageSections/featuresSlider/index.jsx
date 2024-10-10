@@ -1,5 +1,7 @@
 import Styles from "./featuresSlider.module.scss";
 import { Carousel } from "@mantine/carousel";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
 function FeatureSlide({ item }) {
@@ -36,9 +38,17 @@ function FeatureSlide({ item }) {
 import { FEATURES_SLIDERS } from "utils/constants/landingPage";
 
 function FeaturesSLider() {
+    const autoplay = useRef(Autoplay({ delay: 2000 }));
     return (
         <section style={{ backgroundColor: "#f3fafc" }}>
-            <Carousel withIndicators className={Styles.Carousel}>
+            <Carousel
+                loop
+                withIndicators
+                plugins={[autoplay.current]}
+                onMouseEnter={autoplay.current.stop}
+                onMouseLeave={autoplay.current.reset}
+                className={Styles.Carousel}
+            >
                 {FEATURES_SLIDERS.map((item, i) => {
                     return (
                         <Carousel.Slide key={i}>
