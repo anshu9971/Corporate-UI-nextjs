@@ -18,47 +18,68 @@
   .section1 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     // background-color: aqua;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     color: var(--primary-dark-3);
-    min-height: 90vh;
-    gap: 6rem;
+    min-height: 100vh;
+    padding: 100px 0px;
 
     .headingContainer {
       >h1 {
         font-size: 4rem;
         font-family: 'Source Sans Pro', sans-serif;
-        font-weight: 200;
+        font-weight: 300;
         color: #09c;
+        margin-bottom: 0px;
       }
 
       >p {
-        font-weight: 300;
+        font-weight: 400;
+        font-size: medium;
+        display: none;
       }
     }
 
+
     .carouselContainer {
-      width: 50%;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
       background-color: #fff;
       padding: 4rem 2rem;
-      width: 100%;
+      box-shadow: 0 19.1px 4.3px -22px rgba(0, 0, 0, 0.03),
+        0 25.8px 11.8px -22px rgba(0, 0, 0, 0.05),
+        0 24.3px 28.3px -22px rgba(0, 0, 0, 0.06),
+        0 40px 94px -22px rgba(0, 0, 0, 0.09);
 
+      .indicators {
+        position: absolute;
+        bottom: -100px;
+      }
+
+      .indicator {
+        background-color: #000;
+        border-radius: 100%;
+        width: 10px;
+        height: 10px;
+      }
 
       .slide {
-        width: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
-         > img {
+
+        >img {
           width: 100%;
           height: 100%;
           object-fit: contain;
-         }
+        }
 
-         .time {
+        .time {
           width: 100%;
           display: flex;
           justify-content: space-between;
@@ -67,12 +88,13 @@
           color: #707070;
           font-weight: 600;
           font-size: small;
-  
+
           >button {
             color: red;
             font-size: larger;
           }
         }
+
         .about {
           flex-wrap: wrap;
         }
@@ -80,29 +102,45 @@
     }
 
     @include lg {
+      width: 91%;
       justify-content: space-between;
       flex-direction: row;
+      align-items: center;
+      gap: 6rem;
+      padding: 0px 0px;
+
+      .headingContainer {
+        >p {
+          display: block;
+        }
+      }
+
+      .carouselContainer {
+        width: 55%;
+      }
     }
   }
 
   .tabContainer {
     display: flex;
-    border-bottom : 3px solid #e5e7eb;
+    border-bottom: 3px solid #e5e7eb;
     width: 100%;
     background-color: #fff;
     justify-content: center;
     align-items: center;
-    > div {
+
+    >div {
       width: 90%;
       display: flex;
-      gap:1rem;
+      gap: 1rem;
 
-      > div {
+      >div {
         padding: 1rem;
         font-weight: 500;
+
         &:hover {
-          border-bottom : 5px solid #09c;
-          
+          border-bottom: 5px solid #09c;
+
         }
       }
     }
@@ -193,6 +231,7 @@
       align-items: start;
       width: 90%;
       text-align: start;
+
       >h1 {
         color: #09c;
         font-weight: 500;
@@ -207,33 +246,37 @@
       font-size: 20px;
       text-wrap: wrap;
       text-align: start;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .teamsContainer {
       width: 90%;
-      gap: 80px;
+
       justify-content: space-between;
-      > div {
+
+      >div {
         height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .imgContainer{
+
+        .imgContainer {
           display: flex;
           flex-direction: column;
-          align-items: start;
-          justify-content: start;
-          gap:0px;
+          align-items: start !important;
+          justify-content: start !important;
+          text-align: start !important;
+          gap: 0px;
         }
       }
+
       .time {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 10px;
         color: #707070;
-        font-weight: 600;
+        font-weight: 500;
         font-size: small;
 
         >button {
@@ -242,6 +285,11 @@
       }
     }
 
+    @include lg {
+      .teamsContainer {
+        gap: 80px;
+      }
+    }
   }
 
   .videoClips {
@@ -253,31 +301,33 @@
     background-color: #fff;
     gap: 0px;
     flex-wrap: wrap;
-    >div{
-width: 90%;
-color: #09c;
-font-weight: 500;
+
+    >div {
+      width: 90%;
+      color: #09c;
+      font-weight: 500;
     }
+
     .videoClipsContainer {
       width: 95%;
-      display: flex;
-      justify-content: space-between;
-      // align-items: center;
       background-color: #fff;
-      gap: 0px;
-      flex-wrap: wrap;
-      .videoClipsWrapper{
+      gap: 10px;       
+      display: grid;
+      grid-template-columns: 1fr;
+      
+      .videoClipsWrapper {
         position: relative;
         overflow: hidden;
-        .imgContainer{
-          > img {
+
+        .imgContainer {
+          >img {
             border-radius: 10px !important;
           }
-        } 
+        }
 
-        .videoClipsContent{
+        .videoClipsContent {
           position: absolute;
-          bottom: 12px;
+          bottom: 8px;
           left: 0;
           width: 100%;
           height: 30%;
@@ -287,8 +337,9 @@ font-weight: 500;
           display: flex;
           justify-content: start;
           align-items: center;
-          > div {
-            > h3{
+
+          >div {
+            >h3 {
               font-size: 1rem;
               width: 90%;
               margin: 0px;
@@ -296,6 +347,7 @@ font-weight: 500;
               padding-left: 20px;
               font-weight: 400;
             }
+
             >p {
               margin: 0px;
               padding: 0px;
@@ -307,10 +359,15 @@ font-weight: 500;
       }
     }
 
-    @include lg{
-      .videoClipsContent{
+    @include lg {
+      .videoClipsContainer {
+        width: 95%;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .videoClipsContent {
         >div {
-          > h3{
+          >h3 {
             font-size: 1.5rem;
             width: 90%;
             margin: 0px;
@@ -318,6 +375,7 @@ font-weight: 500;
             padding-left: 20px;
             font-weight: 400;
           }
+
           >p {
             margin: 0px;
             padding: 0px;
