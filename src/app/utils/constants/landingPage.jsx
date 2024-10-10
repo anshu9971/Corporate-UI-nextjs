@@ -59,3 +59,58 @@ export const FEATURES_SLIDERS = [
         ],
     },
 ];
+
+export const ARTICLES = [
+    {
+        id: 1,
+        title: "Eduvanz wins Best FinTech company in Education at BW Businessworld Awards 2022",
+        source: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/newsroom/81/bwedulogo.png",
+        date: "Aug 20 2022",
+        link: "#",
+    },
+    {
+        id: 2,
+        title: "How BNPL financing can transform learning",
+        source: "	https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/newsroom/80/finexpress.jpg",
+        date: "May 30 2022",
+        link: "#",
+    },
+    {
+        id: 3,
+        title: "Mass layoffs, offline classes: How edtech is coping with schools, colleges reopening",
+        source: "	https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/newsroom/78/Print.1.jpg",
+        date: "May 17 2022",
+        link: "#",
+    },
+];
+
+export const PARTNERS = [
+    {
+        logo: "https://d1idiaqkpcnv43.cloudfront.net/assets/images/abfl-logo-new.png",
+        name: "Aditya Birla Capital",
+        designation: "Complaints Redressal Officer",
+        contact: "080-45860196",
+        email: "grievance.finance@adityabirlacapital.com",
+    },
+    {
+        logo: "https://d1idiaqkpcnv43.cloudfront.net/assets/images/header-smfg.png",
+        name: "SMFG India Credit",
+        designation: "Grievance Redressal Officer",
+        contact: "42241220",
+        email: "GRO@smfgindia.com",
+    },
+    {
+        logo: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/piramal-finance-logo1.png",
+        name: "Piramal Finance",
+        designation: "Nodal Officer",
+        contact: "022-69181439",
+        email: "nodal.officer@piramal.com",
+    },
+    {
+        logo: "https://d1idiaqkpcnv43.cloudfront.net/assets/webimages/Mas-logo.png",
+        name: "MAS Financial Services Ltd.",
+        designation: "Nodal Officer",
+        contact: "079-41106500",
+        email: "crm.masfin@mas.co.in",
+    },
+];
