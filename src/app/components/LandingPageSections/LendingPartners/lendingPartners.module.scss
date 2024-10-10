@@ -1,0 +1,63 @@
+// styles/LendingPartners.module.scss
+
+.lendingPartnersContainer {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1.5rem;
+        font-size: 32px;
+        line-height: 35px;
+        color: #074764;
+        letter-spacing: 0.5px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        width: 100px;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+// Media queries for responsiveness
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}

@@ -49,1158 +49,130 @@
     }
 }
 
-// ----------------------
-// Hero Section Styling
-.heroSection {
-    height: calc(var(--app-height) - 66px); // test
-    // padding: 10px 0 0;
+.section2 {
+    background-color: #0099cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
 
-    @include md {
-        padding: 10px 20px 18px;
-    }
-
-    .contentWrapper {
-        height: 100%;
-        padding: 10px 20px 42px;
+    div {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
 
         @include md {
-            padding-bottom: 60px;
-            border-radius: 20px;
-            overflow: hidden;
-            border-radius: 30px;
-            position: relative;
-        }
-
-        & > div:first-of-type {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-
-            @include md {
-                margin-left: 150px;
-                justify-content: center;
-                height: 100%;
-            }
-
-            @include maxHeightWithDpr(1.25) {
-                margin-left: 8%;
-            }
-
-            h1 {
-                font-family: var(--font-patron);
-                font-weight: 700;
-                font-size: 48px;
-                line-height: 1;
-                letter-spacing: 0.012em;
-                color: #302621;
-
-                @media (max-height: 724px) {
-                    font-size: 35px;
-                }
-
-                @include md {
-                    font-size: 76px;
-                    line-height: 80px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 66px;
-                    line-height: 70px;
-                }
-            }
-
-            p {
-                font-weight: 500;
-                letter-spacing: -0.006em;
-                color: var(--primary-dark-1);
-                margin: 46px 0 20px;
-                font-size: 18px;
-                line-height: 31px;
-
-                @media (max-height: 724px) {
-                    margin: 20px 0 30px;
-                }
-
-                @include md {
-                    font-size: 20px;
-                    line-height: 31px;
-                    width: 35%;
-                    margin: 46px 0 30px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 16px;
-                    line-height: 24px;
-                    margin: 36px 0 20px;
-                    margin: 46px 0 30px;
-                }
-            }
-
-            .mainCTAWrapper {
-                width: 18%;
-                text-align: center;
-
-                .skillCTA {
-                    padding-top: 20px;
-                    padding-bottom: 20px;
-                    width: fit-content !important;
-                    height: auto;
-
-                    @include md {
-                        width: 100% !important;
-                    }
-
-                    span {
-                        padding: 1px 0;
-
-                        @include md {
-                            //padding: unset;
-                        }
-                    }
-                }
-            }
-        }
-
-        & > .illustrationFrame {
-            height: 50%;
-            width: auto;
-            pointer-events: none;
-            display: flex;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
-            position: absolute;
-            right: 0;
-            top: 12px;
-            z-index: -1;
-
-            @include md {
-                height: 100%;
-                width: 100%;
-                top: 0;
-                left: 0;
-                right: unset;
-            }
-
-            & > .illustration {
-                pointer-events: none;
-                width: 180%;
-                height: auto;
-                transform: translateX(-20%);
-                background-color: white !important;
-                @include md {
-                    transform: none;
-                    width: auto;
-                    margin-left: auto;
-                    height: 100%;
-                }
-            }
+            margin: 0 auto;
+            padding: 0 24px;
+            gap: 16px;
         }
-        .scrollDown {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-            gap: 2px;
-            > p {
-                font-weight: 700;
-                color: var(--learn-purple-3);
-                pointer-events: none;
-                font-size: 10px;
-                margin-top: 8px;
-                @include md {
-                    font-size: 13px;
-                    margin-top: 24px;
-                }
+
+        p {
+            font-size: 24px;
+            line-height: 34px;
+            text-align: center;
+            letter-spacing: 2.5px;
+            color: #ffffff;
+        }
+        button {
+            color: #ffffff;
+            background-color: #ee415e;
+            font-size: 18px;
+            line-height: 25.7px;
+            text-align: center;
+            padding: 6px 62px;
+            border-radius: 2px;
+            outline: none;
+            border: 1px solid #ffffff;
+
+            &:hover {
+                color: #ee415e;
+                background-color: #ffffff;
             }
         }
     }
 }
-// ----------------------
 
-// ----------------------
-// Snap Scroll Section Styling
-.snapScrollSection {
-    height: 100%; //test
-    border-radius: 30px 30px 0 0;
-    position: absolute;
-    z-index: 1;
-    overflow: hidden;
-    width: 100%;
-    background-color: var(--neutral-white);
-    @include md {
-        height: 100%;
-        width: 100%;
-        border-radius: 30px;
-        padding: 10px 20px 18px;
-        position: absolute;
-        overflow: unset;
+.creditSection {
+    padding: 65px 0;
+    background-color: #ffffff;
+    .creditContainer {
+        max-width: 1170px;
+        margin: auto;
+
+        .creditHead {
+            text-align: center;
+            letter-spacing: 0.5px;
+
+            h3 {
+                font-size: 32px;
+                line-height: 35.2px;
+                color: #074764;
+            }
+            p {
+                font-size: 18px;
+                line-height: 25.7px;
+                color: #455a64;
+                padding: 60px 0;
+            }
+        }
+
+        .creditButtonContainer {
+            div {
+                color: #ffffff;
+                background-color: #0099cc;
+                font-size: 18px;
+                line-height: 25.7px;
+                text-align: center;
+                padding: 6px 62px;
+                border-radius: 2px;
+                outline: none;
+                border: 1px solid #ffffff;
+                max-width: 270px;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.testimonialSection {
+    background-color: #2bd3dd;
+    padding: 40px 0px;
+
+    .testimonialContainer {
+        width: fit-content;
+        max-width: 1170px;
+        margin: auto;
     }
 
-    & > .sectionCard {
+    .testimonialRow {
         display: flex;
         flex-direction: column;
-        padding: 10px;
-        height: 100%;
-        border-radius: 20px 20px 0 0;
 
-        @include md {
-            display: flex;
+        @include xl {
             flex-direction: row;
-            width: 100%;
-            padding: 40px;
-            overflow: hidden;
-            border-radius: 30px;
-        }
-
-        @include maxHeightWithDpr(1.5) {
-            padding: 30px;
-        }
-
-        .hyperLink {
-            // cursor: pointer;
-            font-weight: 700;
-
-            // &:hover {
-            //     text-decoration: underline;
-            // }
-        }
-    }
-
-    & > .sectionCard > .contentWrapper {
-        display: flex;
-        justify-content: flex-end;
-        padding: 0 6px;
-        margin-bottom: 40px;
-
-        @include md {
-            flex: 1;
-            padding: 0;
-            margin: 0;
-        }
-
-        & > span {
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 52px;
-            margin-right: 10px;
-            font-family: var(--font-quintus);
-
-            @include md {
-                flex: 1;
-                text-align: right;
-
-                font-weight: 400;
-                font-size: 62px;
-                line-height: 72px;
-            }
-
-            @include maxHeightWithDpr(1.5) {
-                font-size: 50px;
-                line-height: 1.2;
-            }
-        }
-
-        & > div {
-            flex: 4;
-
-            & > .title {
-                font-weight: 700;
-                font-size: 39px;
-                line-height: 40px;
-                letter-spacing: 0.002em;
-                font-family: var(--font-patron);
-
-                @include md {
-                    font-size: 61px;
-                    line-height: 60px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 50px;
-                    line-height: 1;
-                }
-            }
-
-            & > .subTitle {
-                font-weight: 700;
-                // font-size: 40px;
-                // line-height: 52px;
-                font-size: 34px;
-                line-height: 38px;
-                margin: 8px 0;
-                font-family: var(--font-quintus);
-
-                @include md {
-                    font-weight: 400;
-                    font-size: 62px;
-                    margin: 20px 0 40px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 50px;
-                    line-height: 1;
-                    margin: 10px 0 20px;
-                }
-            }
-
-            & .description {
-                font-weight: 500;
-                letter-spacing: -0.001em;
-                font-size: 14px;
-                line-height: 20px;
-
-                @include md {
-                    font-size: 16px;
-                    line-height: 23px;
-                }
-            }
-        }
-    }
-
-    & > .sectionCard > div:last-of-type {
-        flex: 2;
-        height: 100%;
-        overflow: hidden;
-        @include md {
-            margin-left: 60px;
-        }
-    }
-
-    &.discover > .sectionCard {
-        background-color: var(--discover-brick-2);
-        overflow: hidden;
-
-        .contentWrapper {
-            margin-bottom: 20px;
-
-            @include md {
-                margin-bottom: unset;
-            }
-        }
-
-        & .title {
-            color: var(--discover-brick-4);
-        }
-
-        & .subTitle,
-        & span.number {
-            color: var(--discover-brick-3);
-        }
-
-        & .description {
-            color: var(--primary-dark-1);
-            opacity: 0.7;
-        }
-
-        & > div:last-of-type {
-            @include md {
-                margin-left: 30px;
-                flex: 1.6;
-            }
-        }
-    }
-
-    &.learn > .sectionCard {
-        background-color: var(--learn-purple-2);
-        transition: 0.5s background-color ease-in-out, 0.5s margin ease-in-out;
-
-        @include md {
-            padding: 0 40px;
-
-            > div:first-of-type {
-                padding: 40px 0px;
-            }
-        }
-
-        .contentWrapper {
-            margin-bottom: 20px;
-
-            @include md {
-                margin-bottom: unset;
-            }
-        }
-        .secondSnapDescription {
-            // display: none !important;
-            opacity: 0;
-            display: none;
-        }
-        .nsdcParnerShipButton {
-            opacity: 0;
-            pointer-events: none;
-            pointer-events: all;
-            background-color: var(--primary-accent-2);
-            border-radius: 30px;
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            transition: none;
-            height: 0px;
-            @include md {
-                position: absolute;
-                bottom: 55px;
-                background-color: var(--primary-accent-1);
-                padding: 15px 30px;
-                width: fit-content;
-                justify-content: flex-start;
-                left: 7%;
-            }
-
-            @include maxHeightWithDpr(1.5) {
-                padding: 12px 30px;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                transform: rotate(-4deg);
-                filter: drop-shadow(-10px 14px 0px rgba(0, 0, 0, 0.25));
-            }
-
-            h4 {
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 27px;
-                letter-spacing: 0.002em;
-                color: var(--primary-accent-4);
-                text-align: left;
-                @media (max-height: 660px) {
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-
-                @include md {
-                    text-align: right;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-            }
-
-            .partnerLogo {
-                margin-left: 20px;
-
-                @include maxHeightWithDpr(1.5) {
-                    text-align: left;
-                }
-
-                img {
-                    height: auto;
-                    width: 85px;
-
-                    @include md {
-                        width: 100%;
-                    }
-
-                    @include maxHeightWithDpr(1.5) {
-                        width: 90px;
-                    }
-                    @media (max-height: 660px) {
-                        width: 70px;
-                    }
-                }
-            }
-        }
-        & .title {
-            color: var(--learn-purple-4);
         }
 
-        & .subTitle,
-        & span.number,
-        & .description {
-            color: var(--learn-purple-1);
-        }
-
-        &.dark {
-            .nsdcParnerShipButton {
-                opacity: 1;
-                height: auto;
-                padding: 12px 18px;
-                transition: 0.2s all ease-in-out;
-            }
-            .description {
-                display: none !important;
-                opacity: 0 !important;
-                transition: all 0.2s ease-in-out !important;
-            }
-            .secondSnapDescription {
-                opacity: 1 !important;
-                transition: all 0.2s ease-in-out !important;
-                display: block !important;
-                color: var(--learn-purple-2) !important;
+        :nth-child(1) {
+            span {
+                font-size: 24px;
+                line-height: 34px;
+                font-weight: 600;
             }
 
-            background-color: var(--learn-purple-1);
-            .contentWrapper {
-                margin-bottom: 20px;
-            }
-
-            & .subTitle,
-            & span.number {
-                color: var(--learn-purple-2);
-            }
-
-            :global(.learn-animation-wrapper) {
-                & > section:nth-child(3) {
-                    padding: 0 0 40px;
-
-                    @include maxHeightWithDpr(1.25) {
-                        padding: 0 0 30px;
-                    }
-                }
+            @include xl {
+                padding-right: 32px;
             }
         }
     }
-
-    &.finance > .sectionCard {
-        background-color: var(--learn-purple-2);
-        padding-bottom: 0;
-
-        @include md {
-            background-color: var(--finance-blue-2);
-            padding-bottom: 40px;
-            padding-right: 0;
-        }
-
-        @include maxHeightWithDpr(1.25) {
-            padding-bottom: 30px;
-            padding-top: 30px;
-        }
-
-        .contentWrapper {
-            margin-bottom: 20px;
-            @include md {
-                margin-bottom: unset;
-            }
-        }
-
-        & .title {
-            color: var(--learn-purple-4);
-        }
-
-        & .subTitle,
-        & span.number {
-            color: var(--finance-blue-1);
-        }
-
-        & .description {
-            color: #1d2032;
-        }
-    }
-
-    &.grow > .sectionCard {
-        background-color: var(--primary-light-1);
-        padding-bottom: 0;
-
-        @include md {
-            padding-bottom: 40px;
-            & > div:last-of-type {
-                overflow: unset;
-            }
-        }
-
-        @include maxHeightWithDpr(1.25) {
-            padding-bottom: 30px;
-        }
-
-        .contentWrapper {
-            margin-bottom: 20px;
-            @include md {
-                margin-bottom: unset;
-            }
-        }
-
-        & .title {
-            color: var(--discover-brick-4);
-        }
-
-        & .subTitle,
-        & span.number {
-            color: var(--primary-accent-3);
-        }
-
-        & .description {
-            color: #1d2032;
-            color: var(--primary-accent-4, #292f1e);
-            opacity: 0.7;
-        }
-    }
-
-    &.about {
-        width: 100%;
-
-        & > .sectionCard {
-            background-image: url("assets/images/aboutBG.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-
-            @include md {
-                padding: 0;
-            }
-
-            .contentWrapper {
-                flex-direction: column;
-
-                @include md {
-                    flex-direction: row;
-                    height: 100%;
-                }
-
-                & > div:first-of-type {
-                    order: 2;
-                    flex: 1;
-                    display: none;
-
-                    @include md {
-                        display: block;
-                        order: 1;
-                        height: fit-content;
-                        position: relative;
-                    }
-
-                    & > div {
-                        &:nth-child(2n) {
-                            margin-left: auto;
-                            margin-top: -70px;
-                        }
-
-                        &:nth-child(2n + 1) {
-                            &:not(:first-of-type) {
-                                margin-top: -70px;
-                            }
-                        }
-
-                        &:nth-child(4) img {
-                            transform: rotate(-10deg);
-                        }
-                    }
-                }
-            }
-
-            .aboutCard {
-                width: 50%;
-                height: auto;
-                min-width: 163px;
-
-                @include md {
-                    display: block;
-                    width: 270px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    width: 180px;
-                }
-            }
-
-            .stickyContent {
-                flex: 1;
-                padding: 20px 0 0;
-
-                @include md {
-                    padding: 40px 0;
-                    position: sticky;
-                    top: 0px;
-                    margin-left: 50px;
-                    order: 1;
-                    flex: 1.5;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    margin-right: 20px;
-                    padding: 30px 0 20px;
-                    height: 100%;
-                }
-
-                > div {
-                    position: relative;
-                    height: calc(100% - 160px);
-
-                    .aboutPlaceholder {
-                        height: auto;
-                        width: 100%;
-                        margin-top: 20px;
-
-                        @include md {
-                            width: calc(100% - 40px);
-                            margin-top: 0;
-                        }
-
-                        @include maxHeightWithDpr(1.25) {
-                            height: 100%;
-                        }
-                    }
-
-                    .playBtnWrapper {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-
-                        @include md {
-                            top: unset;
-                            left: 30px;
-                            bottom: 50px;
-                            background-color: var(--primary-accent-1);
-                            display: flex;
-                            align-items: center;
-                            padding: 10px 20px;
-                            border-radius: 30px;
-                            transform: none;
-                        }
-
-                        @include maxHeightWithDpr(1.5) {
-                            bottom: 20px;
-                            left: 20px;
-                            padding: 8px 20px;
-                        }
-
-                        > div {
-                            background: #1c2014;
-                            border-radius: 50%;
-                            padding: 8px;
-
-                            @include md {
-                                margin-right: 6px;
-                                padding: 0;
-                            }
-                        }
-
-                        h4 {
-                            display: none;
-
-                            @include md {
-                                display: block;
-                                font-weight: 500;
-                                font-size: 16px;
-                                line-height: 31px;
-                                letter-spacing: -0.006em;
-                                color: var(--primary-accent-4);
-                            }
-
-                            @include maxHeightWithDpr(1.5) {
-                                font-size: 14px;
-                                line-height: 28px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            & .title {
-                font-weight: 700;
-                font-size: 39px;
-                line-height: 50px;
-                text-align: center;
-                letter-spacing: 0.002em;
-                color: var(--primary-light-1);
-
-                @include md {
-                    font-size: 61px;
-                    line-height: 72px;
-                    color: var(--learn-purple-2);
-                    text-align: initial;
-                }
-
-                span {
-                    font-weight: 700;
-                    font-size: 40px;
-                    line-height: 52px;
-                    color: var(--primary-accent-1);
-                    font-family: var(--font-quintus);
-
-                    @include md {
-                        font-weight: 400;
-                        font-size: 62px;
-                    }
-
-                    @include maxHeightWithDpr(1.5) {
-                        font-size: 51px;
-                        line-height: 42px;
-                    }
-                }
-            }
-
-            & .description {
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 20px;
-                text-align: center;
-                letter-spacing: -0.001em;
-                opacity: 0.4;
-                color: var(--primary-accent-2);
-                margin-top: 20px;
-
-                @include md {
-                    font-size: 16px;
-                    line-height: 23px;
-                    text-align: left;
-                    width: 78%;
-                    margin: 20px 0 40px;
-                }
-            }
-
-            .mobileCards {
-                flex: 1;
-                height: 100%;
-                width: fit-content;
-                // overflow-x: hidden;
-                display: flex;
-                padding: 20px 0;
-
-                @include md {
-                    display: none;
-                }
-
-                > div {
-                    height: fit-content;
-
-                    &:not(:first-of-type) {
-                        margin-left: 50px;
-                    }
-                }
-            }
-        }
-    }
-
-    &.partners > .sectionCard {
-        background-color: var(--primary-light-1);
-
-        @include md {
-            overflow: hidden;
-        }
-
-        & > .inViewMobile {
-            height: 1px;
-            @include md {
-                display: none;
-            }
-        }
-
-        .contentWrapper {
-            flex-direction: column;
-            position: relative;
-            justify-content: flex-start;
-            margin-bottom: 0px;
-
-            @include md {
-                flex-direction: row;
-                margin-bottom: 40px;
-                overflow: unset;
-            }
-
-            & > div:first-of-type {
-                @include md {
-                    flex: 1;
-                }
-            }
-
-            & > div:last-of-type {
-                @include md {
-                    flex: 2;
-                }
-            }
-
-            & .title {
-                font-weight: 700;
-                font-size: 39px;
-                line-height: 50px;
-                text-align: center;
-                letter-spacing: 0.002em;
-                color: var(--primary-accent-4);
-
-                @include md {
-                    font-size: 61px;
-                    line-height: 72px;
-                    color: #1d2032;
-                    text-align: left;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    font-size: 50px;
-                    line-height: 39px;
-                }
-
-                span {
-                    font-weight: 700;
-                    font-size: 40px;
-                    line-height: 28px;
-                    text-align: center;
-                    color: var(--primary-accent-3);
-                    display: inline-block;
-                    font-family: var(--font-quintus);
-
-                    @include md {
-                        font-weight: 400;
-                        font-size: 62px;
-                        line-height: 52px;
-                        color: #727379;
-                        margin: 10px 0;
-                    }
-
-                    @include maxHeightWithDpr(1.5) {
-                        font-size: 50px;
-                        line-height: 1;
-                    }
-                }
-            }
-
-            & .description {
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 20px;
-                text-align: center;
-                letter-spacing: -0.001em;
-                color: var(--primary-accent-4);
-                opacity: 0.7;
-                margin-top: 30px;
-
-                @include md {
-                    font-size: 16px;
-                    line-height: 23px;
-                    color: #1d2032;
-                    opacity: 0.5;
-                    margin-top: 40px;
-                    text-align: left;
-                }
-            }
-        }
-
-        .animatedSection {
-            flex: unset;
-            height: 33%;
-            width: 100%;
-            overflow: auto;
-            position: relative;
-            margin-top: 5px;
-            min-height: 220px; // cos each logo row is 55px
-
-            @include md {
-                // overflow: unset;
-                width: 70%;
-                height: 100%;
-            }
-
-            &::before {
-                // content: "";
-                // display: block;
-                // position: absolute;
-                // width: 100%;
-                // height: 100%;
-                // top: 0;
-                // left: 0;
-                // z-index: 0;
-                // background-color: var(--primary-accent-4);
-                // border-radius: 30px;
-
-                // @include md {
-                //     width: 70%;
-                //     left: 30%;
-                // }
-
-                // @include maxHeightWithDpr(1.25) {
-                //     width: 65%;
-                //     left: 35%;
-                // }
-
-                // @include maxHeightWithDpr(1.5) {
-                //     width: 60%;
-                //     left: 40%;
-                // }
-            }
-
-            > .logoWrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: 0;
-                background-color: var(--primary-accent-4);
-                border-radius: 30px;
-                overflow-x: auto;
-
-                @include md {
-                    width: 70%;
-                    left: 30%;
-                }
-
-                @include maxHeightWithDpr(1.25) {
-                    width: 65%;
-                    left: 35%;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    width: 60%;
-                    left: 40%;
-                }
-
-                > div {
-                    display: flex;
-                    justify-content: flex-end;
-                    position: relative;
-                    width: fit-content;
-                    height: 55px;
-
-                    @include md {
-                        height: 130px;
-                    }
-
-                    &:first-of-type {
-                        // transform: translate(-28px, 89px);
-                        @include md {
-                            // margin-left: 15%;
-                            transform: translate(65px, 47px);
-                        }
-                    }
-
-                    &:nth-child(2) {
-                        // transform: translate(-56px, -4px);
-                        @include md {
-                            // margin-left: 10%;
-                            transform: translate(0, 30px);
-                        }
-                    }
-
-                    &:nth-child(3) {
-                        // transform: translate(-83px, -2px);
-                        @include md {
-                            // margin-left: 5%;
-                            transform: translate(65px, 15px);
-                        }
-                    }
-                }
-            }
-
-            .logo {
-                bottom: 0;
-                width: 55px;
-                height: 55px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                // position: absolute;
-
-                @include md {
-                    width: 130px;
-                    height: 130px;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    width: 100px;
-                    height: 100px;
-                }
-
-                img {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-        }
-
-        .textWrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: unset;
-
-            @include md {
-                flex: unset;
-            }
-
-            .description {
-                margin-top: 20px;
-            }
-
-            .partnerBlock {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-
-                background-color: var(--primary-accent-2);
-                border-radius: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 12px 18px;
-                border: none;
-                outline: none;
-                cursor: pointer;
-
-                @include md {
-                    position: static;
-                    background-color: var(--primary-accent-1);
-                    padding: 15px 30px;
-                    width: fit-content;
-                    justify-content: flex-start;
-                }
-
-                @include maxHeightWithDpr(1.5) {
-                    padding: 12px 30px;
-                    border-radius: 20px;
-                }
-
-                &:hover {
-                    transform: rotate(-4deg);
-                    filter: drop-shadow(-10px 14px 0px rgba(0, 0, 0, 0.25));
-                }
-
-                h4 {
-                    font-weight: 700;
-                    font-size: 20px;
-                    line-height: 27px;
-                    letter-spacing: 0.002em;
-                    color: var(--primary-accent-4);
-                    text-align: left;
-                    @media (max-height: 660px) {
-                        font-size: 16px;
-                        line-height: 24px;
-                    }
-
-                    @include md {
-                        text-align: right;
-                    }
-
-                    @include maxHeightWithDpr(1.5) {
-                        font-size: 16px;
-                        line-height: 24px;
-                    }
-                }
-
-                .partnerLogo {
-                    margin-left: 20px;
-
-                    @include maxHeightWithDpr(1.5) {
-                        text-align: left;
-                    }
-
-                    img {
-                        height: auto;
-                        width: 85px;
-
-                        @include md {
-                            width: 100%;
-                        }
-
-                        @include maxHeightWithDpr(1.5) {
-                            width: 90px;
-                        }
-                        @media (max-height: 660px) {
-                            width: 70px;
-                        }
-                    }
-                }
-            }
+    :nth-child(3) {
+        span {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
         }
     }
 }
